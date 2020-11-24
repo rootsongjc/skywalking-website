@@ -14,6 +14,121 @@
     
     
     <item>
+      <title>Zh: [视频] SkyWalking DevCon 2020</title>
+      <link>https://skywalking.apache.org/zh/2020-11-23-devcon/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://skywalking.apache.org/zh/2020-11-23-devcon/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;活动介绍&#34;&gt;活动介绍&lt;/h1&gt;
+&lt;p&gt;Apache SkyWalking 2020 开发者线下活动，社区创始人，PMC成员和Committer会亲临现场，和大家交流和分享项目中的使用经验。
+以及邀请Apache Local Community 北京的成员一起分享Apache文化和Apache之道。&lt;/p&gt;
+&lt;h1 id=&#34;日程安排&#34;&gt;日程安排&lt;/h1&gt;
+&lt;h2 id=&#34;开场演讲&#34;&gt;开场演讲&lt;/h2&gt;
+&lt;p&gt;09：30-09：50   SkyWalking&amp;rsquo;s 2019-2020 and beyond&lt;/p&gt;
+&lt;p&gt;吴晟，Tetrate.io创始工程师，Apache SkyWalking创始人&lt;/p&gt;
+
+
+
+
+&lt;div&gt;&lt;iframe id=&#34;biliplayer&#34; src=&#34;//player.bilibili.com/player.html?bvid=BV1ay4y16755&amp;page=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34; loading=&#34;lazy&#34; width=&#34;100%&#34; height=&#34;500&#34;&gt; &lt;/iframe&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;h2 id=&#34;上午&#34;&gt;上午&lt;/h2&gt;
+&lt;p&gt;09：55-10：30   贝壳全链路跟踪实践&lt;/p&gt;
+&lt;p&gt;赵禹光，赵禹光，贝壳找房监控技术负责人，Apache SkyWalking PMC成员&lt;/p&gt;
+&lt;p&gt;10：35-11：15   SkyWalking在百度爱番番部门实践&lt;/p&gt;
+&lt;p&gt;刘嘉鹏，百度，SkyWalking contributor&lt;/p&gt;
+&lt;p&gt;11：15-11：55   非计算机背景的同学如何贡献开源&lt;/p&gt;
+&lt;p&gt;缘于一位本科在读的社会学系的同学的问题，这让我反思我们开源community的定位和Open的程度，于是，适兕从生产、分发、消费的软件供应的角度，根据涉及到的角色，然后再反观现代大学教育体系的专业，进一步对一个开源项目和community需要的专业背景多样性进行一个阐述和探究。并以ALC Beijing为例进行一个事例性的说明。&lt;/p&gt;
+&lt;p&gt;适兕，开源布道师，ALC Beijing member，开源之道主创，开源社教育组成员。&lt;/p&gt;
+
+
+
+
+&lt;div&gt;&lt;iframe id=&#34;biliplayer&#34; src=&#34;//player.bilibili.com/player.html?bvid=BV12v411t7yt&amp;page=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34; loading=&#34;lazy&#34; width=&#34;100%&#34; height=&#34;500&#34;&gt; &lt;/iframe&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;h2 id=&#34;下午&#34;&gt;下午&lt;/h2&gt;
+&lt;p&gt;13：30-14：10   如何从 Apache SkyWalking 社区学习 Apache Way&lt;/p&gt;
+&lt;p&gt;温铭，支流科技联合创始人＆CEO，Apache APISIX 项目 VP， Apache SkyWalking Committer&lt;/p&gt;
+&lt;p&gt;14：10-14：50   Apache SkyWalking 在小米公司的应用&lt;/p&gt;
+&lt;p&gt;宋振东，小米公司小米信息技术部 skywalking 研发负责人&lt;/p&gt;
+&lt;p&gt;14：50-15：30   Istio全生命周期监控&lt;/p&gt;
+&lt;p&gt;高洪涛，Tetrate.io创始工程师，Apache SkyWalking PMC成员&lt;/p&gt;
+&lt;p&gt;15：30-15：45   茶歇&lt;/p&gt;
+&lt;p&gt;15：45-16：25  针对HikariCP数据库连接池的监控&lt;/p&gt;
+&lt;p&gt;张鑫 Apache SkyWalking PMC 成员&lt;/p&gt;
+&lt;p&gt;16：25-17：00   SkyWalking 与 Nginx 的优化实践&lt;/p&gt;
+&lt;p&gt;王院生 深圳支流科技创始人兼 CTO，Apache APISIX 创始人 &amp;amp; PMC成员&lt;/p&gt;
+
+
+
+
+&lt;div&gt;&lt;iframe id=&#34;biliplayer&#34; src=&#34;//player.bilibili.com/player.html?bvid=BV1xZ4y1G7D7&amp;page=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34; loading=&#34;lazy&#34; width=&#34;100%&#34; height=&#34;500&#34;&gt; &lt;/iframe&gt;&lt;/div&gt;
+
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Zh: 亲临百人盛况的Apache SkyWalking 2020 DevCon，看见了什么？</title>
+      <link>https://skywalking.apache.org/zh/2020-11-21-what-do-we-see-at-the-apache-skywalking-2020-devcon-event/</link>
+      <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://skywalking.apache.org/zh/2020-11-21-what-do-we-see-at-the-apache-skywalking-2020-devcon-event/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;作者: 赵禹光&lt;/li&gt;
+&lt;li&gt;原文链接: &lt;a href=&#34;https://mp.weixin.qq.com/s/5wYCYiP8oKs7V6BR1lyKxg&#34;&gt;亲临百人盛况的Apache SkyWalking 2020 DevCon，看见了什么？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2020 年 10 月 29 日&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;活动现场&#34;&gt;活动现场&lt;/h3&gt;
+&lt;p&gt;2020年11月14日Apache SkyWalking 2020 DevCon由贝壳找房和tetrate赞助，Apache SkyWalking、云原生、Apache APISIX、Apache Pulsar 和 ALC Beijing 五大社区合作，在贝壳找房一年级会议室盛大举行，本次活动主要面对Apache SkyWalking的使用者、开发者和潜在用户。线上线下共有230多人报名。经统计，实际参加活动人数超过130人，近60%的人愿意抽出自己的休息时间，来交流学习Apache SkyWalking和开源文化。不难看见，在可预见的未来，中国的开源项目很快将进入下一个维度，那必定是更广的社区人员参与，更高技术知识体现，更强的线上稳定性和及时修复能力。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;hdsk.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;活动历程&#34;&gt;活动历程：&lt;/h3&gt;
+&lt;h4 id=&#34;0930-0950-skywalkings-2019-2020-and-beyond&#34;&gt;09：30-09：50 SkyWalking&amp;rsquo;s 2019-2020 and beyond&lt;/h4&gt;
+&lt;p&gt;吴晟老师本次分享：回顾2020年度SkyWalking发布的重要的新特性，出版的《Apache SkyWalking实战》图书，社区的进展，开源爱好者如何参与SkyWalking建设，和已知社区在主导的SkyWalking2021年孵化中的新特性。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ws.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;0955-1030-贝壳全链路跟踪实践&#34;&gt;09：55-10：30 贝壳全链路跟踪实践&lt;/h4&gt;
+&lt;p&gt;赵禹光老师（作者）本次分享：回顾了贝壳找房2018年至今，贝壳找房的全链路跟踪项目与SkyWalking的渊源，分享了SkyWalking在实践中遇到的问题，和解决方案。以及SkyWalking近10%的Committer都曾经或正在贝壳人店平台签中研发部，工作过的趣事。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;zyg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1035-1115-刘嘉鹏老师分享-skywalking在百度爱番番部门实践&#34;&gt;10：35-11：15 刘嘉鹏老师分享 SkyWalking在百度爱番番部门实践&lt;/h4&gt;
+&lt;p&gt;刘嘉鹏老师本次分享：回顾了百度爱番番部门在使用SkyWalking的发展历程&amp;amp;现状，CRM SAAS产品在近1年使用SkyWalking实践经验，以及如何参与SkyWalking的贡献，并成为的Apache Committer。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ljp.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1115-1155-适兕老师分享-非计算机背景的同学如何贡献开源&#34;&gt;11：15-11：55 适兕老师分享 非计算机背景的同学如何贡献开源&lt;/h4&gt;
+&lt;p&gt;适兕是国内很有名的开源布道师，本次分享从生产、分发、消费的软件供应的角度，根据涉及到的角色，然后再反观现代大学教育体系的专业，进一步对一个开源项目和community需要的专业背景多样性进行一个阐述和探究。并以ALC Beijing为例进行一个事例性的说明，非计算机背景的同学如何贡献开源。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;js.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1330-1410-如何从-apache-skywalking-社区学习-apache-way&#34;&gt;13：30-14：10 如何从 Apache SkyWalking 社区学习 Apache Way&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;wm.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1410-1450-apache-skywalking-在小米公司的应用&#34;&gt;14：10-14：50 Apache SkyWalking 在小米公司的应用&lt;/h4&gt;
+&lt;p&gt;宋振东老师是小米信息技术部分布式链路追踪系统研发负责人，分别以小米公司，业务开发、架构师、SRE、Leader和QA等多个视角，回顾了SkyWalking在小米公司的应用实践。从APM的产品选型到实际落地，对其他公司准备使用SkyWalking落地，非常有借鉴意义。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;szd.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1450-1530-istio全生命周期监控&#34;&gt;14：50-15：30 Istio全生命周期监控&lt;/h4&gt;
+&lt;p&gt;高洪涛老师本次分享了SkyWalking和可观测云原生等非常前沿的知识布道，其中有，云原生在Logging、Metrics和Tracing的相关知识，Istio，K8S等方面的实践。对一些公司在前沿技术的落地，非常有借鉴意义。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ght.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1545-1625-针对hikaricp数据库连接池的监控&#34;&gt;15：45-16：25 针对HikariCP数据库连接池的监控&lt;/h4&gt;
+&lt;p&gt;张鑫老师本次分享了，以一个SkyWalking无法Tracing的实际线上故障的故事出发，讲述如何定位，和补充SkyWalking插件的不足，并将最后的实践贡献到社区。对大家参与开源很有帮助。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;zx.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1625-1700-skywalking-与-nginx-的优化实践&#34;&gt;16：25-17：00 SkyWalking 与 Nginx 的优化实践&lt;/h4&gt;
+&lt;p&gt;王院生老师本次分享SkyWalking社区和APISIX社区合作，在Nginx插件的实践过程，对社区之间的如何开展合作，非常有借鉴意义，院生老师的工作&amp;amp;开源态度，很好的诠释Geek精神，也是我们互联网从业者需要学习恪守的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;wys.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;apache-skywalking-2020-devcon-讲师ppt&#34;&gt;Apache SkyWalking 2020 DevCon 讲师PPT&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/alc-beijing/alc-site/blob/master/content/images/What_do_we_see_at_the_Apache_SkyWalking_2020_DevCon_event/ppt&#34;&gt;Apache SkyWalking 2020 DevCon 讲师 PPT&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;skywalking-后续发展计划&#34;&gt;SkyWalking 后续发展计划&lt;/h3&gt;
+&lt;p&gt;正如吴晟老师所说：No plan, open to the community，Apache SkyWalking是没有RoadMap。社区的后续发展，依赖于每个人在社区的贡献。与其期待，不如大胆设想，将自己的设计按照Apache Way贡献到SkyWalking，你就是下一个Apache SkyWalking Commiter，加入Member of SkyWalking大家庭，让社区因为你，而更加有活力。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Zh: SkyWalking 8.2.0 中的新特性: 浏览器端监控; 使用标签查询; 指标分析语言</title>
       <link>https://skywalking.apache.org/zh/2020-10-29-skywalking8-2-release/</link>
       <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
@@ -66,6 +181,67 @@ PV（page views，页面浏览量）， UV（unique visitors，独立访客数�
 &lt;h3 id=&#34;apache-skywalking-devcon-报名信息&#34;&gt;Apache SkyWalking DevCon 报名信息&lt;/h3&gt;
 &lt;p&gt;Apache SkyWalking DevCon 2020 开始报名了。
 2020 年 11 月 14 日，欢迎大家&lt;a href=&#34;https://www.huodongxing.com/event/3567284406200&#34;&gt;来线下参加活动和交流&lt;/a&gt;, 或者&lt;a href=&#34;https://www.itdks.com/Home/Act/apply?id=5392&amp;amp;mUid=57437&#34;&gt;报名观看线上直播&lt;/a&gt;。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Zh: [视频] Apache SkyWalking Cloud on Kubernetes</title>
+      <link>https://skywalking.apache.org/zh/2020-10-25-coscon20-swck/</link>
+      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://skywalking.apache.org/zh/2020-10-25-coscon20-swck/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;高洪涛&#34;&gt;高洪涛&lt;/h3&gt;
+&lt;p&gt;美国ServiceMesh服务商tetrate创始工程师。原华为软件开发云技术专家。目前为Apache SkyWalking核心贡献者，参与该开源项目在软件开发云的商业化进程。曾任职当当网系统架构师，开源达人，曾参与Apache ShardingSphere，Elastic-Job等知名开源项目。对分布式数据库，容器调度，微服务，ServicMesh等技术有深入的了解。&lt;/p&gt;
+&lt;h3 id=&#34;议题简介&#34;&gt;议题简介&lt;/h3&gt;
+&lt;p&gt;定制化Operator模式在面向Kubernetes的云化平台建构中变得越来越流行。Apache SkyWalking社区已经开始尝试使用Operator模式去构建基于Kubernetes平台的PaaS云组件。本次分享给将会给听众带来该项目的初衷，实现与未来演进等相关内容。分享的内容包含：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;项目动机与设计理念&lt;/li&gt;
+&lt;li&gt;核心功能展示，包含SkyWalking核心组件的发布，更新与维护。&lt;/li&gt;
+&lt;li&gt;观测ServiceMesh，包含于Istio的自动集成。&lt;/li&gt;
+&lt;li&gt;目前的工作进展和对未来的规划。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+&lt;div&gt;&lt;iframe id=&#34;biliplayer&#34; src=&#34;//player.bilibili.com/player.html?bvid=BV1ia411c7Hc&amp;page=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34; loading=&#34;lazy&#34; width=&#34;100%&#34; height=&#34;500&#34;&gt; &lt;/iframe&gt;&lt;/div&gt;
+
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Zh: [视频] 云原生学院 - 后分布式追踪时代的性能问题定位——方法级性能剖析</title>
+      <link>https://skywalking.apache.org/zh/2020-08-13-cloud-native-academy/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://skywalking.apache.org/zh/2020-08-13-cloud-native-academy/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;吴晟&#34;&gt;吴晟&lt;/h2&gt;
+&lt;p&gt;吴晟，Apache 基金会会员，Apache SkyWalking 创始人、项目 VP 和 PMC 成员，Apache 孵化器 PMC 成员，Apache ShardingSphere PMC成员，Apache APISIX PMC 成员，Apache ECharts (incubating) 和Apache DolphinScheduler (incubating) 孵化器导师，Zipkin 成员和贡献者。&lt;/p&gt;
+&lt;h2 id=&#34;分享大纲&#34;&gt;分享大纲&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;分布式追踪兴起的背景&lt;/li&gt;
+&lt;li&gt;SkyWalking和其他分布式追踪的异同&lt;/li&gt;
+&lt;li&gt;定位问题的流程和方法&lt;/li&gt;
+&lt;li&gt;性能剖析的由来、用途和优势&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;听众收获&#34;&gt;听众收获&lt;/h2&gt;
+&lt;p&gt;听众能够全面的了解分布式追踪的技术背景，和技术原理。以及为什么这些年，分布式追踪和基于分布式追踪的APM系统，Apache SkyWalking，得到了广泛的使用、集成，甚至云厂商的支持。同时，除了针对追踪数据，我们应该关注更多的是，如何利用其产生的监控数据，定位系统的性能问题。以及它有哪些短板，应该如何弥补。&lt;/p&gt;
+
+
+
+
+&lt;div&gt;&lt;iframe id=&#34;biliplayer&#34; src=&#34;//player.bilibili.com/player.html?bvid=BV1D541187kC&amp;page=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34; loading=&#34;lazy&#34; width=&#34;100%&#34; height=&#34;500&#34;&gt; &lt;/iframe&gt;&lt;/div&gt;
+
+
 
       </description>
     </item>
