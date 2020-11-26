@@ -13,6 +13,233 @@
     
     
     <item>
+      <title>Blog: The first design of Satellite 0.1.0</title>
+      <link>https://skywalking.apache.org/blog/2020-11-25-skywalking-satellite-0.1.0-design/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://skywalking.apache.org/blog/2020-11-25-skywalking-satellite-0.1.0-design/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;Satellite.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Author: &lt;a href=&#34;https://github.com/evanljp&#34;&gt;Jiapeng Liu&lt;/a&gt;. Baidu.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/apache/skywalking-satellite&#34;&gt;skywalking-satellite&lt;/a&gt;: The Sidecar Project of Apache SkyWalking&lt;/li&gt;
+&lt;li&gt;Nov. 25th, 2020&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A lightweight collector/sidecar which can be deployed close to the target monitored system, to collect metrics, traces, and logs. It also provides advanced features, such as local cache, format transformation, and sampling.&lt;/p&gt;
+&lt;h2 id=&#34;design-thinking&#34;&gt;Design Thinking&lt;/h2&gt;
+&lt;p&gt;Satellite is a 2 level system to collect observability data from other core systems. So, the core element of the design is to guarantee data stability during Pod startup all the way to Pod shutdown avoiding alarm loss. All modules are designed as plugins, and if you have other ideas, you can add them yourself.&lt;/p&gt;
+&lt;h2 id=&#34;slo&#34;&gt;SLO&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Single gatherer supports &amp;gt; 1000 ops (Based 0.5 Core,50M)&lt;/li&gt;
+&lt;li&gt;At least once delivery.(Optional)&lt;/li&gt;
+&lt;li&gt;Data stability: 99.999%.(Optional)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Because they are influenced by the choice of plugins, some items in SLO are optional.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;role&#34;&gt;Role&lt;/h2&gt;
+&lt;p&gt;Satellite would be running as a &lt;strong&gt;Sidecar&lt;/strong&gt;. Although Daemonset mode would take up fewer resources, it will cause more troubles to the forwarding of agents. So we also want to use Sidecar mode by reducing the costs. But Daemonset mode would be also supported in the future plan.&lt;/p&gt;
+&lt;h2 id=&#34;core-modules&#34;&gt;Core Modules&lt;/h2&gt;
+&lt;p&gt;The Satellite has 3 core modules which are Gatherer, Processor, and Sender.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Gatherer module is responsible for fetching or receiving data and pushing the data to Queue.&lt;/li&gt;
+&lt;li&gt;The Processor module is responsible for reading data from the queue and processing data by a series of filter chains.&lt;/li&gt;
+&lt;li&gt;The Sender module is responsible for async processing and forwarding the data to the external services in the batch mode. After sending success, Sender would also acknowledge the offset of Queue in Gatherer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;core-modules.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;detailed-structure&#34;&gt;Detailed Structure&lt;/h2&gt;
+&lt;p&gt;The overall design is shown in detail in the figure below. We will explain the specific components one by one.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;detail-modules.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;gatherer&#34;&gt;Gatherer&lt;/h3&gt;
+&lt;h4 id=&#34;concepts&#34;&gt;Concepts&lt;/h4&gt;
+&lt;p&gt;The Gatherer has 4 components to support the data collection, which are Input, Collector, Worker, and Queue. There are 2 roles in the Worker, which are Fetcher and Receiver.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The Input is an abstraction of the input source, which is usually mapped to a configuration file.&lt;/li&gt;
+&lt;li&gt;The Collector is created by the Source, but many collectors could be created by the same Source. For example, when a log path has been configured as the /var/*.log in an Input, the number of collectors is the same as the file number in this path.&lt;/li&gt;
+&lt;li&gt;The Fetcher and Receiver is the real worker to collect data. The receiver interface is an abstraction, which has multiple implementations, such as gRPC receiver  and HTTP receiver.Here are some specific use cases:
+&lt;ul&gt;
+&lt;li&gt;Trace Receiver is a gRPC server for receiving trace data created by Skywalking agents.&lt;/li&gt;
+&lt;li&gt;Log Receiver is also a gRPC server for receiving log data which is collected by Skywalking agents. (In the future we want Skywalking Agent to support log sending, and RPC-based log sending is more efficient and needs fewer resources than file reading. For example, the way of file reading will bring IO pressure and performance cost under multi-line splicing.)&lt;/li&gt;
+&lt;li&gt;Log Fetcher is like Filebeat, which fits the common log collection scenario. This fetcher will have more responsibility than any other workers because it needs to record the offset and process the multi-line splicing. This feature will be implemented in the future.&lt;/li&gt;
+&lt;li&gt;Prometheus Fetcher supports a new way to fetch Prometheus data and push the data to the upstream.&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The Queue is a buffer module to decouple collection and transmission. In the 1st release version, we will use persistent storage to ensure data stability. But the implementation is a plug-in design that can support pure memory queues later.
+&lt;img src=&#34;gatherer.jpg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;the-data-flow&#34;&gt;The data flow&lt;/h4&gt;
+&lt;p&gt;We use the Trace Receiver as an example to introduce the data flow.
+&lt;img src=&#34;DataFlow.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;queue&#34;&gt;Queue&lt;/h4&gt;
+&lt;h5 id=&#34;mmapqueue&#34;&gt;MmapQueue&lt;/h5&gt;
+&lt;p&gt;We have simplified the design of MmapQueue to reduce the resources cost on the memory and disk.&lt;/p&gt;
+&lt;h6 id=&#34;concepts-1&#34;&gt;Concepts&lt;/h6&gt;
+&lt;p&gt;There are 2 core concepts in MmapQueue.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Segment: Segment is the real data store center, that provides large-space storage and does not reduce read and write performance as much as possible by using mmap. And we will avoid deleting files by reusing them.&lt;/li&gt;
+&lt;li&gt;Meta: The purpose of meta is to find the data that the consumer needs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;segment&#34;&gt;Segment&lt;/h6&gt;
+&lt;p&gt;One MmapQueue has a directory to store the whole data. The Queue directory is made up with many segments and 1 meta file. The number of the segments would be computed by 2 params, which are the max cost of the Queue and the cost of each segment. For example, If the max cost is 512M and each segment cost is 256K, the directory can hold up to 2000 files. Once capacity is exceeded, an coverage policy is adopted that means the 2000th would override the first file.&lt;/p&gt;
+&lt;p&gt;Each segment in Queue will be N times the size of the page cache and will be read and written in an appended sequence rather than randomly. These would improve the performance of Queue. For example, each Segment is a 128k file, as shown in the figure below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;segments.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h6 id=&#34;meta&#34;&gt;Meta&lt;/h6&gt;
+&lt;p&gt;The Meta is a mmap file that only contains 56Bit. There are 5 concepts in the Meta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Version: A version flag.&lt;/li&gt;
+&lt;li&gt;Watermark Offset: Point to the current writing space.
+&lt;ul&gt;
+&lt;li&gt;ID: SegmentID&lt;/li&gt;
+&lt;li&gt;Offset: The offset in Segment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Writed Offset: Point to the latest refreshed data, that would be overridden by the write offset after period refresh.
+&lt;ul&gt;
+&lt;li&gt;ID: SegmentID&lt;/li&gt;
+&lt;li&gt;Offset: The offset in Segment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Reading Offset: Point to the current reading space.
+&lt;ul&gt;
+&lt;li&gt;ID: SegmentID&lt;/li&gt;
+&lt;li&gt;Offset: The offset in Segment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Committed Offset: Point to the latest committed offset , that is equal to the latest acked offset plus one.
+&lt;ul&gt;
+&lt;li&gt;ID: SegmentID&lt;/li&gt;
+&lt;li&gt;Offset: The offset in Segment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;meta.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The following diagram illustrates the transformation process.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The publisher receives data and wants to write to Queue.
+&lt;ul&gt;
+&lt;li&gt;The publisher would read Writing Offset to find a space and do plus one.&lt;/li&gt;
+&lt;li&gt;After this, the publisher will write the data to the space.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The consumer wants to read the data from Queue.
+&lt;ul&gt;
+&lt;li&gt;The consumer would read Reading Offset to find the current read offset and do plus one.&lt;/li&gt;
+&lt;li&gt;After this, the consumer will read the data from the space.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;On period flush, the flusher would override Watermark Offset by using Writing Offset.&lt;/li&gt;
+&lt;li&gt;When the ack operation is triggered, Committed Offset would plus the batch size in the ack batch.&lt;/li&gt;
+&lt;li&gt;When facing crash, Writing Offset and Reading Offset would be overridden by Watermark Offset and Committed Offset. That is because the Reading Offset and Writing Offset cannot guarantee at least once delivery.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;offset-convert.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h6 id=&#34;mmap-performance-test&#34;&gt;Mmap Performance Test&lt;/h6&gt;
+&lt;p&gt;The test is to verify the efficiency of mmap in low memory cost.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The rate of data generation: 7.5K/item 1043 item/s (Based on Aifanfan online pod.)&lt;/li&gt;
+&lt;li&gt;The test structure is based on &lt;a href=&#34;https://github.com/grandecola/bigqueue&#34;&gt;Bigqueue&lt;/a&gt; because of similar structure.&lt;/li&gt;
+&lt;li&gt;Test tool: Go Benchmark Test&lt;/li&gt;
+&lt;li&gt;Command: go test -bench BenchmarkEnqueue  -run=none -cpu=1&lt;/li&gt;
+&lt;li&gt;Result On Mac(15-inch, 2018,16 GB 2400 MHz DDR4, 2.2 GHz Intel Core i7 SSD):
+&lt;ul&gt;
+&lt;li&gt;BenchmarkEnqueue/ArenaSize-128KB/MessageSize-8KB/MaxMem-384KB              66501             21606 ns/op              68 B/op          1 allocs/op&lt;/li&gt;
+&lt;li&gt;BenchmarkEnqueue/ArenaSize-128KB/MessageSize-8KB/MaxMem-1.25MB             72348             16649 ns/op              67 B/op          1 allocs/op&lt;/li&gt;
+&lt;li&gt;BenchmarkEnqueue/ArenaSize-128KB/MessageSize-16KB/MaxMem-1.25MB            39996             33199 ns/op             103 B/op          1 allocs/op&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Result On Linux(INTEL Xeon E5-2450 V2 8C 2.5GHZ&lt;em&gt;2,INVENTEC PC3L-10600 16G&lt;/em&gt;8,INVENTEC SATA 4T 7.2K*8):
+&lt;ul&gt;
+&lt;li&gt;BenchmarkEnqueue/ArenaSize-128KB/MessageSize-8KB/MaxMem-384KB         	  126662	     12070 ns/op	      62 B/op	       1 allocs/op&lt;/li&gt;
+&lt;li&gt;BenchmarkEnqueue/ArenaSize-128KB/MessageSize-8KB/MaxMem-1.25MB        	  127393	     12097 ns/op	      62 B/op	       1 allocs/op&lt;/li&gt;
+&lt;li&gt;BenchmarkEnqueue/ArenaSize-128KB/MessageSize-16KB/MaxMem-1.25MB       	   63292	     23806 ns/op	      92 B/op	       1 allocs/op&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Conclusion: Based on the above tests, mmap is both satisfied at the write speed and at little memory with very low consumption when running as a sidecar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;processor&#34;&gt;Processor&lt;/h3&gt;
+&lt;p&gt;The Processor has 3 core components, which are Consumer, Filter, and Context.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Consumer is created by the downstream Queue. The consumer has its own read offset and committed offset, which is similar to the offset concept of Spark Streaming.&lt;/li&gt;
+&lt;li&gt;Due to the particularity of APM data preprocessing, Context is a unique concept in the Satellite filter chain, which supports storing the intermediate event because the intermediate state event also needs to be sent in sometimes.&lt;/li&gt;
+&lt;li&gt;The Filter is the core data processing part, which is similar to the processor of &lt;a href=&#34;https://github.com/elastic/beats&#34;&gt;beats&lt;/a&gt;. Due to the context, the upstream/downstream filters would be logically coupling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;Processor.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sender&#34;&gt;Sender&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;BatchConverter decouples the Processor and Sender by staging the Buffer structure, providing parallelization. But if BatchBuffer is full, the downstream processors would be blocked.&lt;/li&gt;
+&lt;li&gt;Follower is a real send worker that has a client, such as a gRPC client or Kafka client, and a fallback strategy. Fallback strategy is an interface, we can add more strategies to resolve the abnormal conditions, such as Instability in the network, upgrade the oap cluster.&lt;/li&gt;
+&lt;li&gt;When sent success, Committed Offset in Queue would plus the number of this batch.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;Sender.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;high-performance&#34;&gt;High Performance&lt;/h3&gt;
+&lt;p&gt;The scenario using Satellite is to collect a lot of APM data collection. We guarantee high performance by the following ways.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Shorten transmission path, that means only join 2 components,which are Queue and Processor, between receiving and forwarding.&lt;/li&gt;
+&lt;li&gt;High Performance Queue. MmapQueue provides a big, fast and persistent queue based on memory mapped file and ring structure.&lt;/li&gt;
+&lt;li&gt;Processor maintains a linear design, that could be functional processed in one go-routine to avoid too much goroutines switching.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;stability&#34;&gt;Stability&lt;/h2&gt;
+&lt;p&gt;Stability is a core point in Satellite. Stability can be considered in many ways, such as stable resources cost, stable running and crash recovery.&lt;/p&gt;
+&lt;h3 id=&#34;stable-resource-cost&#34;&gt;Stable resource cost&lt;/h3&gt;
+&lt;p&gt;In terms of resource cost,  Memory and CPU should be a concern.&lt;/p&gt;
+&lt;p&gt;In the aspect of the CPU, we keep a sequence structure to avoid a large number of retries occurring when facing network congestion. And Satellite avoids keep pulling when the Queue is empty based on the offset design of Queue.&lt;/p&gt;
+&lt;p&gt;In the aspect of the Memory, we have guaranteed only one data caching in Satellite, that is Queue. For the queue structure, we also keep the size fixed based on the ring structure to maintain stable Memory cost. Also, MmapQueue is designed for minimizing memory consumption and providing persistence while keeping speed as fast as possible. Maybe supports some strategy to dynamically control the size of MmapQueue to process more extreme conditions in the future.&lt;/p&gt;
+&lt;h3 id=&#34;stable-running&#34;&gt;Stable running&lt;/h3&gt;
+&lt;p&gt;There are many cases of network congestion, such as the network problem on the host node, OAP cluster is under upgrating, and Kafka cluster is unstable. When facing the above cases, Follower would process fallback strategy and block the downstream processes. Once the failure strategy is finished, such that send success or give up this batch, the Follower would process the next batch.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;Sender.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;crash-recovery&#34;&gt;Crash Recovery&lt;/h3&gt;
+&lt;p&gt;The crash recovery only works when the user selects MmapQueue in Gatherer because of persistent file system design. When facing a crash, Reading Offset would be overridden by Committed Offset that ensure the at least once delivery. And Writed Offset would be overridden Writing Offset that ensures the consumer always works properly and avoid encountering uncrossable defective data blocks.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;offset-convert.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;buffer-pool&#34;&gt;Buffer pool&lt;/h2&gt;
+&lt;p&gt;The Queue is to store fixed structure objects, object buffer pool would be efficient to reuse memory to avoid GC.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ackChan&lt;/li&gt;
+&lt;li&gt;batch convertor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;some-metrics&#34;&gt;Some metrics&lt;/h2&gt;
+&lt;p&gt;In Satellite, we should also collect its own monitoring metrics. The following metrics are necessary for Satellite.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cpu&lt;/li&gt;
+&lt;li&gt;memory&lt;/li&gt;
+&lt;li&gt;go routine number&lt;/li&gt;
+&lt;li&gt;gatherer_writing_offset&lt;/li&gt;
+&lt;li&gt;gatherer_watermark_offset&lt;/li&gt;
+&lt;li&gt;processor_reading_count&lt;/li&gt;
+&lt;li&gt;sender_committed_offset&lt;/li&gt;
+&lt;li&gt;sender_abandoned_count&lt;/li&gt;
+&lt;li&gt;sender_retry_count&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;input-and-output&#34;&gt;Input and Output&lt;/h2&gt;
+&lt;p&gt;We will reuse this diagram to explain the input and output.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Input
+&lt;ul&gt;
+&lt;li&gt;Because the push-pull mode is both supported, Queue is a core component.&lt;/li&gt;
+&lt;li&gt;Queue is designed to be a ring-shaped fixed capacity, that means the oldest data would be overridden by the latest data. If users find data loss, users should raise the ceiling of memory Queue. MmapQueue generally doesn&amp;rsquo;t face this problem unless the Sender transport is congested.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Ouput
+&lt;ul&gt;
+&lt;li&gt;If the BatchBuffer is full, the processor would be blocked.&lt;/li&gt;
+&lt;li&gt;If the Channel is full, the downstream components would be blocked, such as BatchConvertor and Processor.&lt;/li&gt;
+&lt;li&gt;When SenderWorker sends failure, the batch data would do a failure strategy that would block pulling data from the Channel. The strategy is a part of Sender,the operation mode is synchronous.&lt;/li&gt;
+&lt;li&gt;Once the failure strategy is finished, such that send success or give up this batch, the Sendworker would keep pulling data from the Channel.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;detail-modules.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;questions&#34;&gt;Questions&lt;/h2&gt;
+&lt;h3 id=&#34;how-to-avoid-keep-pulling-when-the-queue-is-empty&#34;&gt;How to avoid keep pulling when the Queue is empty?&lt;/h3&gt;
+&lt;p&gt;If Watermark Offset is less than or equal to Reading Offset, a signal would be sent to the consumer to avoid keep pulling.&lt;/p&gt;
+&lt;h3 id=&#34;why-reusing-files-in-queue&#34;&gt;Why reusing files in Queue?&lt;/h3&gt;
+&lt;p&gt;The unified model  is a ring in Queue, that limits fixed resources cost  in memory or disk.In Mmap Queue, reusing files turns the delete operations into an overwrite operations, effectively reducing the creation and deletion behavior in files.&lt;/p&gt;
+&lt;h3 id=&#34;what-are-the-strategies-for-file-creation-and-deletion-in-mmapqueue&#34;&gt;What are the strategies for file creation and deletion in MmapQueue?&lt;/h3&gt;
+&lt;p&gt;As Satellite running, the number of the files in MmapQueue would keep growing until up to the maximum capacity. After this, the old files will be overridden by the new data to avoid file deletion. When the Pod died, all resources were recycled.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: [Video] Another backend storage solution for the APM system</title>
       <link>https://skywalking.apache.org/blog/2020-11-21-apachecon-obs-shardingsphere/</link>
       <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
@@ -386,6 +613,80 @@ Apdex Score  =  ------------------------------------------------------
 &lt;li&gt;&lt;a href=&#34;https://www.apdex.org/index.php/specifications/&#34;&gt;https://www.apdex.org/index.php/specifications/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://skywalking.apache.org/&#34;&gt;https://skywalking.apache.org/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Apache SkyWalking: Use Profiling to Fix the Blind Spot of Distributed Tracing</title>
+      <link>https://skywalking.apache.org/blog/2020-04-13-apache-skywalking-profiling/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://skywalking.apache.org/blog/2020-04-13-apache-skywalking-profiling/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;em&gt;This post originally appears on &lt;a href=&#34;https://thenewstack.io/apache-skywalking-use-profiling-to-fix-the-blind-spot-of-distributed-tracing/&#34;&gt;The New Stack&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This post introduces a way to automatically profile code in production with &lt;a href=&#34;https://skywalking.apache.org&#34;&gt;Apache SkyWalking&lt;/a&gt;. We believe the profile method helps reduce maintenance and overhead while increasing the precision in root cause analysis.&lt;/p&gt;
+&lt;h3 id=&#34;limitations-of-the-distributed-tracing&#34;&gt;Limitations of the Distributed Tracing&lt;/h3&gt;
+&lt;p&gt;In the early days, metrics and logging systems were the key solutions in monitoring platforms. With the adoption of microservice and distributed system-based architecture, distributed tracing has become more important. Distributed tracing provides relevant service context, such as system topology map and RPC parent-child relationships.&lt;/p&gt;
+&lt;p&gt;Some claim that distributed tracing is the best way to discover the cause of performance issues in a distributed system. It’s good at finding issues at the RPC abstraction, or in the scope of components instrumented with spans. However, it isn’t that perfect.&lt;/p&gt;
+&lt;p&gt;Have you been surprised to find a span duration longer than expected, but no insight into why? What should you do next? Some may think that the next step is to add more instrumentation, more spans into the trace, thinking that you would eventually find the root cause, with more data points. We’ll argue this is not a good option within a production environment. Here’s why:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;There is a risk of application overhead and system overload. Ad-hoc spans measure the performance of specific scopes or methods, but picking the right place can be difficult. To identify the precise cause, you can “instrument” (add spans to) many suspicious places. The additional instrumentation costs more CPU and memory in the production environment. Next, ad-hoc instrumentation that didn’t help is often forgotten, not deleted. This creates a valueless overhead load. In the worst case, excess instrumentation can cause performance problems in the production app or overload the tracing system.&lt;/li&gt;
+&lt;li&gt;The process of ad-hoc (manual) instrumentation usually implies at least a restart. Trace instrumentation libraries, like Zipkin Brave, are integrated into many framework libraries. To instrument a method’s performance typically implies changing code, even if only an annotation. This implies a re-deploy. Even if you have the way to do auto instrumentation, like Apache SkyWalking, you still need to change the configuration and reboot the app. Otherwise, you take the risk of GC caused by hot dynamic instrumentation.&lt;/li&gt;
+&lt;li&gt;Injecting instrumentation into an uninstrumented third party library is hard and complex. It takes more time and many won’t know how to do this.&lt;/li&gt;
+&lt;li&gt;Usually, we don’t have code line numbers in the distributed tracing. Particularly when lambdas are in use, it can be difficult to identify the line of code associated with a span.
+Regardless of the above choices, to dive deeper requires collaboration with your Ops or SRE team, and a shared deep level of knowledge in distributed tracing.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Regardless of the above choices, to dive deeper requires collaboration with your Ops or SRE team, and a shared deep level of knowledge in distributed tracing.&lt;/p&gt;
+&lt;h3 id=&#34;profiling-in-production&#34;&gt;Profiling in Production&lt;/h3&gt;
+&lt;h4 id=&#34;introduction&#34;&gt;Introduction&lt;/h4&gt;
+&lt;p&gt;To reuse distributed tracing to achieve method scope precision requires an understanding of the above limitations and a different approach. We called it PROFILE.&lt;/p&gt;
+&lt;p&gt;Most high-level languages build and run on a thread concept. The profile approach takes continuous thread dumps. We merge the thread dumps to estimate the execution time of every method shown in the thread dumps. The key for distributed tracing is the tracing context, identifiers active (or current) for the profiled method. Using this trace context, we can weave data harvested from profiling into existing traces. This allows the system to automate otherwise ad-hoc instrumentation. Let’s dig deeper into how profiling works:&lt;/p&gt;
+&lt;p&gt;We consider a method invocation with the same stack depth and signature (method, line number etc), the same operation. We derive span timestamps from the thread dumps the same operation is in. Let’s put this visually:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;skywalking-blindspot-1.png&#34; alt=&#34;span timespaces&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Above, represents 10 successive thread dumps. If this method is in dumps 4-8, we assume it started before dump 4 and finished after dump 8. We can’t tell exactly when the method started and stopped. but the timestamps of thread dumps are close enough.&lt;/p&gt;
+&lt;p&gt;To reduce overhead caused by thread dumps, we only profile methods enclosed by a specific entry point, such as a URI or MVC Controller method. We identify these entry points through the trace context and the APM system.&lt;/p&gt;
+&lt;p&gt;The profile does thread dump analysis and gives us:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The root cause, precise to the line number in the code.&lt;/li&gt;
+&lt;li&gt;Reduced maintenance as ad-hoc instrumentation is obviated.&lt;/li&gt;
+&lt;li&gt;Reduced overload risk caused by ad-hoc instrumentation.&lt;/li&gt;
+&lt;li&gt;Dynamic activation: only when necessary and with a very clear profile target.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;implementing-precise-profiling-with-apache-skywalking-7&#34;&gt;Implementing Precise Profiling with Apache SkyWalking 7&lt;/h3&gt;
+&lt;p&gt;Distributed profiling is built-into Apache SkyWalking application performance monitoring (APM). Let’s demonstrate how the profiling approach locates the root cause of the performance issue.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;final CountDownLatchcountDownLatch= new CountDownLatch(2);
+ 
+threadPool.submit(new Task1(countDownLatch));
+threadPool.submit(new Task2(countDownLatch));
+ 
+try {
+   countDownLatch.await(500, TimeUnit.MILLISECONDS);
+} catch (InterruptedExceptione) {
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Task1 and Task2 have a race condition and unstable execution time: they will impact the performance of each other and anything calling them. While this code looks suspicious, it is representative of real life. People in the OPS/SRE team are not usually aware of all code changes and who did them. They only know something in the new code is causing a problem.&lt;/p&gt;
+&lt;p&gt;To make matters interesting, the above code is not always slow: it only happens when the condition is locked. In SkyWalking APM, we have metrics of endpoint p99/p95 latency, so, we are easy to find out the p99 of this endpoint is far from the avg response time. However, this is not the same as understanding the cause of the latency. To locate the root cause, add a profile condition to this endpoint: duration greater than 500ms. This means faster executions will not add profiling load.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;skywalking-blindspot-2.png&#34; alt=&#34;profiled segment&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This is a typical profiled trace segment (part of the whole distributed trace) shown on the SkyWalking UI. We now notice the “service/processWithThreadPool” span is slow as we expected, but why? This method is the one we added the faulty code to. As the UI shows that method, we know the profiler is working. Now, let’s see what the profile analysis result say.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;skywalking-blindspot-3.png&#34; alt=&#34;profile analysis&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This is the profile analysis stack view. We see the stack element names, duration (include/exclude the children) and slowest methods have been highlighted. It shows clearly, “sun.misc.Unsafe.park” costs the most time. If we look for the caller, it is the code we added: &lt;strong&gt;CountDownLatch.await&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;the-limitations-of-the-profile-method&#34;&gt;The Limitations of the Profile Method&lt;/h3&gt;
+&lt;p&gt;No diagnostic tool can fit all cases, not even the profile method.&lt;/p&gt;
+&lt;p&gt;The first consideration is mistaking a repeatedly called method for a slow method. Thread dumps are periodic. If there is a loop of calling one method, the profile analysis result would say the target method is slow because it is captured every time in the dump process. There could be another reason. A method called many times can also end up captured in each thread dump. Even so, the profile did what it is designed for. It still helps the OPS/SRE team to locate the code having the issue.&lt;/p&gt;
+&lt;p&gt;The second consideration is overhead, the impact of repeated thread dumps is real and can’t be ignored. In SkyWalking, we set the profile dump period to at least 10ms. This means we can’t locate method performance issues if they complete in less than 10ms. SkyWalking has a threshold to control the maximum parallel degree as well.&lt;/p&gt;
+&lt;p&gt;Understanding the above keeps distributed tracing and APM systems useful for your OPS/SRE team.&lt;/p&gt;
+&lt;h3 id=&#34;how-to-try-this&#34;&gt;How to Try This&lt;/h3&gt;
+&lt;p&gt;Everything we discussed, including the Apache SkyWalking Java Agent, profile analysis code, and UI, could be found in our GitHub repository. We hope you enjoyed this new profile method, and love Apache SkyWalking. If so, &lt;a href=&#34;https://github.com/apache/skywalking&#34;&gt;give us a star on GitHub&lt;/a&gt; to encourage us.&lt;/p&gt;
+&lt;p&gt;SkyWalking 7 has just been released. You can contact the project team through the following channels:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Follow &lt;a href=&#34;https://twitter.com/ASFSkyWalking&#34;&gt;SkyWalking twitter&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Subscribe mailing list: &lt;a href=&#34;mailto:dev@skywalking.apache.org&#34;&gt;dev@skywalking.apache.org&lt;/a&gt;. Send to &lt;a href=&#34;mailto:dev-subscribe@kywalking.apache.org&#34;&gt;dev-subscribe@kywalking.apache.org&lt;/a&gt; to subscribe to the mail list.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Co-author Sheng Wu is a Tetrate founding engineer and the founder and VP of Apache SkyWalking. He is solving the problem of observability for large-scale service meshes in hybrid and multi-cloud environments.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Adrian Cole works in the Spring Cloud team at VMware, mostly on Zipkin&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Han Liu is a tech expert at Lagou. He is an Apache SkyWalking committer&lt;/em&gt;&lt;/p&gt;
 
       </description>
     </item>
