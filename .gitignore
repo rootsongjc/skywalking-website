@@ -25,3 +25,4 @@
 # webpack output
 /static/js
 /static/css
+/tmp
