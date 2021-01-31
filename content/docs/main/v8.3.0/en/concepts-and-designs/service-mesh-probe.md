@@ -33,4 +33,4 @@ metrics data from parsing tracing data. So, the right expression is:
 **Service Mesh metrics are exact the metrics, what the traces parsers generate. They are same.**
 
 ## What is Next?
-- If you want to use the service mesh probe, read [set SkyWalking on Service Mesh](../../setup/readme#on-service-mesh) document.
+- If you want to use the service mesh probe, read [set SkyWalking on Service Mesh](../setup/readme#on-service-mesh) document.

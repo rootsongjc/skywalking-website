@@ -14,9 +14,9 @@ at the same time, the SkyWalking backend is in another region (VPC).
 
 ## Authentication Mode
 Only support **no mutual auth**.
-- Use this [script](../../../../../../tools/TLS/tls_key_generate.sh) if you are not familiar with how to generate key files.
+- Use this [script](../../../../../tools/TLS/tls_key_generate.sh) if you are not familiar with how to generate key files.
 - Find `ca.crt`, and use it at client side
-- Find `server.crt` ,`server.pem` and `ca.crt`. Use them at server side. Please refer to [gRPC SSL](../../../backend/grpc-ssl) 
+- Find `server.crt` ,`server.pem` and `ca.crt`. Use them at server side. Please refer to [gRPC SSL](../../backend/grpc-ssl) 
   for more details.
 
 ## Open and config TLS

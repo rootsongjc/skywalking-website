@@ -21,4 +21,4 @@ plugin.kafka.get_topic_timeout=${SW_GET_TOPIC_TIMEOUT:10}
 
 Kafka reporter plugin support to customize all configurations of listed in [here](http://kafka.apache.org/24/documentation.html#producerconfigs).
 
-Before you activated the Kafka reporter, you have to make sure that [Kafka fetcher](../../../backend/backend-fetcher#kafka-fetcher) has been opened in service.
+Before you activated the Kafka reporter, you have to make sure that [Kafka fetcher](../../backend/backend-fetcher#kafka-fetcher) has been opened in service.

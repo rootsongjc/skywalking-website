@@ -4,7 +4,7 @@ type: projectDoc
 layout: baseof
 ---
 # Official OAL script
-First, read [OAL introduction](../../concepts-and-designs/oal).
+First, read [OAL introduction](../concepts-and-designs/oal).
 
 Find OAL script at the `/config/oal/*.oal` of SkyWalking dist, since 8.0.0.
 You could change it(such as adding filter condition, or add new metrics) and reboot the OAP server, then it will affect.

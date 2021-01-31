@@ -41,7 +41,7 @@ _Sample codes only_
 * Add `@Trace` to any method you want to trace. After that, you can see the span in the Stack.
 * Methods annotated with `@Tag` will try to tag the **current active span** with the given key (`Tag#key()`) and (`Tag#value()`),
 if there is no active span at all, this annotation takes no effect. `@Tag` can be repeated, and can be used in companion with `@Trace`, see examples below.
-The `value` of `Tag` is the same as what are supported in [Customize Enhance Trace](../Customize-enhance-trace).
+The `value` of `Tag` is the same as what are supported in [Customize Enhance Trace](Customize-enhance-trace).
 * Add custom tag in the context of traced method, `ActiveSpan.tag("key", "val")`.
 
 * `ActiveSpan.error()` Mark the current span as error status.
@@ -87,4 +87,4 @@ CorrelationContext will remove the item when the value is `null` or empty.
 ```java
 Optional<String> value = TraceContext.getCorrelation("customKey");
 ```
-CorrelationContext configuration descriptions could be found in [the agent configuration](../readme#table-of-agent-configuration-properties) documentation, with `correlation.` as the prefix.
+CorrelationContext configuration descriptions could be found in [the agent configuration](readme#table-of-agent-configuration-properties) documentation, with `correlation.` as the prefix.

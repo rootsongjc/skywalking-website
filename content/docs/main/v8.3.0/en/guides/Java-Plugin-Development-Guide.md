@@ -7,10 +7,10 @@ layout: baseof
 This document describe how to understand, develop and contribute plugin. 
 
 There are 2 kinds of plugin
-1. [Tracing plugin](../#tracing-plugin). Follow the distributed tracing concept to collect spans with tags and logs.
-1. [Meter plugin](../#meter-plugin). Collect numeric metrics in Counter, Guage, and Histogram formats.
+1. [Tracing plugin](#tracing-plugin). Follow the distributed tracing concept to collect spans with tags and logs.
+1. [Meter plugin](#meter-plugin). Collect numeric metrics in Counter, Guage, and Histogram formats.
 
-We also provide the [plugin test tool](../#plugin-test-tool) to verify the data collected and reported by the plugin. If you plan to contribute any plugin to our main repo, the data would be verified by this tool too.
+We also provide the [plugin test tool](#plugin-test-tool) to verify the data collected and reported by the plugin. If you plan to contribute any plugin to our main repo, the data would be verified by this tool too.
 
 # Tracing plugin
 ## Concepts
@@ -161,7 +161,7 @@ SpanLayer is the catalog of span. Here are 5 values:
 1. MQ
 
 Component IDs are defined and reserved by SkyWalking project.
-For component name/ID extension, please follow [Component library definition and extension](../Component-library-settings) document.
+For component name/ID extension, please follow [Component library definition and extension](Component-library-settings) document.
 
 ### Special Span Tags
 All tags are available in the trace view, meanwhile, 
@@ -173,7 +173,7 @@ The value should be an integer. The response code of OAL entities is according t
 #### Tag key `db.statement` and `db.type`.
 The value of `db.statement` should be a String, representing the Database statement, such as SQL, or `[No statement]/`+span#operationName if value is empty.
 When exit span has this tag, OAP samples the slow statements based on `agent-analyzer/default/maxSlowSQLLength`.
-The threshold of slow statement is defined by following [`agent-analyzer/default/slowDBAccessThreshold`](../../setup/backend/slow-db-statement)
+The threshold of slow statement is defined by following [`agent-analyzer/default/slowDBAccessThreshold`](../setup/backend/slow-db-statement)
 
 #### Extension logic endpoint. Tag key `x-le`
 Logic endpoint is a concept, which doesn't represent a real RPC call, but requires the statistic.
@@ -326,7 +326,7 @@ tomcat-7.x/8.x=TomcatInstrumentation
      return witnessMethodList;
    }
    ```
-   For more example, see [WitnessTest.java](..//apm-sniffer/apm-agent-core/src/test/java/org/apache/skywalking/apm/agent/core/plugin/witness/WitnessTest.java)
+   For more example, see [WitnessTest.java](/apm-sniffer/apm-agent-core/src/test/java/org/apache/skywalking/apm/agent/core/plugin/witness/WitnessTest.java)
 
    
 
@@ -507,7 +507,7 @@ histogram.addValue(3);
 a tremendously useful test tools suite in a wide variety of languages of Agent. Includes mock collector and validator. 
 The mock collector is a SkyWalking receiver, like OAP server.
 
-You could learn how to use this tool to test the plugin in [this doc](../Plugin-test). If you want to contribute plugins
+You could learn how to use this tool to test the plugin in [this doc](Plugin-test). If you want to contribute plugins
 to SkyWalking official repo, this is required.
 
 # Contribute plugins into Apache SkyWalking repository
@@ -518,7 +518,7 @@ Please follow there steps:
 1. Create sub modules under `apm-sniffer/apm-sdk-plugin` or `apm-sniffer/optional-plugins`, and the name should include supported library name and versions
 1. Follow this guide to develop. Make sure comments and test cases are provided.
 1. Develop and test.
-1. Provide the automatic test cases. Learn `how to write the plugin test case` from this [doc](../Plugin-test)
+1. Provide the automatic test cases. Learn `how to write the plugin test case` from this [doc](Plugin-test)
 1. Send the pull request and ask for review. 
 1. The plugin committers approve your plugins, plugin CI-with-IT, e2e and plugin tests passed.
 1. The plugin accepted by SkyWalking. 

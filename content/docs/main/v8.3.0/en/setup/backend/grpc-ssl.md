@@ -16,7 +16,7 @@ You can follow below steps to enable this feature
 It seems like step one is to generate certificates and key files for encrypting communication. I thought this would be
 fairly straightforward using `openssl` from the command line.
 
-Use this [script](../../../../../tools/TLS/tls_key_generate.sh) if you are not familiar with how to generate key files.
+Use this [script](../../../../tools/TLS/tls_key_generate.sh) if you are not familiar with how to generate key files.
 
 We need below files:
  - `server.pem` a private RSA key to sign and authenticate the public key. It's either a PKCS#8(PEM) or PKCS#1(DER).
@@ -48,4 +48,4 @@ gRPCSslCertChainPath: /path/to/server.crt
 
 Because `sharding-server` only receives data from external, so it doesn't need CA at all.
 
-If you port to java agent, refer to [TLS.md](../../service-agent/java-agent/TLS) to config java agent to enable TLS.
+If you port to java agent, refer to [TLS.md](../service-agent/java-agent/TLS) to config java agent to enable TLS.

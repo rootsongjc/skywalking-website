@@ -214,4 +214,4 @@ Metric has three level, service, instance and endpoint. They extract level relev
 
 ## More Examples
 
-Please refer to [OAP Self-Observability](../../../../oap-server/server-bootstrap/src/main/resources/fetcher-prom-rules/self.yaml)
+Please refer to [OAP Self-Observability](../../../oap-server/server-bootstrap/src/main/resources/fetcher-prom-rules/self.yaml)

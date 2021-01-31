@@ -28,7 +28,7 @@ Requirement: **JDK8 to JDK12 are tested**, other versions are not tested and may
 
 Before you start, you should know that the quickstart aims to get you a basic configuration mostly for previews/demo, performance and long-term running are not our goals. 
 
-For production/QA/tests environments, you should head to [Backend and UI deployment documents](../#deploy-backend-and-ui).
+For production/QA/tests environments, you should head to [Backend and UI deployment documents](#deploy-backend-and-ui).
 
 You can use `bin/startup.sh` (or cmd) to startup the backend and UI with their default settings, which are:
 
@@ -48,6 +48,6 @@ Before deploying Skywalking in your distributed environment, you should know how
 - UI uses GraphQL (HTTP) query to access the backend also in Jetty service (`core/default/rest*` in `application.yml`).
 
 Now, let's continue with the backend, UI and CLI setting documents.
-### [Backend setup document](../backend-setup)
-### [UI setup document](../ui-setup)
+### [Backend setup document](backend-setup)
+### [UI setup document](ui-setup)
 ### [CLI set up document](https://github.com/apache/skywalking-cli)

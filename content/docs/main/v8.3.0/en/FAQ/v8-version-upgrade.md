@@ -4,7 +4,7 @@ type: projectDoc
 layout: baseof
 ---
 # V8 upgrade
-SkyWalking v8 begins to use [v3 protocol](../../protocols/readme), so, it is incompatible with previous releases.
+SkyWalking v8 begins to use [v3 protocol](../protocols/readme), so, it is incompatible with previous releases.
 Users who intend to upgrade in v8 series releases could follow this guidance.
 
 

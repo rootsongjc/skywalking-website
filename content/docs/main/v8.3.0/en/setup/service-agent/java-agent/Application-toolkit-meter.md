@@ -12,7 +12,7 @@ layout: baseof
    </dependency>
 ```
 
-If you're using Spring sleuth, you could use [Spring Sleuth Setup](.././../../backend/spring-sleuth-setup).
+If you're using Spring sleuth, you could use [Spring Sleuth Setup](./../../backend/spring-sleuth-setup).
 
 * `Counter` API represents a single monotonically increasing counter, automatic collect data and report to backend.
 ```java

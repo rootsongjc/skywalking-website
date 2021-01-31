@@ -6,9 +6,9 @@ layout: baseof
 # Alarm
 Alarm core is driven by a collection of rules, which are defined in `config/alarm-settings.yml`.
 There are three parts in alarm rule definition.
-1. [Alarm rules](../#rules). They define how metrics alarm should be triggered, what conditions should be considered.
-1. [Webhooks](../#webhook). The list of web service endpoint, which should be called after the alarm is triggered.
-1. [gRPCHook](../#gRPCHook). The host and port of remote gRPC method, which should be called after the alarm is triggered.
+1. [Alarm rules](#rules). They define how metrics alarm should be triggered, what conditions should be considered.
+1. [Webhooks](#webhook). The list of web service endpoint, which should be called after the alarm is triggered.
+1. [gRPCHook](#gRPCHook). The host and port of remote gRPC method, which should be called after the alarm is triggered.
 
 ## Entity name
 Define the relation between scope and entity name.
@@ -26,9 +26,9 @@ Define the relation between scope and entity name.
 Alarm rule is constituted by following keys
 - **Rule name**. Unique name, show in alarm message. Must end with `_rule`.
 - **Metrics name**. A.K.A. metrics name in oal script. Only long, double, int types are supported. See
-[List of all potential metrics name](../#list-of-all-potential-metrics-name).
-- **Include names**. The following entity names are included in this rule. Please follow [Entity name define](../#entity-name).
-- **Exclude names**. The following entity names are excluded in this rule. Please follow [Entity name define](../#entity-name).
+[List of all potential metrics name](#list-of-all-potential-metrics-name).
+- **Include names**. The following entity names are included in this rule. Please follow [Entity name define](#entity-name).
+- **Exclude names**. The following entity names are excluded in this rule. Please follow [Entity name define](#entity-name).
 - **Include names regex**. Provide a regex to include the entity names. If both setting the include name list and include name regex, both rules will take effect.
 - **Exclude names regex**. Provide a regex to exclude the exclude names. If both setting the exclude name list and exclude name regex, both rules will take effect.
 - **Include labels**. The following labels of the metric are included in this rule.
@@ -134,7 +134,7 @@ We provided a default `alarm-setting.yml` in our distribution only for convenien
 1. Endpoint relation average response time over 1s in last 2 minutes.
 
 ### List of all potential metrics name
-The metrics names are defined in official [OAL scripts](../../../guides/backend-oal-scripts), right now 
+The metrics names are defined in official [OAL scripts](../../guides/backend-oal-scripts), right now 
 metrics from **Service**, **Service Instance**, **Endpoint**, **Service Relation**, **Service Instance Relation**, **Endpoint Relation** scopes could be used in Alarm, and the **Database access** same with **Service** scope.
 
 Submit issue or pull request if you want to support any other scope in alarm.
@@ -142,7 +142,7 @@ Submit issue or pull request if you want to support any other scope in alarm.
 ## Webhook
 Webhook requires the peer is a web container. The alarm message will send through HTTP post by `application/json` content type. The JSON format is based on `List<org.apache.skywalking.oap.server.core.alarm.AlarmMessage>` with following key information.
 - **scopeId**, **scope**. All scopes are defined in org.apache.skywalking.oap.server.core.source.DefaultScopeDefine.
-- **name**. Target scope entity name. Please follow [Entity name define](../#entity-name).
+- **name**. Target scope entity name. Please follow [Entity name define](#entity-name).
 - **id0**. The ID of the scope entity matched the name. When using relation scope, it is the source entity ID.
 - **id1**. When using relation scope, it will be the dest entity ID. Otherwise, it is empty.
 - **ruleName**. The rule name you configured in `alarm-settings.yml`.
@@ -263,7 +263,7 @@ feishuHooks:
 ```
 
 ## Update the settings dynamically
-Since 6.5.0, the alarm settings can be updated dynamically at runtime by [Dynamic Configuration](../dynamic-config),
+Since 6.5.0, the alarm settings can be updated dynamically at runtime by [Dynamic Configuration](dynamic-config),
 which will override the settings in `alarm-settings.yml`.
 
 In order to determine that whether an alarm rule is triggered or not, SkyWalking needs to cache the metrics of a time window for

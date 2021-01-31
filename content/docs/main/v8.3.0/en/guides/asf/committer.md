@@ -90,7 +90,7 @@ If they accepted, then they need to do the following things.
 1. Make sure they have subscribed the `dev@skywalking.apache.org`. Usually they already have.
 1. Choose a Apache ID that is not in the [apache committers list page](http://people.apache.org/committer-index.html).
 1. Download the [ICLA](https://www.apache.org/licenses/icla.pdf) (If they are going to contribute to the project as day job, [CCLA](http://www.apache.org/licenses/cla-corporate.pdf)  is expected).
-1. After filling the `icla.pdf` (or `ccla.pdf`) with information correctly, print, sign it manually (by hand),  scan it as an pdf, and send it in mail as an attachment to the [secretary@apache.org](../mailto:secretary@apache.org). (If they prefer to sign electronically, please follow the steps of [this page](http://www.apache.org/licenses/contributor-agreements.html#submitting))
+1. After filling the `icla.pdf` (or `ccla.pdf`) with information correctly, print, sign it manually (by hand),  scan it as an pdf, and send it in mail as an attachment to the [secretary@apache.org](mailto:secretary@apache.org). (If they prefer to sign electronically, please follow the steps of [this page](http://www.apache.org/licenses/contributor-agreements.html#submitting))
 1. Then the PMC will wait the Apache secretary confirmed the ICLA (or CCLA) filed. The new committer and PMC will receive the mail like following
 
 ```
@@ -129,7 +129,7 @@ SkyWalking project doesn't require the continue contributions after you become a
 Being a committer, you could
 1. Review and merge the pull request to the master branch in the Apache repo. A pull request often contains multiple commits. Those commits **must be squashed and merged** into a single commit **with explanatory comments**. For new committer, we hope you could request some senior committer to recheck the pull request.
 1. Create and push codes to new branch in the Apache repo.
-1. Follow the [Release process](../../How-to-release) to process new release. Of course, you need to ask committer team
+1. Follow the [Release process](../How-to-release) to process new release. Of course, you need to ask committer team
 to confirm it is the right time to release.
 
 The PMC hope the new committer to take part in the release and release vote, even still be consider `+1 no binding`.
@@ -150,7 +150,7 @@ In the normal case, the new PMC member should be nominated from committer team. 
 agree and be confidence that the candidate is ready, such as he/she has been a PMC member of another project, Apache member
 or Apache officer.
 
-The process of new PMC vote should also follow the same `[DISCUSS]`, `[VOTE]` and `[RESULT][VOTE]` in private mail list as [new committer vote](../#new-committer-nomination).
+The process of new PMC vote should also follow the same `[DISCUSS]`, `[VOTE]` and `[RESULT][VOTE]` in private mail list as [new committer vote](#new-committer-nomination).
 One more step before sending the invitation, the PMC [need to send NOTICE mail to Apache board](http://www.apache.org/dev/pmc.html#newpmc).
 ```
 To: board@apache.org

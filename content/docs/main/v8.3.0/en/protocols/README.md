@@ -6,9 +6,9 @@ layout: baseof
 # Protocols
 There are two types of protocols list here. 
 
-- [**Probe Protocol**](../#probe-protocols). Include the descriptions and definitions about how agent send collected metrics data and traces, also the formats of each entities.
+- [**Probe Protocol**](#probe-protocols). Include the descriptions and definitions about how agent send collected metrics data and traces, also the formats of each entities.
 
-- [**Query Protocol**](../#query-protocol). The backend provide query capability to SkyWalking own UI and others. These queries are based on GraphQL.
+- [**Query Protocol**](#query-protocol). The backend provide query capability to SkyWalking own UI and others. These queries are based on GraphQL.
 
 
 ## Probe Protocols

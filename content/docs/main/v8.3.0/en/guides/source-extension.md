@@ -4,7 +4,7 @@ type: projectDoc
 layout: baseof
 ---
 # Source and Scope extension for new metrics
-From [OAL scope introduction](../../concepts-and-designs/oal#scope), you should already have understood what the scope is.
+From [OAL scope introduction](../concepts-and-designs/oal#scope), you should already have understood what the scope is.
 At here, as you want to do more extension, you need understand deeper, which is the **Source**. 
 
 **Source** and **Scope** are binding concepts. **Scope** declare the id(int) and name, **Source** declare the attributes.
@@ -52,7 +52,7 @@ public class ServiceInstance extends Source {
 4. The `String getEntityId()` method in Source, requests the return value representing unique entity which the scope related. 
 Such as,
 in this Service scope, the id is service id, representing a particular service, like `Order` service.
-This value is used in [OAL group mechanism](../../concepts-and-designs/oal#group).
+This value is used in [OAL group mechanism](../concepts-and-designs/oal#group).
 
 5. `@ScopeDefaultColumn.VirtualColumnDefinition` and `@ScopeDefaultColumn.DefinedByField` are required, all declared fields(virtual/byField)
 are going to be pushed into persistent entity, mapping to such as ElasticSearch index and Database table column.

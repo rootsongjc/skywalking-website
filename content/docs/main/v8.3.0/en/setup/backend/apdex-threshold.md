@@ -14,7 +14,7 @@ A user defines a response time threshold T. All responses handled in T or less t
 For example, if T is 1.2 seconds and a response completes in 0.5 seconds, then the user is satisfied. All responses 
 greater than 1.2 seconds dissatisfy the user. Responses greater than 4.8 seconds frustrate the user.
 
-The apdex threshold T can be configured in `service-apdex-threshold.yml` file or via [Dynamic Configuration](../dynamic-config). 
+The apdex threshold T can be configured in `service-apdex-threshold.yml` file or via [Dynamic Configuration](dynamic-config). 
 The `default` item will be apply to a service isn't defined in this configuration as the default threshold.
 
 ## Configuration Format

@@ -99,7 +99,7 @@ storage:
     ...
 ```
 - File at `trustStorePath` is being monitored, once it is changed, the ElasticSearch client will do reconnecting.
-- `trustStorePass` could be changed on the runtime through [**Secrets Management File Of ElasticSearch Authentication**](../#secrets-management-file-of-elasticsearch-authentication).
+- `trustStorePass` could be changed on the runtime through [**Secrets Management File Of ElasticSearch Authentication**](#secrets-management-file-of-elasticsearch-authentication).
 
 ### Daily Index Step
 Daily index step(`storage/elasticsearch/dayStep`, default 1) represents the index creation period. In this period, several days(dayStep value)' metrics are saved.
@@ -275,5 +275,5 @@ ElasticSearch 5 is incompatible with ElasticSearch 6 Java client jar, so it coul
 [OpenSkyWalking/SkyWalking-With-Es5x-Storage](https://github.com/OpenSkywalking/SkyWalking-With-Es5x-Storage) repo includes the distribution version. 
 
 ## More storage solution extension
-Follow [Storage extension development guide](../../../guides/storage-extention) 
-in [Project Extensions document](../../../guides/readme#project-extensions) in development guide.
+Follow [Storage extension development guide](../../guides/storage-extention) 
+in [Project Extensions document](../../guides/readme#project-extensions) in development guide.

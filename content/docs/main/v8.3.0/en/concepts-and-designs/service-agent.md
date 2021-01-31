@@ -29,7 +29,7 @@ could be based on thread Id, and stack module to make sure the context is safe.
 
 - **Just effect frameworks or libraries**. Because of the changing codes by agents, it also means the codes are already known 
 by agent plugin developers. So, there is always a supported list in this kind of probes.
-Like [SkyWalking Java agent supported list](../../setup/service-agent/java-agent/Supported-list).
+Like [SkyWalking Java agent supported list](../setup/service-agent/java-agent/Supported-list).
 
 - **Across thread can't be supported all the time**. Like we said about **in process propagation**, most codes
 run in a single thread per request, especially business codes. But in some other scenarios, they do things in different threads, such as 
@@ -40,5 +40,5 @@ So, no mystery for auto instrument, in short words, agent developers write an ac
 instrument codes work you. That is all. 
 
 ## What is next?
-If you want to learn about manual instrument libs in SkyWalking, see [Manual instrument SDK](../manual-sdk) section.
+If you want to learn about manual instrument libs in SkyWalking, see [Manual instrument SDK](manual-sdk) section.
 

@@ -4,12 +4,12 @@ type: projectDoc
 layout: baseof
 ---
 # Meter System
-Meter system is another streaming calculation mode, especially for metrics data. In the [OAL](../oal), there are clear 
-[Scope Definitions](../scope-definitions), including native objects. Meter system is focusing on the data type itself,
+Meter system is another streaming calculation mode, especially for metrics data. In the [OAL](oal), there are clear 
+[Scope Definitions](scope-definitions), including native objects. Meter system is focusing on the data type itself,
 and provides more flexible to the end user to define the scope entity.
 
 The meter system is open to different receivers and fetchers in the backend, 
-follow the [backend setup document](../../setup/backend/backend-setup) for more details.
+follow the [backend setup document](../setup/backend/backend-setup) for more details.
 
 Every metrics is declared in the meter system should include following attribute
 1. **Metrics Name**. An unique name globally, should avoid overlap the OAL variable names.

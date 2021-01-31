@@ -9,7 +9,7 @@ Open server side trace sampling mechanism, the metrics of service, service insta
 as before, but only don't save all the traces into storage.
 
 Of course, even you open sampling, the traces will be kept as consistent as possible. **Consistent** means, once the trace
-segments have been collected and reported by agents, the backend would do their best to don't break the trace. See [Recommendation](../#recommendation)
+segments have been collected and reported by agents, the backend would do their best to don't break the trace. See [Recommendation](#recommendation)
 to understand why we called it `as consistent as possible` and `do their best to don't break the trace`.
 
 ## Set the sample rate

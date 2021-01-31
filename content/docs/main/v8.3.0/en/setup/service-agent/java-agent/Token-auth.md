@@ -15,7 +15,7 @@ Set token in agent.config file
 agent.authentication = xxxx
 ```
 
-Meanwhile, open the [backend token authentication](../../../backend/backend-token-auth).
+Meanwhile, open the [backend token authentication](../../backend/backend-token-auth).
 
 ## Authentication fails
 The Collector verifies every request from agent, allowed only the token match.

@@ -65,10 +65,10 @@ layout: baseof
               const str = p2
                   .replace(/README.md/gi, 'readme')
                   .replace(/\.md/g, '')
-              if (filePath.includes('README')) {
+              if (filePath.includes('README')&&!str.startsWith('#')) {
                 return `${p1}(../${str})`
               }
-              return `${p1}(../${str})`
+              return `${p1}(${str})`
 
             })
 

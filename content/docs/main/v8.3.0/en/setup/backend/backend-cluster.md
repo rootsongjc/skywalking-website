@@ -9,13 +9,13 @@ so you should need cluster management always in product env.
  
 Backend provides several ways to do cluster management. Choose the one you need/want.
 
-- [Zookeeper coordinator](../#zookeeper-coordinator). Use Zookeeper to let backend instance detects and communicates
+- [Zookeeper coordinator](#zookeeper-coordinator). Use Zookeeper to let backend instance detects and communicates
 with each other.
-- [Kubernetes](../#kubernetes). When backend cluster are deployed inside kubernetes, you could choose this
+- [Kubernetes](#kubernetes). When backend cluster are deployed inside kubernetes, you could choose this
 by using k8s native APIs to manage cluster.
-- [Consul](../#consul). Use Consul as backend cluster management implementor, to coordinate backend instances.
-- [Etcd](../#etcd). Use Etcd to coordinate backend instances.
-- [Nacos](../#nacos). Use Nacos to coordinate backend instances.
+- [Consul](#consul). Use Consul as backend cluster management implementor, to coordinate backend instances.
+- [Etcd](#etcd). Use Etcd to coordinate backend instances.
+- [Nacos](#nacos). Use Nacos to coordinate backend instances.
 In the `application.yml`, there're default configurations for the aforementioned coordinators under the section `cluster`,
 you can specify one of them in the `selector` property to enable it.
 
@@ -62,7 +62,7 @@ zookeeper:
 
 
 ## Kubernetes
-Require backend cluster are deployed inside kubernetes, guides are in [Deploy in kubernetes](../backend-k8s).
+Require backend cluster are deployed inside kubernetes, guides are in [Deploy in kubernetes](backend-k8s).
 Set the selector to `kubernetes`.
 
 ```yaml

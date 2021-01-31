@@ -6,7 +6,7 @@ layout: baseof
 # Uninstrumented Gateways/Proxies
 
 The uninstrumented gateways are not instrumented by SkyWalking agent plugin when they are started,
-but they can be configured in `gateways.yml` file or via [Dynamic Configuration](../dynamic-config). The reason why they can't register
+but they can be configured in `gateways.yml` file or via [Dynamic Configuration](dynamic-config). The reason why they can't register
 to backend automatically is that there're no suitable agent plugins, for example, there is no agent plugins for Nginx, haproxy, etc.
 So in order to visualize the real topology, we provide a way to configure the gateways/proxies manually.
 

@@ -5,11 +5,11 @@ layout: baseof
 ---
 # Spring sleuth setup
 Spring Sleuth provides Spring Boot auto-configuration for distributed tracing. Skywalking integrates it's micrometer part, 
-and it can send metrics to the Skywalking [Meter System](.././../../concepts-and-designs/meter).
+and it can send metrics to the Skywalking [Meter System](./../../concepts-and-designs/meter).
 
 ## Set up agent
 
-1. Add the Micrometer and Skywalking meter registry dependency into project `pom.xml` file. Also you could found more detail at [Toolkit micrometer](.././../service-agent/java-agent/Application-toolkit-micrometer).
+1. Add the Micrometer and Skywalking meter registry dependency into project `pom.xml` file. Also you could found more detail at [Toolkit micrometer](./../service-agent/java-agent/Application-toolkit-micrometer).
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -41,8 +41,8 @@ receiver-meter:
   default:
 ```
 
-2. Configure the meter config file, It already has the [spring sleuth meter config](../../../../../oap-server/server-bootstrap/src/main/resources/meter-analyzer-config/spring-sleuth.yaml).
-If you also has some customized meter at the agent side, please read [meter document](../backend-meter#meters-configure) to configure meter.
+2. Configure the meter config file, It already has the [spring sleuth meter config](../../../../oap-server/server-bootstrap/src/main/resources/meter-analyzer-config/spring-sleuth.yaml).
+If you also has some customized meter at the agent side, please read [meter document](backend-meter#meters-configure) to configure meter.
 
 ## Add UI dashboard
 

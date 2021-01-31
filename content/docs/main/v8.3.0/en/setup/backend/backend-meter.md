@@ -4,7 +4,7 @@ type: projectDoc
 layout: baseof
 ---
 # Meter Receiver
-Meter receiver is accepting the metrics of [meter protocol](https://github.com/apache/skywalking-data-collect-protocol/blob/master/language-agent/Meter.proto) format into the [Meter System](.././../../concepts-and-designs/meter).
+Meter receiver is accepting the metrics of [meter protocol](https://github.com/apache/skywalking-data-collect-protocol/blob/master/language-agent/Meter.proto) format into the [Meter System](./../../concepts-and-designs/meter).
 
 ## Module define
 ```yaml
@@ -32,8 +32,8 @@ are located at `$CLASSPATH/meter-analyzer-config`.
 
 The file is written in YAML format, defined by the scheme described below. Brackets indicate that a parameter is optional.
 
-An example can be found [here](../../../../../oap-server/server-bootstrap/src/main/resources/meter-analyzer-config/spring-sleuth.yaml).
-If you're using Spring sleuth, you could use [Spring Sleuth Setup](../spring-sleuth-setup).
+An example can be found [here](../../../../oap-server/server-bootstrap/src/main/resources/meter-analyzer-config/spring-sleuth.yaml).
+If you're using Spring sleuth, you could use [Spring Sleuth Setup](spring-sleuth-setup).
 
 ### Meters configure
 
@@ -50,7 +50,7 @@ metricsRules:
   exp: <string>
 ```
 
-More about MAL, please refer to [mal.md](../../../concepts-and-designs/mal)
+More about MAL, please refer to [mal.md](../../concepts-and-designs/mal)
 
 #### About rate, irate, increase
 

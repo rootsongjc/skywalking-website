@@ -9,7 +9,7 @@ We have manual instrument SDK contributed from the community.
 - [C++](https://github.com/SkyAPM/cpp2sky). C++ SDK follows SkyWalking format. 
 
 ## What is SkyWalking formats and propagation protocols?
-See these protocols in [protocols document](../../protocols/readme).
+See these protocols in [protocols document](../protocols/readme).
 
 ## Envoy tracer
 Envoy has its internal tracer implementation for SkyWalking. Read [SkyWalking Tracer doc](https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/trace/v3/skywalking.proto.html?highlight=skywalking) and [SkyWalking tracing sandbox](https://www.envoyproxy.io/docs/envoy/latest/start/sandboxes/skywalking_tracing.html?highlight=skywalking) for more details.

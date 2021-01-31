@@ -40,7 +40,7 @@ SkyWalking is logically split into four parts: Probes, Platform backend, Storage
 - **Probe**s collect data and reformat them for SkyWalking requirements (different probes support different sources).
 - **Platform backend**, supports data aggregation, analysis and drives process flow from probes to the UI. The analysis includes
   SkyWalking natives traces and metrics, 3rd party, including Istio and Envoy telemetry, Zipkin trace format, etc. You even can 
-  customize aggregation and analysis by using [Observability Analysis Language for native metrics](../oal) and [Meter System for extension metrics](../meter).
+  customize aggregation and analysis by using [Observability Analysis Language for native metrics](oal) and [Meter System for extension metrics](meter).
 - **Storage** houses SkyWalking data through an open/plugable interface. You can choose an existing implementation, such as
   ElasticSearch, H2 or a MySQL cluster managed by Sharding-Sphere, or implement your own. Patches for new storage implementors 
   welcome!
@@ -48,5 +48,5 @@ SkyWalking is logically split into four parts: Probes, Platform backend, Storage
 
 
 ## What is next?
-- Learn SkyWalking's [Project Goals](../project-goals)
-- FAQ, [Why doesn't SkyWalking involve MQ in the architecture?](../../FAQ/why_mq_not_involved)
+- Learn SkyWalking's [Project Goals](project-goals)
+- FAQ, [Why doesn't SkyWalking involve MQ in the architecture?](../FAQ/why_mq_not_involved)

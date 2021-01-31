@@ -81,10 +81,10 @@ or
 ### Build docker images
 We can build docker images of `backend` and `ui` with `Makefile` located in root folder.
 
-Refer to [Build docker image](../../../../docker) for more details.
+Refer to [Build docker image](../../../docker) for more details.
 
 ## Setup your IntelliJ IDEA
-**NOTICE**: If you clone the codes from GitHub, please make sure that you had finished step 1 to 3 in section **[Build from GitHub](../#build-from-github)**, if you download the source codes from the official website of SkyWalking, please make sure that you had followed the steps in section **[Build from Apache source code release](../#build-from-apache-source-code-release)**.
+**NOTICE**: If you clone the codes from GitHub, please make sure that you had finished step 1 to 3 in section **[Build from GitHub](#build-from-github)**, if you download the source codes from the official website of SkyWalking, please make sure that you had followed the steps in section **[Build from Apache source code release](#build-from-apache-source-code-release)**.
 
 1. Import the project as a maven project
 1. Run `./mvnw compile -Dmaven.test.skip=true` to compile project and generate source codes. Because we use gRPC and protobuf.

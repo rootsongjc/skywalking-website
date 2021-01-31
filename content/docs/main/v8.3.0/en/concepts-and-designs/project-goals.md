@@ -41,6 +41,6 @@ the users to switch their libraries.
 
 
 ## What is next?
-- See [probe Introduction](../probe-introduction) to know SkyWalking's probe groups.
-- From [backend overview](../backend-overview), you can understand what backend does after it received probe data.
-- If you want to customize UI, start with [UI overview](../ui-overview) document. 
+- See [probe Introduction](probe-introduction) to know SkyWalking's probe groups.
+- From [backend overview](backend-overview), you can understand what backend does after it received probe data.
+- If you want to customize UI, start with [UI overview](ui-overview) document. 

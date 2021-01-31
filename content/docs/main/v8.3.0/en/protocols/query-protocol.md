@@ -56,7 +56,7 @@ extend type Query {
 ```
 
 ### Metrics
-Metrics query targets all the objects defined in [OAL script](../../concepts-and-designs/oal). You could get the 
+Metrics query targets all the objects defined in [OAL script](../concepts-and-designs/oal). You could get the 
 metrics data in linear or thermodynamic matrix formats based on the aggregation functions in script. 
 
 3 types of metrics could be query
@@ -104,7 +104,7 @@ The following query(s) are for specific features, including trace, alarm or prof
 1. Trace. Query distributed traces by this.
 1. Alarm. Through alarm query, you can have alarm trend and details.
 
-The actual query GraphQL scrips could be found inside `query-protocol` folder in [here](../../../../oap-server/server-query-plugin/query-graphql-plugin/src/main/resources).
+The actual query GraphQL scrips could be found inside `query-protocol` folder in [here](../../../oap-server/server-query-plugin/query-graphql-plugin/src/main/resources).
 
 ## Condition
 ### Duration
