@@ -1,0 +1,13 @@
+<ul>
+    {{ range .children }}
+
+    <li>
+        <a href="{{ .path }}">{{ .name }}</a>
+        {{if .children}}
+        {{ partial "sidebar-recurse.html" . }}
+        {{end}}
+    </li>
+
+
+    {{ end }}
+</ul>
