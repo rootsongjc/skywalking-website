@@ -48,6 +48,6 @@ Before deploying Skywalking in your distributed environment, you should know how
 - UI uses GraphQL (HTTP) query to access the backend also in Jetty service (`core/default/rest*` in `application.yml`).
 
 Now, let's continue with the backend, UI and CLI setting documents.
-### [Backend setup document](backend-setup)
-### [UI setup document](ui-setup)
+### [Backend setup document](../backend-setup)
+### [UI setup document](../ui-setup)
 ### [CLI set up document](https://github.com/apache/skywalking-cli)

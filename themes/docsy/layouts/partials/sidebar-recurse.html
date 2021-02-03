@@ -2,9 +2,12 @@
     {{ range .children }}
 
     <li>
-        <a href="{{ .path }}">{{ .name }}</a>
+
         {{if .children}}
+        <h5 >{{ .name }}</h5>
         {{ partial "sidebar-recurse.html" . }}
+        {{else}}
+        <a href="{{ .path }}">{{ .name }}</a>
         {{end}}
     </li>
 

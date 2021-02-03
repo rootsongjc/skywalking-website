@@ -1,3 +1,8 @@
+---
+title: Scopes and Fields
+type: projectDoc
+layout: baseof
+---
 # Scopes and Fields
 By using Aggregation Function, the requests will group by time and **Group Key(s)** in each scope.
 

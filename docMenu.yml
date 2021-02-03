@@ -1,0 +1,680 @@
+path: "/docs/main/v8.3.0"
+name: "v8"
+children:
+  - path: "/docs/main/v8.3.0/readme"
+    name: "readme"
+    size: 12295
+    extension: ".md"
+    type: "file"
+  - path: "/docs/main/v8.3.0/en"
+    name: "en"
+    children:
+      - path: "/docs/main/v8.3.0/en/faq"
+        name: "FAQ"
+        children:
+          - path: "/docs/main/v8.3.0/en/faq/compatible-with-other-javaagent-bytecode-processing"
+            name: "compatible-with-other-javaagent-bytecode-processing"
+            size: 2782
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/es-server-faq"
+            name: "es-server-faq"
+            size: 1937
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/enhancerequireobjectcache-cast-exception"
+            name: "enhancerequireobjectcache-cast-exception"
+            size: 1901
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/hour-day-metrics-stopping"
+            name: "hour-day-metrics-stopping"
+            size: 587
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/how-to-build-with-mac-m1"
+            name: "how-to-build-with-mac-m1"
+            size: 1939
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/import-project-eclipse-requireitems-exception"
+            name: "import-project-eclipse-requireitems-exception"
+            size: 1067
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/memory-leak-enhance-worker-thread"
+            name: "memory-leak-enhance-worker-thread"
+            size: 1287
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/protoc-plugin-fails-when-build"
+            name: "protoc-plugin-fails-when-build"
+            size: 853
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/readme"
+            name: "readme"
+            size: 2132
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/unexpected-endpoint-register"
+            name: "unexpected-endpoint-register"
+            size: 688
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/why-have-traces-no-others"
+            name: "why-have-traces-no-others"
+            size: 429
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/install_agent_on_websphere"
+            name: "install_agent_on_websphere"
+            size: 2824
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/kafka-plugin"
+            name: "kafka-plugin"
+            size: 901
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/maven-compile-npm-failure"
+            name: "maven-compile-npm-failure"
+            size: 3676
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/thrift-plugin"
+            name: "thrift-plugin"
+            size: 670
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/time-and-timezone"
+            name: "time-and-timezone"
+            size: 697
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/v3-version-upgrade"
+            name: "v3-version-upgrade"
+            size: 579
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/v6-version-upgrade"
+            name: "v6-version-upgrade"
+            size: 2315
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/v8-version-upgrade"
+            name: "v8-version-upgrade"
+            size: 793
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/vnode"
+            name: "vnode"
+            size: 1192
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/faq/why_mq_not_involved"
+            name: "why_mq_not_involved"
+            size: 2365
+            extension: ".md"
+            type: "file"
+        size: 31614
+        type: "directory"
+      - path: "/docs/main/v8.3.0/en/concepts-and-designs"
+        name: "concepts-and-designs"
+        children:
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/readme"
+            name: "readme"
+            size: 1785
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/backend-overview"
+            name: "backend-overview"
+            size: 2053
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/mal"
+            name: "mal"
+            size: 7338
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/manual-sdk"
+            name: "manual-sdk"
+            size: 814
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/meter"
+            name: "meter"
+            size: 1933
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/oal"
+            name: "oal"
+            size: 7519
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/overview"
+            name: "overview"
+            size: 3648
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/probe-introduction"
+            name: "probe-introduction"
+            size: 2915
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/project-goals"
+            name: "project-goals"
+            size: 2813
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/scope-definitions"
+            name: "scope-definitions"
+            size: 15883
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/service-agent"
+            name: "service-agent"
+            size: 2631
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/service-mesh-probe"
+            name: "service-mesh-probe"
+            size: 2067
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/concepts-and-designs/ui-overview"
+            name: "ui-overview"
+            size: 509
+            extension: ".md"
+            type: "file"
+        size: 51908
+        type: "directory"
+      - path: "/docs/main/v8.3.0/en/guides"
+        name: "guides"
+        children:
+          - path: "/docs/main/v8.3.0/en/guides/component-library-settings"
+            name: "component-library-settings"
+            size: 2144
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/e2e-local-remote-debug"
+            name: "e2e-local-remote-debug"
+            size: 1588
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/how-to-build"
+            name: "how-to-build"
+            size: 4012
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/how-to-release"
+            name: "how-to-release"
+            size: 11117
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/java-plugin-development-guide"
+            name: "java-plugin-development-guide"
+            size: 23103
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/plugin-test"
+            name: "plugin-test"
+            size: 23784
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/readme"
+            name: "readme"
+            size: 12023
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/asf"
+            name: "asf"
+            children:
+              - path: "/docs/main/v8.3.0/en/guides/asf/committer"
+                name: "committer"
+                size: 10062
+                extension: ".md"
+                type: "file"
+            size: 10062
+            type: "directory"
+          - path: "/docs/main/v8.3.0/en/guides/backend-oal-scripts"
+            name: "backend-oal-scripts"
+            size: 596
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/backend-profile-export"
+            name: "backend-profile-export"
+            size: 1455
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/backend-profile"
+            name: "backend-profile"
+            size: 3995
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/source-extension"
+            name: "source-extension"
+            size: 3418
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/guides/storage-extention"
+            name: "storage-extention"
+            size: 1782
+            extension: ".md"
+            type: "file"
+        size: 99079
+        type: "directory"
+      - path: "/docs/main/v8.3.0/en/protocols"
+        name: "protocols"
+        children:
+          - path: "/docs/main/v8.3.0/en/protocols/browser-http-api-protocol"
+            name: "browser-http-api-protocol"
+            size: 2402
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/protocols/browser-protocol"
+            name: "browser-protocol"
+            size: 832
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/protocols/http-api-protocol"
+            name: "http-api-protocol"
+            size: 4019
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/protocols/jvm-protocol"
+            name: "jvm-protocol"
+            size: 304
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/protocols/log-data-protocol"
+            name: "log-data-protocol"
+            size: 233
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/protocols/readme"
+            name: "readme"
+            size: 3651
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/protocols/skywalking-cross-process-correlation-headers-protocol-v1"
+            name: "skywalking-cross-process-correlation-headers-protocol-v1"
+            size: 1332
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/protocols/skywalking-cross-process-propagation-headers-protocol-v3"
+            name: "skywalking-cross-process-propagation-headers-protocol-v3"
+            size: 2935
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/protocols/trace-data-protocol-v3"
+            name: "trace-data-protocol-v3"
+            size: 2442
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/protocols/query-protocol"
+            name: "query-protocol"
+            size: 6350
+            extension: ".md"
+            type: "file"
+        size: 24500
+        type: "directory"
+      - path: "/docs/main/v8.3.0/en/setup"
+        name: "setup"
+        children:
+          - path: "/docs/main/v8.3.0/en/setup/readme"
+            name: "readme"
+            size: 3345
+            extension: ".md"
+            type: "file"
+          - path: "/docs/main/v8.3.0/en/setup/backend"
+            name: "backend"
+            children:
+              - path: "/docs/main/v8.3.0/en/setup/backend/advanced-deployment"
+                name: "advanced-deployment"
+                size: 1162
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/apdex-threshold"
+                name: "apdex-threshold"
+                size: 1187
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-alarm"
+                name: "backend-alarm"
+                size: 12714
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-cluster"
+                name: "backend-cluster"
+                size: 5604
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-fetcher"
+                name: "backend-fetcher"
+                size: 6320
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-health-check"
+                name: "backend-health-check"
+                size: 1812
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-init-mode"
+                name: "backend-init-mode"
+                size: 1193
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-ip-port"
+                name: "backend-ip-port"
+                size: 1218
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-k8s"
+                name: "backend-k8s"
+                size: 350
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-meter"
+                name: "backend-meter"
+                size: 2289
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-receivers"
+                name: "backend-receivers"
+                size: 9609
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-setting-override"
+                name: "backend-setting-override"
+                size: 1657
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-setup"
+                name: "backend-setup"
+                size: 9937
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-start-up-mode"
+                name: "backend-start-up-mode"
+                size: 992
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-storage"
+                name: "backend-storage"
+                size: 14850
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-telemetry"
+                name: "backend-telemetry"
+                size: 3170
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-token-auth"
+                name: "backend-token-auth"
+                size: 1573
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/backend-ui-setup"
+                name: "backend-ui-setup"
+                size: 2406
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/configuration-vocabulary"
+                name: "configuration-vocabulary"
+                size: 32846
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/dynamic-config"
+                name: "dynamic-config"
+                size: 7019
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/endpoint-grouping-rules"
+                name: "endpoint-grouping-rules"
+                size: 1215
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/grpc-ssl"
+                name: "grpc-ssl"
+                size: 2129
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/metrics-exporter"
+                name: "metrics-exporter"
+                size: 2061
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/service-auto-grouping"
+                name: "service-auto-grouping"
+                size: 1012
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/slow-db-statement"
+                name: "slow-db-statement"
+                size: 851
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/spring-sleuth-setup"
+                name: "spring-sleuth-setup"
+                size: 2827
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/trace-sampling"
+                name: "trace-sampling"
+                size: 3339
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/ttl"
+                name: "ttl"
+                size: 764
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/ui-setup"
+                name: "ui-setup"
+                size: 621
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/backend/uninstrumented-gateways"
+                name: "uninstrumented-gateways"
+                size: 1246
+                extension: ".md"
+                type: "file"
+            size: 133973
+            type: "directory"
+          - path: "/docs/main/v8.3.0/en/setup/envoy"
+            name: "envoy"
+            children:
+              - path: "/docs/main/v8.3.0/en/setup/envoy/als_setting"
+                name: "als_setting"
+                size: 3580
+                extension: ".md"
+                type: "file"
+              - path: "/docs/main/v8.3.0/en/setup/envoy/examples"
+                name: "examples"
+                children:
+                  - path: "/docs/main/v8.3.0/en/setup/envoy/examples/metrics"
+                    name: "metrics"
+                    children:
+                      - path: "/docs/main/v8.3.0/en/setup/envoy/examples/metrics/readme"
+                        name: "readme"
+                        size: 2477
+                        extension: ".md"
+                        type: "file"
+                    size: 2477
+                    type: "directory"
+                size: 2477
+                type: "directory"
+              - path: "/docs/main/v8.3.0/en/setup/envoy/metrics_service_setting"
+                name: "metrics_service_setting"
+                size: 2253
+                extension: ".md"
+                type: "file"
+            size: 8310
+            type: "directory"
+          - path: "/docs/main/v8.3.0/en/setup/istio"
+            name: "istio"
+            children:
+              - path: "/docs/main/v8.3.0/en/setup/istio/readme"
+                name: "readme"
+                size: 3245
+                extension: ".md"
+                type: "file"
+            size: 3245
+            type: "directory"
+          - path: "/docs/main/v8.3.0/en/setup/service-agent"
+            name: "service-agent"
+            children:
+              - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent"
+                name: "java-agent"
+                children:
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/application-toolkit-log4j-1.x"
+                    name: "application-toolkit-log4j-1"
+                    size: 1774
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/application-toolkit-log4j-2.x"
+                    name: "application-toolkit-log4j-2"
+                    size: 5247
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/application-toolkit-logback-1.x"
+                    name: "application-toolkit-logback-1"
+                    size: 5154
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/application-toolkit-meter"
+                    name: "application-toolkit-meter"
+                    size: 2835
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/application-toolkit-micrometer"
+                    name: "application-toolkit-micrometer"
+                    size: 2616
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/application-toolkit-trace-cross-thread"
+                    name: "application-toolkit-trace-cross-thread"
+                    size: 1618
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/application-toolkit-trace"
+                    name: "application-toolkit-trace"
+                    size: 3423
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/customize-enhance-trace"
+                    name: "customize-enhance-trace"
+                    size: 4416
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/how-to-disable-plugin"
+                    name: "how-to-disable-plugin"
+                    size: 570
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/how-to-enable-kafka-reporter"
+                    name: "how-to-enable-kafka-reporter"
+                    size: 1221
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/how-to-tolerate-exceptions"
+                    name: "how-to-tolerate-exceptions"
+                    size: 4508
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/namespace"
+                    name: "namespace"
+                    size: 1111
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/opentracing"
+                    name: "opentracing"
+                    size: 536
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/plugin-list"
+                    name: "plugin-list"
+                    size: 2118
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/readme"
+                    name: "readme"
+                    size: 25425
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/setting-override"
+                    name: "setting-override"
+                    size: 2226
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/specified-agent-config"
+                    name: "specified-agent-config"
+                    size: 933
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/supported-list"
+                    name: "supported-list"
+                    size: 7948
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/tls"
+                    name: "tls"
+                    size: 1205
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/token-auth"
+                    name: "token-auth"
+                    size: 1174
+                    extension: ".md"
+                    type: "file"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/agent-optional-plugins"
+                    name: "agent-optional-plugins"
+                    children:
+                      - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/agent-optional-plugins/kotlin-coroutine-plugin"
+                        name: "kotlin-coroutine-plugin"
+                        size: 1748
+                        extension: ".md"
+                        type: "file"
+                      - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/agent-optional-plugins/oracle-resin-plugins"
+                        name: "oracle-resin-plugins"
+                        size: 543
+                        extension: ".md"
+                        type: "file"
+                      - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/agent-optional-plugins/spring-annotation-plugin"
+                        name: "spring-annotation-plugin"
+                        size: 510
+                        extension: ".md"
+                        type: "file"
+                      - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/agent-optional-plugins/trace-ignore-plugin"
+                        name: "trace-ignore-plugin"
+                        size: 1298
+                        extension: ".md"
+                        type: "file"
+                    size: 4099
+                    type: "directory"
+                  - path: "/docs/main/v8.3.0/en/setup/service-agent/java-agent/configuration-discovery"
+                    name: "configuration-discovery"
+                    size: 1834
+                    extension: ".md"
+                    type: "file"
+                size: 81991
+                type: "directory"
+            size: 81991
+            type: "directory"
+        size: 230864
+        type: "directory"
+      - path: "/docs/main/v8.3.0/en/ui"
+        name: "ui"
+        children:
+          - path: "/docs/main/v8.3.0/en/ui/readme"
+            name: "readme"
+            size: 7833
+            extension: ".md"
+            type: "file"
+        size: 7833
+        type: "directory"
+    size: 445798
+    type: "directory"
+size: 458093
+type: "directory"

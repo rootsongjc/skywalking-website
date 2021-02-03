@@ -1,3 +1,8 @@
+---
+title: Setup java agent
+type: projectDoc
+layout: baseof
+---
 # Setup java agent
 1. Agent is available for JDK 8 - 14 in 7.x releases. JDK 1.6 - JDK 12 are supported in all 6.x releases [NOTICE¹](#notice)
 1. Find `agent` folder in SkyWalking release package
@@ -34,7 +39,7 @@ The agent release dist is included in Apache [official release](http://skywalkin
 
 ## Supported middleware, framework and library
 SkyWalking agent has supported various middlewares, frameworks and libraries.
-Read [supported list](Supported-list.md) to get them and supported version.
+Read [supported list](../Supported-list) to get them and supported version.
 If the plugin is in **Optional²** catalog, go to [optional plugins](#optional-plugins) section to learn how to active it.
 
 ## Advanced features
@@ -78,7 +83,7 @@ property key | Description | Default |
 `agent.span_limit_per_segment`|The max number of spans in a single segment. Through this config item, SkyWalking keep your application memory cost estimated.|300 |
 `agent.ignore_suffix`|If the operation name of the first span is included in this set, this segment should be ignored.|Not set|
 `agent.is_open_debugging_class`|If true, skywalking agent will save all instrumented classes files in `/debugging` folder. SkyWalking team may ask for these files in order to resolve compatible problem.|Not set|
-`agent.is_cache_enhanced_class`|If true, SkyWalking agent will cache all instrumented classes files to memory or disk files (decided by class cache mode), allow another java agent to enhance those classes that enhanced by SkyWalking agent. To use some Java diagnostic tools (such as BTrace, Arthas) to diagnose applications or add a custom java agent to enhance classes, you need to enable this feature. [Read this FAQ for more details](../../../FAQ/Compatible-with-other-javaagent-bytecode-processing.md) |`false`|
+`agent.is_cache_enhanced_class`|If true, SkyWalking agent will cache all instrumented classes files to memory or disk files (decided by class cache mode), allow another java agent to enhance those classes that enhanced by SkyWalking agent. To use some Java diagnostic tools (such as BTrace, Arthas) to diagnose applications or add a custom java agent to enhance classes, you need to enable this feature. [Read this FAQ for more details](../../../../FAQ/Compatible-with-other-javaagent-bytecode-processing) |`false`|
 `agent.class_cache_mode`|The instrumented classes cache mode: `MEMORY` or `FILE`. `MEMORY`: cache class bytes to memory, if instrumented classes is too many or too large, it may take up more memory. `FILE`: cache class bytes in `/class-cache` folder, automatically clean up cached class files when the application exits.|`MEMORY`|
 `agent.instance_name` |Instance name is the identity of an instance, should be unique in the service. If empty, SkyWalking agent will generate an 32-bit uuid. Default, use `UUID`@`hostname` as the instance name. Max length is 50(UTF-8 char)|`""`|
 `agent.instance_properties[key]=value` | Add service instance custom properties. | Not set|
@@ -122,7 +127,7 @@ property key | Description | Default |
 `meter.max_meter_size`| Max size of the meter pool |`500`|
 `plugin.mount` | Mount the specific folders of the plugins. Plugins in mounted folders would work. | `plugins,activations` |
 `plugin.peer_max_length `|Peer maximum description limit.|`200`|
-`plugin.exclude_plugins `|Exclude some plugins define in plugins dir.Plugin names is defined in [Agent plugin list](Plugin-list.md)|`""`|
+`plugin.exclude_plugins `|Exclude some plugins define in plugins dir.Plugin names is defined in [Agent plugin list](../Plugin-list)|`""`|
 `plugin.mongodb.trace_param`|If true, trace all the parameters in MongoDB access, default is false. Only trace the operation, not include parameters.|`false`|
 `plugin.mongodb.filter_length_limit`|If set to positive number, the `WriteRequest.params` would be truncated to this length, otherwise it would be completely saved, which may cause performance problem.|`256`|
 `plugin.elasticsearch.trace_dsl`|If true, trace all the DSL(Domain Specific Language) in ElasticSearch access, default is false.|`false`|
@@ -134,7 +139,7 @@ property key | Description | Default |
 `plugin.solrj.trace_statement`|If true, trace all the query parameters(include deleteByIds and deleteByQuery) in Solr query request, default is false.|`false`|
 `plugin.solrj.trace_ops_params`|If true, trace all the operation parameters in Solr request, default is false.|`false`|
 `plugin.light4j.trace_handler_chain`|If true, trace all middleware/business handlers that are part of the Light4J handler chain for a request.|false|
-`plugin.opgroup.*`|Support operation name customize group rules in different plugins. Read [Group rule supported plugins](op_name_group_rule.md)|Not set|
+`plugin.opgroup.*`|Support operation name customize group rules in different plugins. Read [Group rule supported plugins](../op_name_group_rule)|Not set|
 `plugin.springtransaction.simplify_transaction_definition_name`|If true, the transaction definition name will be simplified.|false|
 `plugin.jdkthreading.threading_class_prefixes` | Threading classes (`java.lang.Runnable` and `java.util.concurrent.Callable`) and their subclasses, including anonymous inner classes whose name match any one of the `THREADING_CLASS_PREFIXES` (splitted by `,`) will be instrumented, make sure to only specify as narrow prefixes as what you're expecting to instrument, (`java.` and `javax.` will be ignored due to safety issues) | Not set |
 `plugin.tomcat.collect_http_params`| This config item controls that whether the Tomcat plugin should collect the parameters of the request. Also, activate implicitly in the profiled trace. | `false` |
@@ -154,7 +159,7 @@ property key | Description | Default |
 `plugin.kafka.bootstrap_servers`| A list of host/port pairs to use for establishing the initial connection to the Kafka cluster. | `localhost:9092`|
 `plugin.kafka.get_topic_timeout`| Timeout period of reading topics from the Kafka server, the unit is second. |`10`|
 `plugin.kafka.consumer_config`| Kafka producer configuration. ||
-`plugin.kafka.producer_config`| Kafka producer configuration. Read [producer configure](http://kafka.apache.org/24/documentation.html#producerconfigs) to get more details. Check [Kafka report doc](How-to-enable-kafka-reporter.md) for more details and examples. | |
+`plugin.kafka.producer_config`| Kafka producer configuration. Read [producer configure](http://kafka.apache.org/24/documentation.html#producerconfigs) to get more details. Check [Kafka report doc](../How-to-enable-kafka-reporter) for more details and examples. | |
 `plugin.kafka.topic_meter` | Specify which Kafka topic name for Meter System data to report to. | `skywalking_meters` |
 `plugin.kafka.topic_metrics` | Specify which Kafka topic name for JVM metrics data to report to. | `skywalking_metrics` |
 `plugin.kafka.topic_segment` | Specify which Kafka topic name for traces data to report to. | `skywalking_segments` |
@@ -167,22 +172,22 @@ property key | Description | Default |
 `plugin.toolkit.log.grpc.reporter.upstream_timeout` | How long grpc client will timeout in sending data to upstream. Unit is second.|`30` seconds|
 
 ## Dynamic Configurations
-All configurations above are static, if you need to change some agent settings at runtime, please read [CDS - Configuration Discovery Service document](configuration-discovery.md) for more details.
+All configurations above are static, if you need to change some agent settings at runtime, please read [CDS - Configuration Discovery Service document](../configuration-discovery) for more details.
 
 ## Optional Plugins
 Java agent plugins are all pluggable. Optional plugins could be provided in `optional-plugins` folder under agent or 3rd party repositories.
 For using these plugins, you need to put the target plugin jar file into `/plugins`.
 
 Now, we have the following known optional plugins.
-* [Plugin of tracing Spring annotation beans](agent-optional-plugins/Spring-annotation-plugin.md)
-* [Plugin of tracing Oracle and Resin](agent-optional-plugins/Oracle-Resin-plugins.md)
-* [Filter traces through specified endpoint name patterns](agent-optional-plugins/trace-ignore-plugin.md)
+* [Plugin of tracing Spring annotation beans](../agent-optional-plugins/Spring-annotation-plugin)
+* [Plugin of tracing Oracle and Resin](../agent-optional-plugins/Oracle-Resin-plugins)
+* [Filter traces through specified endpoint name patterns](../agent-optional-plugins/trace-ignore-plugin)
 * Plugin of Gson serialization lib in optional plugin folder.
 * Plugin of Zookeeper 3.4.x in optional plugin folder. The reason of being optional plugin is, many business irrelevant traces are generated, which cause extra payload to agents and backends. At the same time, those traces may be just heartbeat(s).
-* [Customize enhance](Customize-enhance-trace.md) Trace methods based on description files, rather than write plugin or change source codes.
+* [Customize enhance](../Customize-enhance-trace) Trace methods based on description files, rather than write plugin or change source codes.
 * Plugin of Spring Cloud Gateway 2.1.x in optional plugin folder. Please only active this plugin when you install agent in Spring Gateway. spring-cloud-gateway-2.x-plugin and spring-webflux-5.x-plugin are both required.
 * Plugin of Spring Transaction in optional plugin folder. The reason of being optional plugin is, many local span are generated, which also spend more CPU, memory and network.
-* [Plugin of Kotlin coroutine](agent-optional-plugins/Kotlin-Coroutine-plugin.md) provides the tracing across coroutines automatically. As it will add local spans to all across routines scenarios, Please assess the performance impact.
+* [Plugin of Kotlin coroutine](../agent-optional-plugins/Kotlin-Coroutine-plugin) provides the tracing across coroutines automatically. As it will add local spans to all across routines scenarios, Please assess the performance impact.
 * Plugin of quartz-scheduler-2.x in the optional plugin folder. The reason for being an optional plugin is, many task scheduling systems are based on quartz-scheduler, this will cause duplicate tracing and link different sub-tasks as they share the same quartz level trigger, such as ElasticJob.
 * Plugin of spring-webflux-5.x in the optional plugin folder. Please only activate this plugin when you use webflux alone as a web container. If you are using SpringMVC 5 or Spring Gateway, you don't need this plugin.
 
@@ -208,29 +213,29 @@ User could use the SkyWalking's application toolkits to add the tag into the loc
 The tag is, key=`x-le` and value = `{"logic-span":true}`.
 
 ## Advanced Features
-* Set the settings through system properties for config file override. Read [setting override](Setting-override.md).
-* Use gRPC TLS to link backend. See [open TLS](TLS.md)
-* Monitor a big cluster by different SkyWalking services. Use [Namespace](Namespace.md) to isolate the context propagation. 
-* Set client [token](Token-auth.md) if backend open [token authentication](../../backend/backend-token-auth.md).
+* Set the settings through system properties for config file override. Read [setting override](../Setting-override).
+* Use gRPC TLS to link backend. See [open TLS](../TLS)
+* Monitor a big cluster by different SkyWalking services. Use [Namespace](../Namespace) to isolate the context propagation. 
+* Set client [token](../Token-auth) if backend open [token authentication](../../../backend/backend-token-auth).
 * Application Toolkit, are a collection of libraries, provided by SkyWalking APM. Using them, you have a bridge between your application and SkyWalking APM agent. 
-    * If you want your codes to interact with SkyWalking agent, including `getting trace id`, `setting tags`, `propagating custom data` etc.. Try [SkyWalking manual APIs](Application-toolkit-trace.md).
-    * If you require customized metrics, try [SkyWalking Meter System Toolkit](Application-toolkit-meter.md).
-    * If you want to print trace context(e.g. traceId) in your logs, or collect logs, choose the log frameworks, [log4j](Application-toolkit-log4j-1.x.md), 
-[log4j2](Application-toolkit-log4j-2.x.md), [logback](Application-toolkit-logback-1.x.md)
-    * If you want to continue traces across thread manually, use [across thread solution APIs](Application-toolkit-trace-cross-thread.md).
-    * If you want to forward MicroMeter/Spring Sleuth metrics to Meter System, use [SkyWalking MicroMeter Register](Application-toolkit-micrometer.md).
-    * If you want to use OpenTracing Java APIs, try [SkyWalking OpenTracing compatible tracer](Opentracing.md). More details you could find at http://opentracing.io
-    * If you want to tolerate some exceptions, read [tolerate custom exception doc](How-to-tolerate-exceptions.md).
-* If you want to specify the path of your agent.config file. Read [set config file through system properties](Specified-agent-config.md)
+    * If you want your codes to interact with SkyWalking agent, including `getting trace id`, `setting tags`, `propagating custom data` etc.. Try [SkyWalking manual APIs](../Application-toolkit-trace).
+    * If you require customized metrics, try [SkyWalking Meter System Toolkit](../Application-toolkit-meter).
+    * If you want to print trace context(e.g. traceId) in your logs, or collect logs, choose the log frameworks, [log4j](../Application-toolkit-log4j-1.x), 
+[log4j2](../Application-toolkit-log4j-2.x), [logback](../Application-toolkit-logback-1.x)
+    * If you want to continue traces across thread manually, use [across thread solution APIs](../Application-toolkit-trace-cross-thread).
+    * If you want to forward MicroMeter/Spring Sleuth metrics to Meter System, use [SkyWalking MicroMeter Register](../Application-toolkit-micrometer).
+    * If you want to use OpenTracing Java APIs, try [SkyWalking OpenTracing compatible tracer](../Opentracing). More details you could find at http://opentracing.io
+    * If you want to tolerate some exceptions, read [tolerate custom exception doc](../How-to-tolerate-exceptions).
+* If you want to specify the path of your agent.config file. Read [set config file through system properties](../Specified-agent-config)
 
 ## Advanced Reporters
 The advanced report provides an alternative way to submit the agent collected data to the backend. All of them are in the `optional-reporter-plugins` folder, move the one you needed into the `reporter-plugins` folder for the activation. **Notice, don't try to activate multiple reporters, that could cause unexpected fatal errors.**
 
-* Use Kafka to transport the traces, JVM metrics, instance properties, and profiled snapshots to the backend. Read the [How to enable Kafka Reporter](How-to-enable-kafka-reporter.md) for more details.
+* Use Kafka to transport the traces, JVM metrics, instance properties, and profiled snapshots to the backend. Read the [How to enable Kafka Reporter](../How-to-enable-kafka-reporter) for more details.
 
 ## Plugin Development Guide
-SkyWalking java agent supports plugin to extend [the supported list](Supported-list.md). Please follow 
-our [Plugin Development Guide](../../../guides/Java-Plugin-Development-Guide.md).
+SkyWalking java agent supports plugin to extend [the supported list](../Supported-list). Please follow 
+our [Plugin Development Guide](../../../../guides/Java-Plugin-Development-Guide).
 
 # Test
 If you are interested in plugin compatible tests or agent performance, see the following reports.

@@ -161,7 +161,7 @@ SpanLayer is the catalog of span. Here are 5 values:
 1. MQ
 
 Component IDs are defined and reserved by SkyWalking project.
-For component name/ID extension, please follow [Component library definition and extension](Component-library-settings) document.
+For component name/ID extension, please follow [Component library definition and extension](../Component-library-settings) document.
 
 ### Special Span Tags
 All tags are available in the trace view, meanwhile, 
@@ -507,7 +507,7 @@ histogram.addValue(3);
 a tremendously useful test tools suite in a wide variety of languages of Agent. Includes mock collector and validator. 
 The mock collector is a SkyWalking receiver, like OAP server.
 
-You could learn how to use this tool to test the plugin in [this doc](Plugin-test). If you want to contribute plugins
+You could learn how to use this tool to test the plugin in [this doc](../Plugin-test). If you want to contribute plugins
 to SkyWalking official repo, this is required.
 
 # Contribute plugins into Apache SkyWalking repository
@@ -518,7 +518,7 @@ Please follow there steps:
 1. Create sub modules under `apm-sniffer/apm-sdk-plugin` or `apm-sniffer/optional-plugins`, and the name should include supported library name and versions
 1. Follow this guide to develop. Make sure comments and test cases are provided.
 1. Develop and test.
-1. Provide the automatic test cases. Learn `how to write the plugin test case` from this [doc](Plugin-test)
+1. Provide the automatic test cases. Learn `how to write the plugin test case` from this [doc](../Plugin-test)
 1. Send the pull request and ask for review. 
 1. The plugin committers approve your plugins, plugin CI-with-IT, e2e and plugin tests passed.
 1. The plugin accepted by SkyWalking. 

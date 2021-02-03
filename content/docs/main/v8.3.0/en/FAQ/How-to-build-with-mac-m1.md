@@ -1,6 +1,11 @@
+---
+title: Fix compiling on MacBook M1 chip
+type: projectDoc
+layout: baseof
+---
 # Fix compiling on MacBook M1 chip
 ### Problem
-- When compiling according to [How-to-build](../guides/How-to-build.md), The following problems will occur, causing the build to fail.
+- When compiling according to [How-to-build](../guides/How-to-build), The following problems will occur, causing the build to fail.
 ```
 [ERROR] Failed to execute goal org.xolstice.maven.plugins:protobuf-maven-plugin:0.6.1:compile (grpc-build) on project apm-network: Unable to resolve artifact: Missing:
 [ERROR] ----------

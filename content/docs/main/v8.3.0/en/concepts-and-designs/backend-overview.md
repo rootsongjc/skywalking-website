@@ -35,5 +35,5 @@ These formats could be processed in the two ways too.
 Metrics in OAP is totally new feature in 6 series. Build observability for a distributed system based on metrics of connected nodes.
 No tracing data is required.
 
-Metrics data are aggregated inside OAP cluster in streaming mode. See about [Observability Analysis Language](oal),
+Metrics data are aggregated inside OAP cluster in streaming mode. See about [Observability Analysis Language](../oal),
 which provides the easy way to do aggregation and analysis in script style. 

@@ -42,7 +42,7 @@ receiver-meter:
 ```
 
 2. Configure the meter config file, It already has the [spring sleuth meter config](../../../../oap-server/server-bootstrap/src/main/resources/meter-analyzer-config/spring-sleuth.yaml).
-If you also has some customized meter at the agent side, please read [meter document](backend-meter#meters-configure) to configure meter.
+If you also has some customized meter at the agent side, please read [meter document](../backend-meter#meters-configure) to configure meter.
 
 ## Add UI dashboard
 

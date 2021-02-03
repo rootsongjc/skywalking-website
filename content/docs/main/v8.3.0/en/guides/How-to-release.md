@@ -1,3 +1,8 @@
+---
+title: SkyWalking release guide
+type: projectDoc
+layout: baseof
+---
 Apache SkyWalking release guide
 --------------------
 This document guides every committer to release SkyWalking in Apache Way,

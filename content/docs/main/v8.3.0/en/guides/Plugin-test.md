@@ -1,3 +1,8 @@
+---
+title: Plugin automatic test framework
+type: projectDoc
+layout: baseof
+---
 # Plugin automatic test framework
 
 Plugin test framework is designed for verifying the plugins' function and compatible status. As there are dozens of plugins and
@@ -529,7 +534,7 @@ SegmentB span list should like following
 
 Expected data file, `expectedData.yaml`, include `MeterItems` part.
 
-We are using the toolkit plugin to demonstrate how to write the expected data. When write the [meter plugin](Java-Plugin-Development-Guide.md#meter-plugin), the expected data file keeps the same.
+We are using the toolkit plugin to demonstrate how to write the expected data. When write the [meter plugin](../Java-Plugin-Development-Guide#meter-plugin), the expected data file keeps the same.
 
 There is one key point of testing
 1. Build a meter and operate it.

@@ -1,3 +1,8 @@
+---
+title: Dependency the toolkit, such as using maven or gradle
+type: projectDoc
+layout: baseof
+---
 * Dependency the toolkit, such as using maven or gradle
 ```xml
    <dependency>

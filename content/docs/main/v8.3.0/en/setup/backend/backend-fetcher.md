@@ -4,7 +4,7 @@ type: projectDoc
 layout: baseof
 ---
 # Open Fetcher
-Fetcher is a concept in SkyWalking backend. It uses pulling mode rather than [receiver](backend-receivers), which
+Fetcher is a concept in SkyWalking backend. It uses pulling mode rather than [receiver](../backend-receivers), which
 read the data from the target systems. This mode is typically in some metrics SDKs, such as Prometheus.
 
 ## Prometheus Fetcher

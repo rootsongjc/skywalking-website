@@ -37,7 +37,7 @@ which do analysis and aggregate on those traces. **In tracing status** means, ba
 like logs, just save them, and build the links between traces and metrics, like `which endpoint and service does the trace belong?`.
 
 ## What is next?
-- Learn the SkyWalking supported probes in [Service auto instrument agent](service-agent), [Manual instrument SDK](manual-sdk),
-[Service Mesh probe](service-mesh-probe) and [Zipkin receiver](trace-receiver).
-- After understand the probe, read [backend overview](backend-overview) for understanding analysis and persistence.
+- Learn the SkyWalking supported probes in [Service auto instrument agent](../service-agent), [Manual instrument SDK](../manual-sdk),
+[Service Mesh probe](../service-mesh-probe) and [Zipkin receiver](../trace-receiver).
+- After understand the probe, read [backend overview](../backend-overview) for understanding analysis and persistence.
 

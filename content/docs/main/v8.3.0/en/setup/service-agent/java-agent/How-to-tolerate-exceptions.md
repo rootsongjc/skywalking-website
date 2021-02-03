@@ -1,3 +1,8 @@
+---
+title: How to tolerate custom exceptions
+type: projectDoc
+layout: baseof
+---
 # How to tolerate custom exceptions
 *In some codes, the exception is being used as a way of controlling business flow. Skywalking provides 2 ways to tolerate an exception which is traced in a span.*
 1. Set the names of exception classes in the agent config

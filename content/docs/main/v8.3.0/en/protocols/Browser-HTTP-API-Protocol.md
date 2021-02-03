@@ -6,7 +6,7 @@ layout: baseof
 # HTTP API Protocol
 
 HTTP API Protocol defines the API data format, including api request and response data format.
-They use the HTTP1.1 wrapper of the official [SkyWalking Browser Protocol](Browser-Protocol). Read it for more details.
+They use the HTTP1.1 wrapper of the official [SkyWalking Browser Protocol](../Browser-Protocol). Read it for more details.
 
 ## Performance Data Report
 

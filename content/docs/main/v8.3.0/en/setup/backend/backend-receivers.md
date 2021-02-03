@@ -1,8 +1,13 @@
+---
+title: Choose receiver
+type: projectDoc
+layout: baseof
+---
 
 # Choose receiver
 Receiver is a concept in SkyWalking backend. All modules, which are responsible for receiving telemetry
 or tracing data from other being monitored system, are all being called **Receiver**. If you are looking for the pull mode,
-Take a look at [fetcher document](backend-fetcher.md).
+Take a look at [fetcher document](../backend-fetcher).
 
 We have following receivers, and `default` implementors are provided in our Apache distribution.
 1. **receiver-trace**. gRPC and HTTPRestful services to accept SkyWalking format traces.
@@ -12,7 +17,7 @@ We have following receivers, and `default` implementors are provided in our Apac
 1. **envoy-metric**. Envoy `metrics_service` and `ALS(access log service)` supported by this receiver. OAL script support all GAUGE type metrics.
 1. **receiver-profile**. gRPC services accept profile task status and snapshot reporter.
 1. **receiver-otel**. See [details](#opentelemetry-receiver). Receiver for analyzing metrics data from OpenTelemetry
-1. **receiver-meter**. See [details](backend-meter.md). Receiver for analyzing metrics in SkyWalking native meter format.
+1. **receiver-meter**. See [details](../backend-meter). Receiver for analyzing metrics in SkyWalking native meter format.
 1. **receiver-browser**. gRPC services to accept browser performance data and error log.
 1. **receiver-log**. gRPC services accept log data.
 1. **configuration-discovery**. gRPC services handle configurationDiscovery.
@@ -104,7 +109,7 @@ Eg, the `oc` handler loads fules from `$CLASSPATH/otel-oc-rules`,
 Supported handlers:
     * `oc`: [OpenCensus](https://github.com/open-telemetry/opentelemetry-collector/blob/master/exporter/opencensusexporter/README.md) gRPC service handler.
 
-The rule file should be in YAML format, defined by the scheme described in [prometheus-fetcher](./backend-fetcher.md).
+The rule file should be in YAML format, defined by the scheme described in [prometheus-fetcher](./backend-fetcher).
 Notice, `receiver-otel` only support `group`, `defaultMetricLevel` and `metricsRules` nodes of scheme due to the push mode it opts to.
 
 To active the `oc` handler and `istio` relevant rules:
@@ -128,7 +133,7 @@ to be the identification of the metric data.
 
 Meter receiver supports accept the metrics into the meter-system. OAP can load the configuration at bootstrap. 
 
-The file is written in YAML format, defined by the scheme described in [backend-meter](./backend-meter.md).
+The file is written in YAML format, defined by the scheme described in [backend-meter](./backend-meter).
 
 To active the `default` implementation:
 ```yaml
@@ -147,7 +152,7 @@ Zipkin receiver could work in two different mode.
    also provide persistence and query in skywalking UI.
    But it wouldn't analysis metrics from them. In most case, I suggest you could use this feature, when metrics come from service mesh.
    Notice, in this mode, Zipkin receiver requires `zipkin-elasticsearch` storage implementation active.
-   Read [this](backend-storage.md#elasticsearch-6-with-zipkin-trace-extension) to know
+   Read [this](../backend-storage#elasticsearch-6-with-zipkin-trace-extension) to know
    how to active.
 
 Use following config to active.
@@ -191,7 +196,7 @@ NOTICE, Zipkin receiver is only provided in `apache-skywalking-apm-x.y.z.tar.gz`
 Jaeger receiver right now only works in `Tracing Mode`, and no analysis.
 Jaeger receiver provides extra gRPC host/port, if absent, sharing-server host/port will be used, then core gRPC host/port.
 Receiver requires `jaeger-elasticsearch` storage implementation active.
-Read [this](backend-storage.md#elasticsearch-6-with-jaeger-trace-extension) to know how to active.
+Read [this](../backend-storage#elasticsearch-6-with-jaeger-trace-extension) to know how to active.
 
 Right now, you need [jaeger agent](https://www.jaegertracing.io/docs/1.11/architecture/#agent) to batch
 send spans to SkyWalking oap server. Read [Jaeger Architecture](https://www.jaegertracing.io/docs/1.11/architecture/)

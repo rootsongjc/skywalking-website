@@ -8,7 +8,7 @@ Trace Data Protocol describes the data format between SkyWalking agent/sniffer a
 
 ## Overview
 Trace data protocol is defined and provided in [gRPC format](https://github.com/apache/skywalking-data-collect-protocol),
-also implemented in [HTTP 1.1](HTTP-API-Protocol)
+also implemented in [HTTP 1.1](../HTTP-API-Protocol)
 
 ### Report service instance status
 1. Service Instance Properties 
@@ -43,7 +43,7 @@ e.g. accessing DB by JDBC, reading Redis/Memcached are cataloged an ExitSpan.
 3. Span across thread or process parent info is called Reference. Reference carries trace id, 
 segment id, span id, service name, service instance name, endpoint name and target address used at client side(not required in across thread) 
 of this request in the parent. 
-Follow [Cross Process Propagation Headers Protocol v3](Skywalking-Cross-Process-Propagation-Headers-Protocol-v3) to get more details.
+Follow [Cross Process Propagation Headers Protocol v3](../Skywalking-Cross-Process-Propagation-Headers-Protocol-v3) to get more details.
 
 4. `Span#skipAnalysis` could be TRUE, if this span doesn't require backend analysis.
 

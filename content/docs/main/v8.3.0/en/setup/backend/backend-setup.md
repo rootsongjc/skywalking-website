@@ -9,7 +9,7 @@ Understood the setting file will help you to read this document.
 
 ## Startup script
 The default startup scripts are `/bin/oapService.sh`(.bat). 
-Read [start up mode](backend-start-up-mode) document to know other options
+Read [start up mode](../backend-start-up-mode) document to know other options
 of starting backend.
 
 
@@ -74,59 +74,59 @@ The receivers have many different module names, you could
 read **Set receivers** document in the [link list](#advanced-feature-document-link-list).
 
 ## Configuration Vocabulary
-All available configurations in `application.yml` could be found in [Configuration Vocabulary](configuration-vocabulary). 
+All available configurations in `application.yml` could be found in [Configuration Vocabulary](../configuration-vocabulary). 
 
 ## Advanced feature document link list
 After understand the setting file structure, you could choose your interesting feature document.
 We recommend you to read the feature documents in our following order.
 
-1. [Overriding settings](backend-setting-override) in application.yml is supported
-1. [IP and port setting](backend-ip-port). Introduce how IP and port set and be used.
-1. [Backend init mode startup](backend-init-mode). How to init the environment and exit graciously.
+1. [Overriding settings](../backend-setting-override) in application.yml is supported
+1. [IP and port setting](../backend-ip-port). Introduce how IP and port set and be used.
+1. [Backend init mode startup](../backend-init-mode). How to init the environment and exit graciously.
 Read this before you try to initial a new cluster.
-1. [Cluster management](backend-cluster). Guide you to set backend server in cluster mode.
-1. [Deploy in kubernetes](backend-k8s). Guide you to build and use SkyWalking image, and deploy in k8s.
-1. [Choose storage](backend-storage). As we know, in default quick start, backend is running with H2
+1. [Cluster management](../backend-cluster). Guide you to set backend server in cluster mode.
+1. [Deploy in kubernetes](../backend-k8s). Guide you to build and use SkyWalking image, and deploy in k8s.
+1. [Choose storage](../backend-storage). As we know, in default quick start, backend is running with H2
 DB. But clearly, it doesn't fit the product env. In here, you could find what other choices do you have.
 Choose the ones you like, we are also welcome anyone to contribute new storage implementor.
-1. [Set receivers](backend-receivers). You could choose receivers by your requirements, most receivers
+1. [Set receivers](../backend-receivers). You could choose receivers by your requirements, most receivers
 are harmless, at least our default receivers are. You would set and active all receivers provided.
-1. [Open fetchers](backend-fetcher). You could open different fetchers to read metrics from the target applications.
+1. [Open fetchers](../backend-fetcher). You could open different fetchers to read metrics from the target applications.
 These ones work like receivers, but in pulling mode, typically like Prometheus.
-1. [Token authentication](backend-token-auth). You could add token authentication mechanisms to avoid `OAP` receiving untrusted data.  
-1. Do [trace sampling](trace-sampling) at backend. This sample keep the metrics accurate, only don't save some of traces
+1. [Token authentication](../backend-token-auth). You could add token authentication mechanisms to avoid `OAP` receiving untrusted data.  
+1. Do [trace sampling](../trace-sampling) at backend. This sample keep the metrics accurate, only don't save some of traces
 in storage based on rate.
-1. Follow [slow DB statement threshold](slow-db-statement) config document to understand that, 
+1. Follow [slow DB statement threshold](../slow-db-statement) config document to understand that, 
 how to detect the Slow database statements(including SQL statements) in your system.
 1. Official [OAL scripts](../../guides/backend-oal-scripts). As you have known from our [OAL introduction](../../concepts-and-designs/oal),
 most of backend analysis capabilities based on the scripts. Here is the description of official scripts,
 which helps you to understand which metrics data are in process, also could be used in alarm.
-1. [Alarm](backend-alarm). Alarm provides a time-series based check mechanism. You could set alarm 
+1. [Alarm](../backend-alarm). Alarm provides a time-series based check mechanism. You could set alarm 
 rules targeting the analysis oal metrics objects.
-1. [Advanced deployment options](advanced-deployment). If you want to deploy backend in very large
+1. [Advanced deployment options](../advanced-deployment). If you want to deploy backend in very large
 scale and support high payload, you may need this. 
-1. [Metrics exporter](metrics-exporter). Use metrics data exporter to forward metrics data to 3rd party
+1. [Metrics exporter](../metrics-exporter). Use metrics data exporter to forward metrics data to 3rd party
 system.
-1. [Time To Live (TTL)](ttl). Metrics and trace are time series data, TTL settings affect the expired time of them.
-1. [Dynamic Configuration](dynamic-config). Make configuration of OAP changed dynamic, from remote service
+1. [Time To Live (TTL)](../ttl). Metrics and trace are time series data, TTL settings affect the expired time of them.
+1. [Dynamic Configuration](../dynamic-config). Make configuration of OAP changed dynamic, from remote service
 or 3rd party configuration management system.
-1. [Uninstrumented Gateways](uninstrumented-gateways). Configure gateways/proxies that are not supported by SkyWalking agent plugins,
+1. [Uninstrumented Gateways](../uninstrumented-gateways). Configure gateways/proxies that are not supported by SkyWalking agent plugins,
 to reflect the delegation in topology graph.
-1. [Apdex threshold](apdex-threshold). Configure the thresholds for different services if Apdex calculation is activated in the OAL.
-1. [Service Grouping](service-auto-grouping). An automatic grouping mechanism for all services based on name.
-1. [Group Parameterized Endpoints](endpoint-grouping-rules). Configure the grouping rules for parameterized endpoints,
+1. [Apdex threshold](../apdex-threshold). Configure the thresholds for different services if Apdex calculation is activated in the OAL.
+1. [Service Grouping](../service-auto-grouping). An automatic grouping mechanism for all services based on name.
+1. [Group Parameterized Endpoints](../endpoint-grouping-rules). Configure the grouping rules for parameterized endpoints,
 to improve the meaning of the metrics.
-1. [OpenTelemetry Metrics Analysis](backend-receivers#opentelemetry-receiver). Activate built-in configurations to convert the metrics forwarded from OpenTelemetry collector.
+1. [OpenTelemetry Metrics Analysis](../backend-receivers#opentelemetry-receiver). Activate built-in configurations to convert the metrics forwarded from OpenTelemetry collector.
 And learn how to write your own conversion rules.
-1. [Meter Analysis](backend-meter). Set up the backend analysis rules, when use [SkyWalking Meter System Toolkit](../service-agent/java-agent/readme#advanced-features) 
+1. [Meter Analysis](../backend-meter). Set up the backend analysis rules, when use [SkyWalking Meter System Toolkit](../service-agent/java-agent/readme#advanced-features) 
 or meter plugins. 
-1. [Spring Sleuth Metrics Analysis](spring-sleuth-setup). Configure the agent and backend to receiver metrics from micrometer. 
+1. [Spring Sleuth Metrics Analysis](../spring-sleuth-setup). Configure the agent and backend to receiver metrics from micrometer. 
 
 ## Telemetry for backend
 OAP backend cluster itself underlying is a distributed streaming process system. For helping the Ops team,
-we provide the telemetry for OAP backend itself. Follow [document](backend-telemetry) to use it.
+we provide the telemetry for OAP backend itself. Follow [document](../backend-telemetry) to use it.
 
-At the same time, we provide [Health Check](backend-health-check) to get a score for the health status.
+At the same time, we provide [Health Check](../backend-health-check) to get a score for the health status.
 > 0 means healthy, more than 0 means unhealthy 
 > and less than 0 means oap doesn't startup.
 

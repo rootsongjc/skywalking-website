@@ -32,7 +32,7 @@ disable(METRICS_NAME);
 Primary **SCOPE**s are `All`, `Service`, `ServiceInstance`, `Endpoint`, `ServiceRelation`, `ServiceInstanceRelation`, `EndpointRelation`.
 Also there are some secondary scopes, which belongs to one primary scope. 
 
-Read [Scope Definitions](scope-definitions), you can find all existing Scopes and Fields.
+Read [Scope Definitions](../scope-definitions), you can find all existing Scopes and Fields.
 
 
 ## Filter

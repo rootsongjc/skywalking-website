@@ -38,5 +38,5 @@ ___
 These roles are designed for complex deployment requirements based on security and network policy.
 
 ## Kubernetes
-If you are using our native [Kubernetes coordinator](backend-cluster#kubernetes), the `labelSelector`
+If you are using our native [Kubernetes coordinator](../backend-cluster#kubernetes), the `labelSelector`
 setting is used for `Aggregator` choose rules. Choose the right OAP deployment based on your requirements.

@@ -54,7 +54,7 @@ telemetry:
 ```
 
 ### Grafana Visualization
-Provide the grafana dashboard settings. Check [SkyWalking Telemetry dashboard](grafana.json) config.
+Provide the grafana dashboard settings. Check [SkyWalking Telemetry dashboard](../grafana.json) config.
 
 
 ## Self Observability

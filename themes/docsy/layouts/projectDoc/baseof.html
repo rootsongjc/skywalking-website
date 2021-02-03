@@ -4,27 +4,50 @@
     {{ partial "head.html" . }}
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
   </head>
-  <body class="td-{{ .Kind }} td-blog">
+  <body class="td-{{ .Kind }} td-blog project-doc">
     <header>
       {{ partial "navbar.html" . }}
     </header>
     <div class="container-fluid td-outer">
-      <div class="td-main">
-        <div class="row container container-center">
+      <!--<div class="td-main">
+&lt;!&ndash;        <div class="row container container-center">&ndash;&gt;
+        <div class="row  container-center">
+            <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+                {{ partial "sidebar-recurse.html" .Site.Data.docMenu }}
 
+            </div>
           <main class="col-12 col-md-12 col-xl-10 pl-md-4 pr-md-4" role="main">
             {{ block "main" . }}{{ end }}
           </main>
           <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
 
-<!--            {{ partial "tags.html" . }}-->
-              {{ partial "sidebar-recurse.html" .Site.Data.docMenu }}
+&lt;!&ndash;            {{ partial "tags.html" . }}&ndash;&gt;
+&lt;!&ndash;              {{ partial "sidebar-recurse.html" .Site.Data.docMenu }}&ndash;&gt;
 
               {{ partial "toc.html" . }}
 
           </div>
         </div>
       </div>
+-->
+
+        <div class="td-main">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 td-sidebar   d-print-none">
+                    {{ partial "sidebar.html" . }}
+<!--                    {{ partial "sidebar-tree.html" . }}-->
+<!--                    {{ partial "sidebar-recurse.html" .Site.Data.docMenu }}-->
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role="main">
+                    {{ block "main" . }}{{ end }}
+                </main>
+                <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+                                        {{ partial "toc.html" . }}
+                    <!--                    {{ partial "sidebar.html" . }}-->
+                </div>
+            </div>
+        </div>
       {{ partial "footer.html" . }}
     </div>
     {{ partial "lightbox.html" . }}

@@ -40,7 +40,7 @@ static_resources:
                 port_value: 11800
 ```
 
-A more complete static configuration, can be observed [here](config.yaml).
+A more complete static configuration, can be observed [here](../config.yaml).
 
 Note that Envoy can also be configured dynamically through [xDS Protocol](https://github.com/envoyproxy/data-plane-api/blob/master/XDS_PROTOCOL.md).
 
@@ -57,4 +57,4 @@ node:
 
 # Metrics data
 
-Some of the Envoy statistics are listed in this [list](https://www.envoyproxy.io/docs/envoy/latest/configuration/statistics). A sample data that contains identifier can be found [here](identify.json), while the metrics only can be observed [here](metrics.json).
+Some of the Envoy statistics are listed in this [list](https://www.envoyproxy.io/docs/envoy/latest/configuration/statistics). A sample data that contains identifier can be found [here](../identify.json), while the metrics only can be observed [here](../metrics.json).

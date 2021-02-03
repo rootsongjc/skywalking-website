@@ -62,7 +62,7 @@ zookeeper:
 
 
 ## Kubernetes
-Require backend cluster are deployed inside kubernetes, guides are in [Deploy in kubernetes](backend-k8s).
+Require backend cluster are deployed inside kubernetes, guides are in [Deploy in kubernetes](../backend-k8s).
 Set the selector to `kubernetes`.
 
 ```yaml

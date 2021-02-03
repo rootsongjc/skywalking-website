@@ -6,7 +6,7 @@ layout: baseof
 # SkyWalking Cross Process Correlation Headers Protocol
 * Version 1.0
 
-The Cross Process Correlation Headers Protocol is used to transport custom data by leveraging the capability of [Cross Process Propagation Headers Protocol](Skywalking-Cross-Process-Propagation-Headers-Protocol-v3). 
+The Cross Process Correlation Headers Protocol is used to transport custom data by leveraging the capability of [Cross Process Propagation Headers Protocol](../Skywalking-Cross-Process-Propagation-Headers-Protocol-v3). 
 
 This is an optional and additional protocol for language tracer implementation. All tracer implementation could consider to implement this.
 Cross Process Correlation Header key is `sw8-correlation`. The value is the `encoded(key):encoded(value)` list with elements splitted by `,` such as `base64(string key):base64(string value),base64(string key2):base64(string value2)`.
