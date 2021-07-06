@@ -1,0 +1,69 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache SkyWalking – User Manual</title>
+    <link>/tags/user-manual/</link>
+    <description>Recent content in User Manual on Apache SkyWalking</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 25 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="/tags/user-manual/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: SkyWalking alarm webhook sharing</title>
+      <link>/blog/2019-09-25-alarm-webhook-share/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019-09-25-alarm-webhook-share/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;Author: Wei Qiang&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/weiqiang333&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;SkyWalking backend provides the alarm function, we can define some Alarm rules, call webhook after the rule is triggered. I share my implementation&lt;/p&gt;
+&lt;h2 id=&#34;demonstration&#34;&gt;Demonstration&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;skywalking-UI-alarm.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;SkyWalking alarm UI&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;skywalking-dingding-notify.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;dingtalk message body&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;install&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;go get -u github.com/weiqiang333/infra-skywalking-webhook
+&lt;span style=&#34;color:#0086b3&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;$GOPATH&lt;/span&gt;/src/github.com/weiqiang333/infra-skywalking-webhook/
+bash build/build.sh
+./bin/infra-skywalking-webhook &lt;span style=&#34;color:#0086b3&#34;&gt;help&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Configuration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#000080&#34;&gt;main configs file&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;configs/production.yml&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;dingtalk&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;p3&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;token...&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Example&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./bin/infra-skywalking-webhook --config configs/production.yml --address 0.0.0.0:8000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;SkyWalking backend alarm settings&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#000080&#34;&gt;webhooks&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;- http://127.0.0.1:8000/dingtalk&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;collaboration&#34;&gt;Collaboration&lt;/h2&gt;
+&lt;p&gt;Hope that we can improve together &lt;a href=&#34;https://github.com/weiqiang333/infra-skywalking-webhook&#34;&gt;webhook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SkyWalking alarm rules may add more metric names (eg priority name), we can send different channels by locating different levels of alerts (dingtalk / SMS / phone)&lt;/p&gt;
+&lt;p&gt;Thanks.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

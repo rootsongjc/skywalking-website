@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="twitter:site" content="skywalking.apache.org">
+<meta name="twitter:image:src" content="https://skywalking.apache.org/images/skywalking_400x400.png">
+<meta property="og:image" content="https://skywalking.apache.org/images/skywalking_400x400.png">
+<meta name="generator" content="Hugo 0.80.0" />
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 <link rel="alternate" type="application/rss&#43;xml" href="/blog/index.xml">
 
@@ -20,7 +23,7 @@
 <title>Blog | Apache SkyWalking</title><meta property="og:title" content="Blog" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://skywalking.apache.org/blog/" />
+<meta property="og:url" content="/blog/" />
 
 <meta itemprop="name" content="Blog">
 <meta itemprop="description" content="">
@@ -38,18 +41,19 @@ if (!doNotTrack) {
 }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
+<link rel="preload" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
 
 
+<link rel="preload" href="/scss/main.min.183547de3e7337ab8639ed4b1e14334ce5038fdec7dd30707617ff0837722518.css" as="style">
+<link href="/scss/main.min.183547de3e7337ab8639ed4b1e14334ce5038fdec7dd30707617ff0837722518.css" rel="stylesheet" integrity="">
 
-<link rel="preload" href="/scss/main.min.de352a0a4beef786f305e64b28ff87f529664741977283f461c6415ad884f2ed.css" as="style">
-<link href="/scss/main.min.de352a0a4beef786f305e64b28ff87f529664741977283f461c6415ad884f2ed.css" rel="stylesheet" integrity="">
 
 
-<script
-        src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+<script src="/js/jquery-3.6.0.min.js"></script>
 
 
 
@@ -61,9 +65,9 @@ if (!doNotTrack) {
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-    <div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div>
+    <div class="sidebar-button"><svg width="40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div>
     <a class="navbar-brand" href="/">
-        <span class="navbar-logo"><img src="/images/logo.png"></span> 
+        <span class="navbar-logo"><img width="126" height="30" src="/images/logo.png" alt="SkyWalking"></span> 
     </a>
     <div class="td-navbar-nav-scroll ml-md-auto" id="navigation">
         <ul class="navbar-nav mt-lg-0">
@@ -131,6 +135,7 @@ if (!doNotTrack) {
                     <a class="dropdown-item" href="http://www.apache.org/">Apache Software Foundation</a> 
                     <a class="dropdown-item" href="https://github.com/apache/skywalking/issues">GitHub Issue Tracker</a> 
                     <a class="dropdown-item" href="https://lists.apache.org/list.html?dev@skywalking.apache.org">Dev Mailing List</a> 
+                    <a class="dropdown-item" href="https://cwiki.apache.org/confluence/display/SKYWALKING/Home">WIKI</a> 
                     <a class="dropdown-item" href="http://www.apache.org/licenses/">License</a> 
                     <a class="dropdown-item" href="http://www.apache.org/events/current-event">Apache Events</a> 
                     <a class="dropdown-item" href="http://www.apache.org/security/">Security</a> 
@@ -144,15 +149,16 @@ if (!doNotTrack) {
         </ul>
     </div>
     <div class="navbar-nav d-none d-lg-block search-input-box">
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+<input id="algolia-search-input" type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
 </div>
 </nav>
 
     </header>
     <div class="container-fluid td-outer">
       <div class="td-main">
-        <div class="container">
-          <main role="main">
+        <div class="row container container-center">
+
+          <main class="col-12 col-md-12 col-xl-10 pl-md-4 pr-md-4" role="main">
             
 
 
@@ -164,166 +170,173 @@ if (!doNotTrack) {
 <div class="row">
 	<div class="col-12">
 		
-		<h2>Posts in 2020</h2>
+		<h2>Posts in 2021</h2>
 		<ul class="list-unstyled mt-4">
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/blog/2020-11-25-skywalking-satellite-0.1.0-design/">The first design of Satellite 0.1.0</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Wednesday, November 25, 2020 in Blog</small></p>
+					<h5 class="mt-0 mb-1"><a href="/blog/2021-05-09-opensearch-supported/">OpenSearch, a new storage option to avoid ElasticSearch&#39;s SSPL</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Sunday, May 09, 2021 in Blog</small></p>
 					
 
 
 
 
 
-                    
-					<p class="pt-0 mt-0">The design of Satellite 0.1.0.  The structure of the project would follow this design.</p>
-					<p class="pt-0"><a href="/blog/2020-11-25-skywalking-satellite-0.1.0-design/">Read more</a></p>
+					<p class="pt-0 mt-0">We posted our Response to Elastic 2021 License Change blog 4 months ago. It doesn&rsquo;t have a big impact in the short term, but because of the incompatibility between SSPL and Apache 2.0, we lost the chance of upgrading the storage server, which …</p>
+					<p class="pt-0 mt-0">Elasticsearch server doesn&#39;t release under Apache 2.0 anymore. But we have another open option in OpenSearch project.</p>
+					<p class="pt-0"><a href="/blog/2021-05-09-opensearch-supported/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/blog/2020-11-21-apachecon-obs-storage/">[Video] The history of distributed tracing storage</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Saturday, November 21, 2020 in Blog</small></p>
+					<h5 class="mt-0 mb-1"><a href="/blog/end-user-tracing-in-a-skywalking-observed-browser/">End-User Tracing in a SkyWalking-Observed Browser</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Thursday, March 25, 2021 in Blog</small></p>
 					
 
 
 
 
 
-                    
-					<p class="pt-0 mt-0">ApacheCon@Home 2020 Observability Track</p>
-					<p class="pt-0"><a href="/blog/2020-11-21-apachecon-obs-storage/">Read more</a></p>
+					<p class="pt-0 mt-0"> Origin: End-User Tracing in a SkyWalking-Observed Browser - The New Stack
+ Apache SkyWalking: an APM (application performance monitor) system, especially designed for microservices, cloud native, and container-based (Docker, Kubernetes, Mesos) …</p>
+					<p class="pt-0 mt-0">This article describes how the skywalking-client-js extends its monitoring to include the browser, providing performance metrics and error collection to the SkyWalking backend.</p>
+					<p class="pt-0"><a href="/blog/end-user-tracing-in-a-skywalking-observed-browser/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/blog/2020-11-21-apachecon-obs-sourcemarker/">[Video] SourceMarker - Continuous Feedback for Developers</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Saturday, November 21, 2020 in Blog</small></p>
+					<h5 class="mt-0 mb-1"><a href="/blog/2021-03-16-continuous-feedback/">SourceMarker: Continuous Feedback for Developers</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Tuesday, March 16, 2021 in Blog</small></p>
 					
 
 
 
 
 
-                    
-					<p class="pt-0 mt-0">ApacheCon@Home 2020 Observability Track</p>
-					<p class="pt-0"><a href="/blog/2020-11-21-apachecon-obs-sourcemarker/">Read more</a></p>
+					<p class="pt-0 mt-0">SourceMarker is an open-source continuous feedback IDE plugin built on top of Apache SkyWalking, a popular open-source APM system with monitoring, tracing, and diagnosing capabilities for distributed software systems. SkyWalking, a truly holistic …</p>
+					<p class="pt-0 mt-0">The JetBrains plugin providing continuous feedback capabilities via Apache SkyWalking.</p>
+					<p class="pt-0"><a href="/blog/2021-03-16-continuous-feedback/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/blog/2020-11-21-apachecon-obs-apisix/">[Video] Improve Apache APISIX observability with Apache SkyWalking</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Saturday, November 21, 2020 in Blog</small></p>
+					<h5 class="mt-0 mb-1"><a href="/blog/obs-service-mesh-vm-with-sw-and-als/">Observe VM Service Meshes with Apache SkyWalking and the Envoy Access Log Service</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Sunday, February 21, 2021 in Blog</small></p>
 					
 
 
 
 
 
-                    
-					<p class="pt-0 mt-0">ApacheCon@Home 2020 Observability Track</p>
-					<p class="pt-0"><a href="/blog/2020-11-21-apachecon-obs-apisix/">Read more</a></p>
+					<p class="pt-0 mt-0"> Origin: Observe VM Service Meshes with Apache SkyWalking and the Envoy Access Log Service - The New Stack
+ Apache SkyWalking: an APM (application performance monitor) system, especially designed for microservices, cloud native, and container-based …</p>
+					<p class="pt-0 mt-0">In this tutorial, you can learn how to use Apache SkyWalking for service mesh observability, in Kubernetes and / or in virtual machines.</p>
+					<p class="pt-0"><a href="/blog/obs-service-mesh-vm-with-sw-and-als/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/blog/2020-11-21-apachecon-obs-shardingsphere/">[Video] Another backend storage solution for the APM system</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Saturday, November 21, 2020 in Blog</small></p>
+					<h5 class="mt-0 mb-1"><a href="/blog/2021-02-09-skywalking-trace-threadpool/">Apache SkyWalking: How to propagate context between threads when using ThreadPoolExecutor</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Tuesday, February 09, 2021 in Blog</small></p>
 					
 
 
 
 
 
-                    
-					<p class="pt-0 mt-0">ApacheCon@Home 2020 Observability Track</p>
-					<p class="pt-0"><a href="/blog/2020-11-21-apachecon-obs-shardingsphere/">Read more</a></p>
+					<p class="pt-0 mt-0">When using SkyWalking java agent, people usually propagate context easily. They even do not need to change the business code. However, it becomes harder when you want to propagate context between threads when using ThreadPoolExecutor. You can use the …</p>
+					<p class="pt-0 mt-0">This post introduces how to propagate context between threads when using ThreadPoolExecutor, which SkyWalking agent should not enhance</p>
+					<p class="pt-0"><a href="/blog/2021-02-09-skywalking-trace-threadpool/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/blog/2020-11-21-apachecon-keynote/">[Video] Apache grows in China</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Friday, November 20, 2020 in Blog</small></p>
+					<h5 class="mt-0 mb-1"><a href="/blog/2021-02-07-infrastructure-monitoring/">SkyWalking 8.4 provides infrastructure monitoring</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Monday, February 08, 2021 in Blog</small></p>
 					
 
 
 
 
 
-                    
-					<p class="pt-0 mt-0">ApacheCon@Home 2020 Keynote, the progress about China embracing the Apache culture, and willing of enhancing the whole Apache community.</p>
-					<p class="pt-0"><a href="/blog/2020-11-21-apachecon-keynote/">Read more</a></p>
+					<p class="pt-0 mt-0"> Origin: Tetrate.io blog
+ Background Apache SkyWalking&ndash; the APM tool for distributed systems&ndash; has historically focused on providing observability around tracing and metrics, but service performance is often affected by the host. The …</p>
+					<p class="pt-0 mt-0">In this tutorial, learn how to use Apache SkyWalking for infrastructure monitoring</p>
+					<p class="pt-0"><a href="/blog/2021-02-07-infrastructure-monitoring/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/blog/2020-10-29-skywalking8-2-release/">Features in SkyWalking 8.2: Browser Side Monitoring; Query Traces by Tags; Meter Analysis Language</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Thursday, October 29, 2020 in Blog</small></p>
+					<h5 class="mt-0 mb-1"><a href="/blog/skywalking8-4-release/">Apache SkyWalking 8.4: Logs, VM Monitoring, and Dynamic Configurations at Agent Side</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Friday, February 05, 2021 in Blog</small></p>
 					
 
 
 
 
 
-                    
-					<p class="pt-0 mt-0">Browser Side Monitoring; Query Traces by Tags; Meter Analysis Language; Composite Alert Rules</p>
-					<p class="pt-0"><a href="/blog/2020-10-29-skywalking8-2-release/">Read more</a></p>
+					<p class="pt-0 mt-0"> Origin: Tetrate.io blog
+ The Apache SkyWalking team today announced the 8.4 release is generally available. This release fills the gap between all previous versions of SkyWalking and the logging domain area. The release also advances SkyWalking’s …</p>
+					<p class="pt-0 mt-0">Logs, VM Monitoring, and Dynamic Configurations at Agent Side</p>
+					<p class="pt-0"><a href="/blog/skywalking8-4-release/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/blog/2020-08-11-observability-at-scale/">Observability at Scale: SkyWalking it is</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Tuesday, August 11, 2020 in Blog</small></p>
+					<h5 class="mt-0 mb-1"><a href="/blog/2021-02-01-e2e-verifier-design/">[Design] The Verifier of NGE2E</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Monday, February 01, 2021 in Blog</small></p>
 					
 
 
 
 
 
-                    
-					<p class="pt-0 mt-0"> SkyWalking evolved to address the problem of observability at scale, and grew from a pure tracing system to a feature-rich observability platform that is now used to analyze deployments that collect tens of billions of traces per day. </p>
-					<p class="pt-0"><a href="/blog/2020-08-11-observability-at-scale/">Read more</a></p>
+					<p class="pt-0 mt-0">Background The verifier is an important part of the next generation End-to-End Testing framework (NGE2E), which is responsible for verifying whether the actual output satisfies the expected template.
+Design Thinking We will implement the verifier …</p>
+					<p class="pt-0 mt-0">The design of Next Generation End-to-End Testing Framework  Verifier</p>
+					<p class="pt-0"><a href="/blog/2021-02-01-e2e-verifier-design/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/blog/2020-08-03-skywalking8-1-release/">Features in SkyWalking 8.1: SpringSleuth metrics, endpoint dependency detection, Kafka transport traces and metrics</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Monday, August 03, 2020 in Blog</small></p>
+					<h5 class="mt-0 mb-1"><a href="/blog/2021-01-23-tencent-cloud-violates-aplv2/">[Resolved][License Issue] Tencent Cloud TSW service violates the Apache 2.0 License when using SkyWalking.</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Friday, January 22, 2021 in Blog</small></p>
 					
 
 
 
 
 
-                    
-					<p class="pt-0 mt-0"> SpringSleuth metrics, endpoint dependency detection, Kafka transport traces and metrics.</p>
-					<p class="pt-0"><a href="/blog/2020-08-03-skywalking8-1-release/">Read more</a></p>
+					<p class="pt-0 mt-0">Apache SkyWalking is an open source APM for distributed system, Apache Software Foundation top-level project.
+At Jan. 11th, 2021, we noticed the Tencent Cloud Service, Tencent Service Watcher - TSW, for first time. Due to the similar short name, …</p>
+					<p class="pt-0 mt-0">Tencent Cloud Service, Tencent Service Watcher - TSW, have been reported as it violates Apache 2.0 License requirements.</p>
+					<p class="pt-0"><a href="/blog/2021-01-23-tencent-cloud-violates-aplv2/">Read more</a></p>
 				</div>
 			</li>
 			
 			<li class="media mb-4">
 				<div class="media-body">
-					<h5 class="mt-0 mb-1"><a href="/blog/2020-07-26-apdex-and-skywalking/">The Apdex Score for Measuring Service Mesh Health</a></h5>
-					<p class="mb-2 mb-md-3"><small class="text-muted">Sunday, July 26, 2020 in Blog</small></p>
+					<h5 class="mt-0 mb-1"><a href="/blog/2021-01-17-elastic-change-license/">Response to Elastic 2021 License Change</a></h5>
+					<p class="mb-2 mb-md-3"><small class="text-muted">Sunday, January 17, 2021 in Blog</small></p>
 					
 
 
 
 
 
-                    
-					<p class="pt-0 mt-0"> In managing Service Mesh Health, Asking `How are you&#39; is more profound than `What are your symptoms&#39;. Apdex goes a long way in helping this.</p>
-					<p class="pt-0"><a href="/blog/2020-07-26-apdex-and-skywalking/">Read more</a></p>
+					<p class="pt-0 mt-0">Elastic announced their license change, Upcoming licensing changes to Elasticsearch and Kibana.
+ We are moving our Apache 2.0-licensed source code in Elasticsearch and Kibana to be dual licensed under Server Side Public License (SSPL) and the Elastic …</p>
+					<p class="pt-0 mt-0">Elastic Search server doesn&#39;t release under Apache 2.0 anymore. What is the impact to the SkyWalking project?</p>
+					<p class="pt-0"><a href="/blog/2021-01-17-elastic-change-license/">Read more</a></p>
 				</div>
 			</li>
 			
@@ -348,10 +361,13 @@ if (!doNotTrack) {
     <a class="page-link" href="/blog/page/2/">2</a>
   </li>
   <li class="page-item">
+    <a class="page-link" href="/blog/page/3/">3</a>
+  </li>
+  <li class="page-item">
     <a href="/blog/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
   </li>
   <li class="page-item">
-    <a href="/blog/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    <a href="/blog/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
   </li>
 </ul>
 
@@ -360,6 +376,214 @@ if (!doNotTrack) {
 </div>
 
           </main>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+
+            <div class="tags-wrapper">
+    <div class="font-weight-bold post-meta ">
+        <i class="fas fa-tags pr-1" aria-hidden="true"></i>
+        Tags
+    </div>
+    <ul class="tags-box">
+        
+        <li>
+            <a href="/tags/agent/" class="tag-link">Agent</a>
+            <span class="count">3</span>
+        </li>
+        
+        <li>
+            <a href="/tags/apm/" class="tag-link">APM</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/browser/" class="tag-link">Browser</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/conference/" class="tag-link">Conference</a>
+            <span class="count">5</span>
+        </li>
+        
+        <li>
+            <a href="/tags/design/" class="tag-link">Design</a>
+            <span class="count">2</span>
+        </li>
+        
+        <li>
+            <a href="/tags/dotnetcore/" class="tag-link">DotNetCore</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/infrastructure-monitoring/" class="tag-link">Infrastructure Monitoring</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/java/" class="tag-link">Java</a>
+            <span class="count">2</span>
+        </li>
+        
+        <li>
+            <a href="/tags/kafka/" class="tag-link">Kafka</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/license/" class="tag-link">License</a>
+            <span class="count">3</span>
+        </li>
+        
+        <li>
+            <a href="/tags/logs/" class="tag-link">Logs</a>
+            <span class="count">2</span>
+        </li>
+        
+        <li>
+            <a href="/tags/observability/" class="tag-link">Observability</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/performance/" class="tag-link">Performance</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/profiling/" class="tag-link">Profiling</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/release-blog/" class="tag-link">Release Blog</a>
+            <span class="count">4</span>
+        </li>
+        
+        <li>
+            <a href="/tags/satellite/" class="tag-link">Satellite</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/service-mesh/" class="tag-link">Service Mesh</a>
+            <span class="count">3</span>
+        </li>
+        
+        <li>
+            <a href="/tags/spring/" class="tag-link">Spring</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/testing/" class="tag-link">Testing</a>
+            <span class="count">3</span>
+        </li>
+        
+        <li>
+            <a href="/tags/tracing/" class="tag-link">Tracing</a>
+            <span class="count">4</span>
+        </li>
+        
+        <li>
+            <a href="/tags/user-manual/" class="tag-link">User Manual</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/tags/video/" class="tag-link">Video</a>
+            <span class="count">5</span>
+        </li>
+        
+        <li>
+            <a href="/tags/web-performance/" class="tag-link">Web-performance</a>
+            <span class="count">1</span>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+            
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+  $(function () {
+    var $toc = $("#TableOfContents");
+    if (!$toc || !$toc.length) {
+      return;
+    }
+    var top = $toc.offset().top;
+    $(window).on("scroll", debounce(setTop, 100))
+    $(window).on("scroll", debounce(addActive, 30))
+
+    function addActive() {
+      var scrollValue = $(window).scrollTop();
+      var topEle = null;
+      $.each($('main h1, main h2, main h3'), function (index, item) {
+        if ($(item).offset().top - 70 > scrollValue) {
+          return
+        }
+        if (!topEle) {
+          topEle = item
+        } else if ($(item).offset().top >= $(topEle).offset().top) {
+          topEle = item
+        }
+        if (topEle) {
+          var id = $(item).attr('id');
+          $toc.find('a').removeClass("active").end().find('a[href="' + '#' + id + '"]').addClass("active")
+        }
+      })
+    }
+
+    function setTop() {
+      var scrollValue = $(window).scrollTop();
+      if (scrollValue >= top - 70) {
+        $toc.addClass('fixed')
+      } else {
+        $toc.removeClass('fixed')
+      }
+    }
+
+    function debounce(fn, wait) {
+      var timeout = null;
+      return function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          fn.apply(this, arguments);
+        }, wait);
+      };
+    }
+  })
+
+</script>
+
+          </div>
         </div>
       </div>
       
@@ -402,7 +626,7 @@ if (!doNotTrack) {
     </div>
     <div class="">
 
-        <small class="text-white">&copy; 2020 The Apache Software Foundation All Rights Reserved</small>
+        <small class="text-white">&copy; 2017 - 2021 The Apache Software Foundation All Rights Reserved</small>
         
 	
     </div>
@@ -414,6 +638,118 @@ if (!doNotTrack) {
 
 
     </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 <div id="popup">
     <div class="mask">
@@ -495,7 +831,9 @@ if (!doNotTrack) {
 
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 
 
 
@@ -504,7 +842,10 @@ if (!doNotTrack) {
 
 
 
-<script src="/js/main.min.1af134a4c88e31903c06a8615ebc58d98f5093aa781fba638783ac122e8df2b5.js" integrity="sha256-GvE0pMiOMZA8BqhhXrxY2Y9Qk6p4H7pjh4OsEi6N8rU=" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/main.min.b39e9e0a8b4cdf9f436c5f7899461300ecea2f05f620805ef970b7832857a4cb.js" integrity="sha256-s56eCotM359DbF94mUYTAOzqLwX2IIBe&#43;XC3gyhXpMs=" crossorigin="anonymous"></script>
 
 
 

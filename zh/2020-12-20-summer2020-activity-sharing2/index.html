@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="twitter:site" content="skywalking.apache.org">
+<meta name="twitter:image:src" content="https://skywalking.apache.org/images/skywalking_400x400.png">
+<meta property="og:image" content="https://skywalking.apache.org/images/skywalking_400x400.png">
+<meta name="generator" content="Hugo 0.80.0" />
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/site.webmanifest">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<title>暑期 2020 活动学生（张可）心得分享 | Apache SkyWalking</title><meta property="og:title" content="暑期 2020 活动学生（张可）心得分享" />
+<meta property="og:description" content="学生（张可）参与暑期 2020 活动中 Apache SkyWalking 项目的感受与收获" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/zh/2020-12-20-summer2020-activity-sharing2/" />
+<meta property="article:published_time" content="2020-12-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-05T17:00:45+08:00" />
+<meta itemprop="name" content="暑期 2020 活动学生（张可）心得分享">
+<meta itemprop="description" content="学生（张可）参与暑期 2020 活动中 Apache SkyWalking 项目的感受与收获">
+<meta itemprop="datePublished" content="2020-12-20T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-07-05T17:00:45+08:00" />
+<meta itemprop="wordCount" content="109">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="暑期 2020 活动学生（张可）心得分享"/>
+<meta name="twitter:description" content="学生（张可）参与暑期 2020 活动中 Apache SkyWalking 项目的感受与收获"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-178891182-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<link rel="preload" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+
+
+<link rel="preload" href="/scss/main.min.183547de3e7337ab8639ed4b1e14334ce5038fdec7dd30707617ff0837722518.css" as="style">
+<link href="/scss/main.min.183547de3e7337ab8639ed4b1e14334ce5038fdec7dd30707617ff0837722518.css" rel="stylesheet" integrity="">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+    <title>暑期 2020 活动学生（张可）心得分享 | Apache SkyWalking</title>
+  </head>
+  <body class="td-page td-blog">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <div class="sidebar-button"><svg width="40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div>
+    <a class="navbar-brand" href="/">
+        <span class="navbar-logo"><img width="126" height="30" src="/images/logo.png" alt="SkyWalking"></span> 
+    </a>
+    <div class="td-navbar-nav-scroll ml-md-auto" id="navigation">
+        <ul class="navbar-nav mt-lg-0">
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs" ><span>Projects and Documentations</span></a>
+			</li>
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/events" ><span>Events</span></a>
+			</li>
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog" ><span>Blogs</span></a>
+			</li>
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/downloads" ><span>Downloads</span></a>
+			</li>
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/team" ><span>Team</span></a>
+			</li>
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/zh" ><span>中文博客</span></a>
+			</li>
+              
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Links
+              </a>
+                <div class="dropdown-menu">
+                    
+                    <a class="dropdown-item" href="http://www.apache.org/">Apache Software Foundation</a> 
+                    <a class="dropdown-item" href="https://github.com/apache/skywalking/issues">GitHub Issue Tracker</a> 
+                    <a class="dropdown-item" href="https://lists.apache.org/list.html?dev@skywalking.apache.org">Dev Mailing List</a> 
+                    <a class="dropdown-item" href="https://cwiki.apache.org/confluence/display/SKYWALKING/Home">WIKI</a> 
+                    <a class="dropdown-item" href="http://www.apache.org/licenses/">License</a> 
+                    <a class="dropdown-item" href="http://www.apache.org/events/current-event">Apache Events</a> 
+                    <a class="dropdown-item" href="http://www.apache.org/security/">Security</a> 
+                    <a class="dropdown-item" href="http://www.apache.org/foundation/sponsorship.html">Sponsor and Donate</a> 
+                    <a class="dropdown-item" href="http://www.apache.org/foundation/thanks.html">Thanks</a> 
+                </div>
+            </li>
+             
+            
+			
+        </ul>
+    </div>
+    <div class="navbar-nav d-none d-lg-block search-input-box">
+<input id="algolia-search-input" type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row container container-center">
+          <main class="col-12 col-md-12 col-xl-10 pl-md-4 pr-md-4" role="main">
+            
+<div class="td-content">
+	<h1>暑期 2020 活动学生（张可）心得分享</h1>
+	<div class="lead">学生（张可）参与暑期 2020 活动中 Apache SkyWalking 项目的感受与收获</div>
+	<div class="td-byline mb-4">
+		By <b>张可</b> |
+		<time datetime="2020-12-20" class="text-muted">Sunday, December 20, 2020</time>
+
+	    
+		<p class="mt-1 tags-box">
+			<i class="fas fa-tags" aria-hidden="true"></i>Tags |
+			
+			<span> <a href="/zh_tags/open-source-promotion-plan">Open Source Promotion Plan</a></span>
+			
+			<span> <a href="/zh_tags/open-source-contribution">Open Source Contribution</a></span>
+			
+		</p>
+		
+
+	</div>
+	<p>今年暑假期间我参加了开源软件供应链点亮计划—暑期 2020 的活动，在这个活动中，我主要参加了 Apache SkyWalking 的 Python Agent 的开发，最终项目顺利结项并获得了”最具潜力奖“，今天我想分享一下我参与这个活动以及开源社区的感受与收获。</p>
+<h2 id="缘起">缘起</h2>
+<p>其实我在参加暑期 2020 活动之前就听说过 SkyWalking 了。我研究生的主要研究方向是微服务和云原生，组里的学长们之前就在使用 SkyWalking 进行一些研究工作，也是通过他们，我了解到了 OpenTracing, SkyWalking 等与微服务相关的 Tracing 工具以及 APM 等，当时我就在想如果有机会可以深度参加这些开源项目就好了。 巧的是，也正是在差不多的时候，本科的一个学长发给了我暑期 2020 活动的链接，我在其中惊喜的发现了 SkyWalking 项目。</p>
+<p>虽然说想要参与 SkyWalking 的开发，但是真的有了机会我却有一些不自信——这可是 Star 上万的 Apache 顶级项目。万幸的是在暑期 2020 活动中，每一个社区都提供了很多题目以供选择，想参与的同学可以提前对要做的事情有所了解，并可以提前做一些准备。我当时也仔细地浏览了项目列表，最终决定申请为 Python Agent 支持 Flask 或 Django 埋点的功能。当时主要考虑的是，我对 Python 语言比较熟悉，同时也有使用 Flask 等 web 框架进行开发的经验，我认为应该可以完成项目要求。为了能让心里更有底一些，我阅读了 Python Agent 的源码，写下了对项目需要做的工作的理解，并向项目的导师柯振旭发送了自荐邮件，最终被选中去完成这个项目。</p>
+<h2 id="过程">过程</h2>
+<p>被选中后我很激动，也把这份激动化作了参与开源的动力。我在进一步阅读源码，搭建本地环境后，用了三周左右的时间完成了 Django 项目的埋点插件的开发，毕竟我选择的项目是一个低难度的项目，而我在 Python web 方面也有一些经验。在这之后，我的导师和我进行了沟通，在我表达了想要继续做贡献的意愿之后，他给我建议了一些可以进一步进行贡献的方向，我也就继续参与 Python Agent 的开发。接下来，我陆续完成了 PyMongo 埋点插件, 插件版本检查机制, 支持使用 kafka 协议进行数据上报等功能。在提交了暑期 2020 活动的结项申请书后，我又继续参与了在端到端测试中增加对百分位数的验证等功能。</p>
+<p>在整个过程中，我遇到过很多问题，包括对问题认识不够清晰，功能的设计不够完善等等，但是通过与导师的讨论以及 Code Review，这些问题最终都迎刃而解了。此外他还经常会和我交流项目进一步发展方向，并给我以鼓励和肯定，在这里我想特别感谢我的导师在整个项目过程中给我的各种帮助。</p>
+<h2 id="收获">收获</h2>
+<p>参加暑期 2020 的活动带给我了很多收获，主要有以下几点：</p>
+<p>第一是让我真正参与到了开源项目中。在之前我只向在项目代码或文档中发现的 typo 发起过一些 Pull Request，但是暑期 2020 活动通过列出项目 ＋ 导师指导的方式，明确了所要做的事情，并提供了相应的指导，降低了参与开源的门槛，使得我们学生可以参与到项目的开发中来。</p>
+<p>第二是对我的专业研究方向也有很多启发，我的研究方向就是微服务与云原生相关，通过参与到 SkyWalking 的开发中使得我可以更好地理解研究问题中的一些概念，也让我更得心应手得使用 SkyWalking 来解决一些实际的问题。</p>
+<p>第三是通过参与 SkyWalking Python Agent 以及其他部分的开发，我的贡献得到了社区的承认，并在最近被邀请作为 Committer 加入了社区，这对我而言是很高的认可，也提升了我的自信心。</p>
+<p>​	<img src="committer.png" alt="committer"></p>
+<p>第四点就是我通过这个活动认识了不少新朋友，同时也开拓了我的视野，使得我对于开源项目与开源社区有了很多新的认识。</p>
+<h2 id="建议">建议</h2>
+<p>最后同样是我对想要参与开源社区，想要参与此类活动的同学们的一些建议：</p>
+<ol>
+<li>虽然奖金很吸引人，但是还是希望大家能抱着长期为项目进行贡献的心态来参与开源项目，以这样的心态参与开源可以让你更好地理解开源社区的运作方式，也可以让你更有机会参与完成激动人心的功能，你在一个东西上付出的时间精力越多，你能收获的往往也越多。</li>
+<li>在申请项目的时候，可以提前阅读一下相关功能的源码，并结合自己的思考去写一份清晰明了的 proposal ，这样可以帮助你在申请人中脱颖而出。</li>
+<li>在开始着手去完成一个功能之前，首先理清思路，并和自己的导师或了解这一部分的人进行沟通与确认，从而尽量避免在错误的方向上浪费太多时间。</li>
+</ol>
+
+	
+
+	<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+  <li>
+    <a href="/zh/2020-12-19-summer2020-activity-sharing/" class="btn btn-primary "><span class="mr-1">←</span> Previous</a>
+  </li>
+    <a href="/zh/2021-01-21-educate-community/" class="btn btn-primary ">Next <span class="ml-1">→</span></a>
+  </li>
+</ul>
+
+</div>
+
+
+          </main>
+          <div class="toc d-none d-xl-block d-md-none col-xl-2 td-toc d-print-none">
+            <div class="tags-wrapper">
+    <div class="font-weight-bold post-meta ">
+        <i class="fas fa-tags pr-1" aria-hidden="true"></i>
+        Tags
+    </div>
+    <ul class="tags-box">
+        
+        <li>
+            <a href="/zh_tags/agent/" class="tag-link">Agent</a>
+            <span class="count">3</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/conference/" class="tag-link">Conference</a>
+            <span class="count">5</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/development/" class="tag-link">Development</a>
+            <span class="count">3</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/dotnetcore/" class="tag-link">DotNetCore</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/elasticsearch/" class="tag-link">ElasticSearch</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/java/" class="tag-link">Java</a>
+            <span class="count">2</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/open-source-contribution/" class="tag-link">Open Source Contribution</a>
+            <span class="count">4</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/open-source-promotion-plan/" class="tag-link">Open Source Promotion Plan</a>
+            <span class="count">2</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/profiling/" class="tag-link">Profiling</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/release-blog/" class="tag-link">Release Blog</a>
+            <span class="count">3</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/service-mesh/" class="tag-link">Service Mesh</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/source-code/" class="tag-link">Source Code</a>
+            <span class="count">1</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/tracing/" class="tag-link">Tracing</a>
+            <span class="count">2</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/use-case/" class="tag-link">Use Case</a>
+            <span class="count">3</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/user-manual/" class="tag-link">User Manual</a>
+            <span class="count">13</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/video/" class="tag-link">Video</a>
+            <span class="count">6</span>
+        </li>
+        
+        <li>
+            <a href="/zh_tags/web-ui/" class="tag-link">Web UI</a>
+            <span class="count">1</span>
+        </li>
+        
+    </ul>
+</div>
+
+
+            
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#缘起">缘起</a></li>
+        <li><a href="#过程">过程</a></li>
+        <li><a href="#收获">收获</a></li>
+        <li><a href="#建议">建议</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+
+<script>
+  $(function () {
+    var $toc = $("#TableOfContents");
+    if (!$toc || !$toc.length) {
+      return;
+    }
+    var top = $toc.offset().top;
+    $(window).on("scroll", debounce(setTop, 100))
+    $(window).on("scroll", debounce(addActive, 30))
+
+    function addActive() {
+      var scrollValue = $(window).scrollTop();
+      var topEle = null;
+      $.each($('main h1, main h2, main h3'), function (index, item) {
+        if ($(item).offset().top - 70 > scrollValue) {
+          return
+        }
+        if (!topEle) {
+          topEle = item
+        } else if ($(item).offset().top >= $(topEle).offset().top) {
+          topEle = item
+        }
+        if (topEle) {
+          var id = $(item).attr('id');
+          $toc.find('a').removeClass("active").end().find('a[href="' + '#' + id + '"]').addClass("active")
+        }
+      })
+    }
+
+    function setTop() {
+      var scrollValue = $(window).scrollTop();
+      if (scrollValue >= top - 70) {
+        $toc.addClass('fixed')
+      } else {
+        $toc.removeClass('fixed')
+      }
+    }
+
+    function debounce(fn, wait) {
+      var timeout = null;
+      return function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          fn.apply(this, arguments);
+        }, wait);
+      };
+    }
+  })
+
+</script>
+
+
+          </div>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 sky-row">
+  <div class="container-fluid text-center">
+    <div class="">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" href="https://twitter.com/asfskywalking">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="http://s.apache.org/slack-invite">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Mailing list" aria-label="Mailing list">
+    <a class="text-white" target="_blank" href="https://lists.apache.org/list.html?dev@skywalking.apache.org">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/apache/skywalking">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+    </div>
+    <div class="">
+
+        <small class="text-white">&copy; 2017 - 2021 The Apache Software Foundation All Rights Reserved</small>
+        
+	
+    </div>
+    <div class="">
+      <small class="text-white   mt-4">Apache SkyWalking, SkyWalking, Apache, the Apache feather logo, and the Apache SkyWalking project logo are either registered trademarks or trademarks of the Apache Software Foundation.</small>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<div id="popup">
+    <div class="mask">
+        <img src=""/>
+    </div>
+</div>
+
+    <div class="sidebar-mask"></div>
+<div class="sidebar">
+    <nav class="nav-links">
+        <div class="nav-item"><a href="/docs/" class="nav-link">Projects and Documentation</a></div>
+        <div class="nav-item"><a href="/events/" class="nav-link">Events</a></div>
+        <div class="nav-item"><a href="/blog/" class="nav-link router-link-exact-active router-link-active">Blog</a>
+        </div>
+        <div class="nav-item"><a href="/downloads/" class="nav-link">Downloads</a></div>
+        <div class="nav-item"><a href="/team/" class="nav-link">Team</a></div>
+        <div class="nav-item"><a href="/zh/" class="nav-link">中文博客</a></div>
+        <div class="nav-item">
+            <div class="dropdown-wrapper open"><a class="dropdown-title"><span class="title">Links</span> <span
+                    class="arrow down"></span></a>
+                <ul class="nav-dropdown" style="">
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/" target="_blank"
+                           rel="noopener noreferrer" class="nav-link external">
+                            Apache Software Foundation
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="https://github.com/apache/skywalking/issues"
+                           target="_blank" rel="noopener noreferrer"
+                           class="nav-link external">
+                            GitHub Issue Tracker
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="https://lists.apache.org/list.html?dev@skywalking.apache.org" target="_blank"
+                           rel="noopener noreferrer" class="nav-link external">
+                            Dev Mailing List
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/licenses/" target="_blank"
+                           rel="noopener noreferrer" class="nav-link external">
+                            License
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/events/current-event"
+                           target="_blank" rel="noopener noreferrer"
+                           class="nav-link external">
+                            Apache Events
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/security/" target="_blank"
+                           rel="noopener noreferrer" class="nav-link external">
+                            Security
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/foundation/sponsorship.html"
+                           target="_blank" rel="noopener noreferrer"
+                           class="nav-link external">
+                            Sponsorship and Donate
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/foundation/thanks.html"
+                           target="_blank" rel="noopener noreferrer"
+                           class="nav-link external">
+                            Thanks
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.b39e9e0a8b4cdf9f436c5f7899461300ecea2f05f620805ef970b7832857a4cb.js" integrity="sha256-s56eCotM359DbF94mUYTAOzqLwX2IIBe&#43;XC3gyhXpMs=" crossorigin="anonymous"></script>
+
+
+
+
+
+  </body>
+</html>

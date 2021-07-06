@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apache SkyWalking – Events</title>
-    <link>https://skywalking.apache.org/events/</link>
+    <link>/events/</link>
     <description>Recent content in Events on Apache SkyWalking</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://skywalking.apache.org/events/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/events/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -14,11 +14,1149 @@
     
     
     <item>
+      <title>Events: Release Apache SkyWalking CLI 0.7.0</title>
+      <link>/events/release-apache-skywalking-cli-0-7-0/</link>
+      <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-cli-0-7-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking CLI 0.7.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Features&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add GitHub Action for integration of event reporter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bug Fixes&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix &lt;code&gt;metrics top&lt;/code&gt; can&amp;rsquo;t infer the scope automatically&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Chores&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgrade dependency crypto&lt;/li&gt;
+&lt;li&gt;Refactor project to use goapi&lt;/li&gt;
+&lt;li&gt;Move &lt;code&gt;parseScope&lt;/code&gt; to pkg&lt;/li&gt;
+&lt;li&gt;Update release doc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking APM 8.6.0</title>
+      <link>/events/release-apache-skywalking-apm-8-6-0/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-apm-8-6-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking 8.6.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.
+Changes by Version&lt;/p&gt;
+&lt;h4 id=&#34;project&#34;&gt;Project&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Add OpenSearch as storage option.&lt;/li&gt;
+&lt;li&gt;Upgrade Kubernetes Java client dependency to 11.0.&lt;/li&gt;
+&lt;li&gt;Fix plugin test script error in macOS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;java-agent&#34;&gt;Java Agent&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;trace_segment_ref_limit_per_span&lt;/code&gt; configuration mechanism to avoid OOM.&lt;/li&gt;
+&lt;li&gt;Improve &lt;code&gt;GlobalIdGenerator&lt;/code&gt; performance.&lt;/li&gt;
+&lt;li&gt;Add an agent plugin to support elasticsearch7.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;jsonrpc4j&lt;/code&gt; agent plugin.&lt;/li&gt;
+&lt;li&gt;new options to support multi skywalking cluster use same kafka cluster(plugin.kafka.namespace)&lt;/li&gt;
+&lt;li&gt;resolve agent has no retries if connect kafka cluster failed when bootstrap&lt;/li&gt;
+&lt;li&gt;Add Seata in the component definition. Seata plugin hosts on Seata project.&lt;/li&gt;
+&lt;li&gt;Extended Kafka plugin to properly trace consumers that have topic partitions directly assigned.&lt;/li&gt;
+&lt;li&gt;Support Kafka consumer 2.8.0.&lt;/li&gt;
+&lt;li&gt;Support print SkyWalking context to logs.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;MessageListener&lt;/code&gt; enhancement in pulsar plugin.&lt;/li&gt;
+&lt;li&gt;fix a bug that spring-mvc set an error endpoint name if the controller class annotation implements an interface.&lt;/li&gt;
+&lt;li&gt;Add an optional agent plugin to support mybatis.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;spring-cloud-gateway-3.x&lt;/code&gt; optional plugin.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;okhttp-4.x&lt;/code&gt; plugin.&lt;/li&gt;
+&lt;li&gt;Fix NPE when thrift field is nested in plugin &lt;code&gt;thrift&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fix possible NullPointerException in agent&amp;rsquo;s ES plugin.&lt;/li&gt;
+&lt;li&gt;Fix the conversion problem of float type in ConfigInitializer.&lt;/li&gt;
+&lt;li&gt;Fixed part of the dynamic configuration of ConfigurationDiscoveryService that does not take effect under certain circumstances.&lt;/li&gt;
+&lt;li&gt;Introduce method interceptor API v2&lt;/li&gt;
+&lt;li&gt;Fix ClassCast issue for RequestHolder/ResponseHolder.&lt;/li&gt;
+&lt;li&gt;fixed &lt;code&gt;jdk-threading-plugin&lt;/code&gt; memory leak.&lt;/li&gt;
+&lt;li&gt;Optimize multiple field reflection operation in Feign plugin.&lt;/li&gt;
+&lt;li&gt;Fix &lt;code&gt;trace-ignore-plugin&lt;/code&gt; TraceIgnorePathPatterns can&amp;rsquo;t set empty value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;oap-backend&#34;&gt;OAP-Backend&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;BugFix: filter invalid Envoy access logs whose socket address is empty.&lt;/li&gt;
+&lt;li&gt;Fix K8s monitoring the incorrect metrics calculate.&lt;/li&gt;
+&lt;li&gt;Loop alarm into event system.&lt;/li&gt;
+&lt;li&gt;Support alarm tags.&lt;/li&gt;
+&lt;li&gt;Support WeLink as a channel of alarm notification.&lt;/li&gt;
+&lt;li&gt;Fix: Some defensive codes didn&amp;rsquo;t work in &lt;code&gt;PercentileFunction combine&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;CVE: fix Jetty vulnerability. &lt;a href=&#34;https://nvd.nist.gov/vuln/detail/CVE-2019-17638&#34;&gt;https://nvd.nist.gov/vuln/detail/CVE-2019-17638&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fix: MAL function would miss samples name after creating new samples.&lt;/li&gt;
+&lt;li&gt;perf: use iterator.remove() to remove modulesWithoutProvider&lt;/li&gt;
+&lt;li&gt;Support analyzing Envoy TCP access logs and persist error TCP logs.&lt;/li&gt;
+&lt;li&gt;Fix: Envoy error logs are not persisted when no metrics are generated&lt;/li&gt;
+&lt;li&gt;Fix: Memory leakage of low version etcd client. &lt;a href=&#34;https://github.com/jurmous/etcd4j/pull/185&#34;&gt;fix-issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Allow multiple definitions as fallback in metadata-service-mapping.yaml file and &lt;code&gt;k8sServiceNameRule&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Fix: NPE when configmap has no data.&lt;/li&gt;
+&lt;li&gt;Fix: Dynamic Configuration key &lt;code&gt;slowTraceSegmentThreshold&lt;/code&gt; not work&lt;/li&gt;
+&lt;li&gt;Fix: &lt;code&gt;!=&lt;/code&gt; is not supported in oal when parameters are numbers.&lt;/li&gt;
+&lt;li&gt;Include events of the entity(s) in the alarm.&lt;/li&gt;
+&lt;li&gt;Support &lt;code&gt;native-json&lt;/code&gt; format log in kafka-fetcher-plugin.&lt;/li&gt;
+&lt;li&gt;Fix counter misuse in the alarm core. Alarm can&amp;rsquo;t be triggered in time.&lt;/li&gt;
+&lt;li&gt;Events can be configured as alarm source.&lt;/li&gt;
+&lt;li&gt;Make the number of core worker in meter converter thread pool configurable.&lt;/li&gt;
+&lt;li&gt;Add HTTP implementation of logs reporting protocol.&lt;/li&gt;
+&lt;li&gt;Make metrics exporter still work even when storage layer failed.&lt;/li&gt;
+&lt;li&gt;Fix Jetty HTTP &lt;code&gt;TRACE&lt;/code&gt; issue, disable HTTP methods except &lt;code&gt;POST&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;CVE: upgrade snakeyaml to prevent &lt;a href=&#34;https://en.wikipedia.org/wiki/Billion_laughs#Variations&#34;&gt;billion laughs attack&lt;/a&gt; in dynamic configuration.&lt;/li&gt;
+&lt;li&gt;polish debug logging avoids null value when the segment ignored.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ui&#34;&gt;UI&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Add logo for kong plugin.&lt;/li&gt;
+&lt;li&gt;Add apisix logo.&lt;/li&gt;
+&lt;li&gt;Refactor js to ts for browser logs and style change.&lt;/li&gt;
+&lt;li&gt;When creating service groups in the topology, it is better if the service names are sorted.&lt;/li&gt;
+&lt;li&gt;Add tooltip for dashboard component.&lt;/li&gt;
+&lt;li&gt;Fix style of endpoint dependency.&lt;/li&gt;
+&lt;li&gt;Support search and visualize alarms with tags.&lt;/li&gt;
+&lt;li&gt;Fix configurations on dashboard.&lt;/li&gt;
+&lt;li&gt;Support to configure the maximum number of displayed items.&lt;/li&gt;
+&lt;li&gt;After changing the durationTime, the topology shows the originally selected group or service.&lt;/li&gt;
+&lt;li&gt;remove the no use maxItemNum for labeled-value metric, etc.&lt;/li&gt;
+&lt;li&gt;Add Azure Functions logo.&lt;/li&gt;
+&lt;li&gt;Support search Endpoint use keyword params in trace view.&lt;/li&gt;
+&lt;li&gt;Add a function which show the statistics infomation during the trace query.&lt;/li&gt;
+&lt;li&gt;Remove the sort button at the column of Type in the trace statistics page.&lt;/li&gt;
+&lt;li&gt;Optimize the APISIX icon in the topology.&lt;/li&gt;
+&lt;li&gt;Implement metrics templates in the topology.&lt;/li&gt;
+&lt;li&gt;Visualize Events on the alarm page.&lt;/li&gt;
+&lt;li&gt;Update duration steps in graphs for Trace and Log.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;documentation&#34;&gt;Documentation&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Polish k8s monitoring otel-collector configuration example.&lt;/li&gt;
+&lt;li&gt;Print SkyWalking context to logs configuration example.&lt;/li&gt;
+&lt;li&gt;Update doc about metrics v2 APIs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All issues and pull requests are &lt;a href=&#34;https://github.com/apache/skywalking/milestone/84?closed=1&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: SkyWalkingDay Conference 2021, relocating at Beijing</title>
+      <link>/events/skywalkingday-2021/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/skywalkingday-2021/</guid>
+      <description>
+        
+        
+        &lt;img src=&#34;skywalkingday.png&#34;&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Apache SkyWalking hosts SkyWalkingDay Conference 2021 in June 26th, jointly with Tencent and Tetrate.&lt;/p&gt;
+&lt;p&gt;We are going to share SkyWalking&amp;rsquo;s roadmap, features, product experiences and open source culture.&lt;/p&gt;
+&lt;p&gt;Welcome to join us.&lt;/p&gt;
+&lt;h2 id=&#34;venue&#34;&gt;Venue&lt;/h2&gt;
+&lt;p&gt;Addr./地址  北京市海淀区西格玛大厦B1多功能厅&lt;/p&gt;
+&lt;h2 id=&#34;date&#34;&gt;Date&lt;/h2&gt;
+&lt;p&gt;June 26th.&lt;/p&gt;
+&lt;h2 id=&#34;registration-for-free&#34;&gt;Registration For Free&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.tencent.com/developer/salon/salon-1447&#34;&gt;Register for onsite or online&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;sessions&#34;&gt;Sessions&lt;/h2&gt;
+&lt;h4 id=&#34;1000---1020-apache-skywalking-landscape&#34;&gt;10:00 - 10:20 Apache SkyWalking Landscape&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;吴晟 Sheng Wu. Tetrate Founding Engineer, Apache Software Foundation board director. SkyWalking founder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;SkyWalking 2020-2021年发展和后续计划&lt;/p&gt;
+&lt;h4 id=&#34;1020---1050-微服务可观测性分析平台的探索与实践&#34;&gt;10:20 - 10:50 微服务可观测性分析平台的探索与实践&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;凌若川 腾讯高级工程师&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可观测性分析平台作为云原生时代微服务系统基础组件，开放性与性能是决定平台价值的核心要素。
+复杂微服务应用场景与海量多维链路数据，对可观测性分析平台在开放性设计和各环节高性能实现带来诸多挑战。
+本次分享中将重点梳理腾讯云微服务团队在构建云原生可观测性分析平台过程中遇到的挑战，介绍我们在架构设计与实现方面的探索与实践。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;云原生时代微服务可观测性平台面临的性能与可用性挑战&lt;/li&gt;
+&lt;li&gt;腾讯云在构建高性能微服务可观测性分析平台的探索与实践&lt;/li&gt;
+&lt;li&gt;微服务可观测性分析平台架构的下一阶段演进方向展望&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;1050---1120-banyandb数据模型背后的逻辑&#34;&gt;10:50 - 11:20 BanyanDB数据模型背后的逻辑&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;高洪涛 Hongtao Gao. Tetrate SRE, SkyWalking PMC, Apache ShardingSphere PMC.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;BanyanDB作为为处理Apache SkyWalking产生的trace，log和metric的数据而特别设计的数据库，其背后数据模型的抉择是非常与众不同的。
+在本次分享中，我将根据RUM猜想来讨论为什么BanyanDB使用的数据模型对于APM数据而言是更加高效和可靠的。&lt;/p&gt;
+&lt;p&gt;通过本次分享，观众可以：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;理解数据库设计的取舍&lt;/li&gt;
+&lt;li&gt;了解BanyanDB的数据模型&lt;/li&gt;
+&lt;li&gt;认识到该模型对于APM类数据有特定的优势&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;1120---1150-apache-skywalking-如何做前端监控&#34;&gt;11:20 - 11:50 Apache SkyWalking 如何做前端监控&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;范秋霞 Qiuxia Fan，Tetrate FE SRE，SkyWalking PMC.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Apache SkyWalking对前端进行了监控与跟踪，分别有Metric, Log, Trace三部分。本次分享我会介绍页面性能指标的收集与计算，同时用案列进行分析，也会讲解Log的采集方法以及Source Map错误定位的实施。最后介绍浏览器端Requets的跟踪方法。&lt;/p&gt;
+&lt;p&gt;通过本次分享，观众可以：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;了解页面的性能指标以及收集计算方法&lt;/li&gt;
+&lt;li&gt;了解前端如何做错误日志收集&lt;/li&gt;
+&lt;li&gt;如何对页面请求进行跟踪以及跟踪的好处&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;午休&#34;&gt;午休&lt;/h4&gt;
+&lt;h4 id=&#34;1330---1400-一名普通工程师该如何正确的理解开源精神&#34;&gt;13:30 - 14:00 一名普通工程师，该如何正确的理解开源精神？&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;王晔倞 Yeliang Wang. API7 Partner / Product VP.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;开源精神，那也许是一种给于和获取的平衡，有给于才能有获取，有获取才会有给于的动力。无需指责别人只会获取，我们应该懂得开源是一种创造方式，一个没有创造欲和创造力的人加入开源也是无用的。&lt;/p&gt;
+&lt;p&gt;通过本次分享，观众可以：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;为什么国内一些程序员会对开源产生误解？&lt;/li&gt;
+&lt;li&gt;了解 “开源≠自由≠非商业” 的来龙去脉。&lt;/li&gt;
+&lt;li&gt;一名普通工程师，如何高效地向开源社区做贡献？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;1400---1430-可观测性技术生态和opentelemetry原理及实践&#34;&gt;14:00 - 14:30 可观测性技术生态和OpenTelemetry原理及实践&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;陈一枭 腾讯. OpenTelemetry docs-cn maintainer、Tencent OpenTelemetry OTeam创始人&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;综述云原生可观测性技术生态，介绍OpenTracing，OpenMetrics，OpenTelemetry等标准演进。介绍OpenTelemetry存在价值意义，介绍OpenTelemetry原理及其整体生态规划。介绍腾讯在OpenTelemetry方面的实践。&lt;/p&gt;
+&lt;p&gt;本次分享内容如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;云原生可观测性技术简介&lt;/li&gt;
+&lt;li&gt;OpenTelemetry及其它规范简介&lt;/li&gt;
+&lt;li&gt;OpenTelemetry原理&lt;/li&gt;
+&lt;li&gt;OpenTelemetry在腾讯的应用及实践&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;1430---1510-利用-apache-skywalking-事件采集系统更快定位故障&#34;&gt;14:30 - 15:10 利用 Apache SkyWalking 事件采集系统更快定位故障&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;柯振旭 Zhenxu Ke，Tetrate SRE, Apache SkyWalking PMC. Apache Incubator PMC. Apache Dubbo committer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过本次分享，听众可以：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;了解 SkyWalking 的事件采集系统；&lt;/li&gt;
+&lt;li&gt;了解上报事件至 SkyWalking 的多种方式；&lt;/li&gt;
+&lt;li&gt;学习如何利用 SkyWalking 采集的事件结合 metrics，分析目标系统的性能问题；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;1510---1530-茶歇&#34;&gt;15:10 - 15:30 茶歇&lt;/h4&gt;
+&lt;h4 id=&#34;1530---1600-可观测性自动注入技术原理探索与实践&#34;&gt;15:30 - 16:00 可观测性自动注入技术原理探索与实践&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;詹启新 Tencnet OpenTelemetry Oteam PMC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在可观测领域中自动注入已经成为重要的组成部分之一，其优异简便的使用方式并且可同时覆盖到链路、指标、日志，大大降低了接入成本及运维成本，属于友好的一种接入方式；
+本次分享将介绍Java中的字节码注入技术原理，及在可观测领域的应用实践&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;常用的自动注入技术原理简介&lt;/li&gt;
+&lt;li&gt;介绍可观测性在Java落地的要点&lt;/li&gt;
+&lt;li&gt;opentelemetry-java-instrumentation的核心原理及实现&lt;/li&gt;
+&lt;li&gt;opentelemetry自动注入的应用实践&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;1600---1630-如何利用-apache-apisix-提升-nginx-的可观测性&#34;&gt;16:00 - 16:30 如何利用 Apache APISIX 提升 Nginx 的可观测性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;金卫 Wei Jin, API7 Engineer Apache SkyWalking committer. Apache apisix-ingress-controller Founder. Apache APISIX PMC.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在云原生时代，动态和可观测性是 API 网关的标准特性。Apache APISIX 不仅覆盖了 Nginx 的传统功能，在可观测性上也和 SkyWalking 深度合作，大大提升了服务治理能力。本次分享会介绍如何无痛的提升 Nginx 的可观测性和 APISIX 在未来可观测性方面的规划。&lt;/p&gt;
+&lt;p&gt;通过本次分享，观众可以：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;通过 Apache APISIX 实现观测性的几种手段.&lt;/li&gt;
+&lt;li&gt;了解 Apache APISIX 高效且易用的秘诀.&lt;/li&gt;
+&lt;li&gt;结合 Apache skywalking 进一步提升可观测性.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;1635-抽奖结束&#34;&gt;16:35 抽奖，结束&lt;/h4&gt;
+&lt;h2 id=&#34;sponsors&#34;&gt;Sponsors&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Tencent&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tetrate.io&#34;&gt;Tetrate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com&#34;&gt;SegmentFault 思否&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;anti-harassment-policy&#34;&gt;Anti-harassment policy&lt;/h2&gt;
+&lt;p&gt;SkyWalkingDay is dedicated to providing a harassment-free experience for everyone. We do not tolerate harassment of participants in any form. Sexual language and imagery will also not be tolerated in any event venue. Participants violating these rules may be sanctioned or expelled without a refund, at the discretion of the event organizers. Our anti-harassment policy can be found at &lt;a href=&#34;https://www.apache.org/foundation/policies/anti-harassment.html&#34;&gt;Apache website&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;contact-us&#34;&gt;Contact Us&lt;/h2&gt;
+&lt;p&gt;Send mail to &lt;a href=&#34;mailto:dev@skywalking.apache.org&#34;&gt;dev@skywalking.apache.org&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking for NodeJS 0.3.0</title>
+      <link>/events/release-apache-skywalking-nodejs-0-3-0/</link>
+      <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-nodejs-0-3-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking NodeJS 0.3.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add ioredis plugin. (#53)&lt;/li&gt;
+&lt;li&gt;Endpoint cold start detection and marking. (#52)&lt;/li&gt;
+&lt;li&gt;Add mysql2 plugin. (#54)&lt;/li&gt;
+&lt;li&gt;Add AzureHttpTriggerPlugin. (#51)&lt;/li&gt;
+&lt;li&gt;Add Node 15 into test matrix. (#45)&lt;/li&gt;
+&lt;li&gt;Segment reference and reporting overhaul. (#50)&lt;/li&gt;
+&lt;li&gt;Add http ignore by method. (#49)&lt;/li&gt;
+&lt;li&gt;Add secure connection option. (#48)&lt;/li&gt;
+&lt;li&gt;BugFix: wrong context during many async spans. (#46)&lt;/li&gt;
+&lt;li&gt;Add Node Mongoose Plugin. (#44)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking Client JS 0.5.1</title>
+      <link>/events/release-apache-skywalking-client-js-0-5-1/</link>
+      <pubDate>Fri, 21 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-client-js-0-5-1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking Client JS 0.5.1 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Add &lt;code&gt;noTraceOrigins&lt;/code&gt; option.&lt;/li&gt;
+&lt;li&gt;Fix wrong URL when using relative path.&lt;/li&gt;
+&lt;li&gt;Catch frames errors.&lt;/li&gt;
+&lt;li&gt;Get &lt;code&gt;response.body&lt;/code&gt; as a stream with the fetch API.&lt;/li&gt;
+&lt;li&gt;Support reporting multiple logs.&lt;/li&gt;
+&lt;li&gt;Support typescript project.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking Kong 0.1.1</title>
+      <link>/events/release-apache-skywalking-kong-0-1-1/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-kong-0-1-1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking Kong Agent 0.1.1 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Establish the SkyWalking Kong Agent.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Welcome Hailin Wang as new committer</title>
+      <link>/events/welcome-hailin-wang-as-new-committer/</link>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/welcome-hailin-wang-as-new-committer/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Hailin Wang(GitHub ID, hailin0) began his SkyWalking journey since Aug 23rd, 2020.&lt;/p&gt;
+&lt;p&gt;He is very active on the code contributions and brought several important features into the SkyWalking ecosystem.&lt;/p&gt;
+&lt;p&gt;He is on the 33rd of the contributor in the main repository[1], focuses on plugin contributions, and logs ecosystem integration, see his code contributions[2].
+And also, he started a new and better way to make other open-source projects integrating with SkyWalking.&lt;/p&gt;
+&lt;p&gt;He used over 2 months to make the SkyWalking agent and its plugins as a part of Apache DolphinScheduler&amp;rsquo;s default binary distribution[3], see this PR[4]. This kind of example has affected further community development. Our PMC member, Yuguang Zhao, is using this way to ship our agent and plugins into the Seata project[5]. With SkyWalking&amp;rsquo;s growing, I would not doubt that this kind of integration would be more.&lt;/p&gt;
+&lt;p&gt;The SkyWalking accepts him as a new committer.&lt;/p&gt;
+&lt;p&gt;Welcome Hailin Wang join the committer team.&lt;/p&gt;
+&lt;p&gt;[1] &lt;a href=&#34;https://github.com/apache/skywalking/graphs/contributors&#34;&gt;https://github.com/apache/skywalking/graphs/contributors&lt;/a&gt;
+[2] &lt;a href=&#34;https://github.com/apache/skywalking/commits?author=hailin0&#34;&gt;https://github.com/apache/skywalking/commits?author=hailin0&lt;/a&gt;
+[3] &lt;a href=&#34;https://github.com/apache/dolphinscheduler/tree/1.3.6-prepare/ext/skywalking&#34;&gt;https://github.com/apache/dolphinscheduler/tree/1.3.6-prepare/ext/skywalking&lt;/a&gt;
+[4] &lt;a href=&#34;https://github.com/apache/incubator-dolphinscheduler/pull/4852&#34;&gt;https://github.com/apache/incubator-dolphinscheduler/pull/4852&lt;/a&gt;
+[5] &lt;a href=&#34;https://github.com/seata/seata/pull/3652&#34;&gt;https://github.com/seata/seata/pull/3652&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking LUA Nginx 0.5.0</title>
+      <link>/events/release-apache-skywalking-lua-nginx-0.5.0/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-lua-nginx-0.5.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking LUA Nginx 0.5.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adapt to Kong agent.&lt;/li&gt;
+&lt;li&gt;Correct the version format luarock.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking APM 8.5.0</title>
+      <link>/events/release-apache-skywalking-apm-8-5-0/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-apm-8-5-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking 8.5.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.
+Changes by Version&lt;/p&gt;
+&lt;h4 id=&#34;project&#34;&gt;Project&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Incompatible Change&lt;/strong&gt;. Indices and templates of ElasticSearch(6/7, including zipkin-elasticsearch7) storage option have been changed.&lt;/li&gt;
+&lt;li&gt;Update frontend-maven-plugin to 1.11.0, for Download node x64 binary on Apple Silicon.&lt;/li&gt;
+&lt;li&gt;Add E2E test for VM monitoring that metrics from Prometheus node-exporter.&lt;/li&gt;
+&lt;li&gt;Upgrade lombok to 1.18.16.&lt;/li&gt;
+&lt;li&gt;Add Java agent Dockerfile to build Docker image for Java agent.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;java-agent&#34;&gt;Java Agent&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove invalid mysql configuration in agent.config.&lt;/li&gt;
+&lt;li&gt;Add net.bytebuddy.agent.builder.AgentBuilder.RedefinitionStrategy.Listener to show detail message when redefine errors occur.&lt;/li&gt;
+&lt;li&gt;Fix ClassCastException of log4j gRPC reporter.&lt;/li&gt;
+&lt;li&gt;Fix NPE when Kafka reporter activated.&lt;/li&gt;
+&lt;li&gt;Enhance gRPC log appender to allow layout pattern.&lt;/li&gt;
+&lt;li&gt;Fix apm-dubbo-2.7.x-plugin memory leak due to some Dubbo RpcExceptions.&lt;/li&gt;
+&lt;li&gt;Fix lettuce-5.x-plugin get null host in redis sentinel mode.&lt;/li&gt;
+&lt;li&gt;Fix ClassCastException by making CallbackAdapterInterceptor to implement EnhancedInstance interface in the spring-kafka plugin.&lt;/li&gt;
+&lt;li&gt;Fix NullPointerException with KafkaProducer.send(record).&lt;/li&gt;
+&lt;li&gt;Support config &lt;code&gt;agent.span_limit_per_segment&lt;/code&gt; can be changed in the runtime.&lt;/li&gt;
+&lt;li&gt;Collect and report agent starting / shutdown events.&lt;/li&gt;
+&lt;li&gt;Support jedis pipeline in jedis-2.x-plugin.&lt;/li&gt;
+&lt;li&gt;Fix apm-toolkit-log4j-2.x-activation no trace Id in async log.&lt;/li&gt;
+&lt;li&gt;Replace hbase-1.x-plugin with hbase-1.x-2.x-plugin to adapt hbase client 2.x&lt;/li&gt;
+&lt;li&gt;Remove the close_before_method and close_after_method parameters of custom-enhance-plugin to avoid memory leaks.&lt;/li&gt;
+&lt;li&gt;Fix bug that springmvc-annotation-4.x-plugin, witness class does not exist in some versions.&lt;/li&gt;
+&lt;li&gt;Add Redis command parameters to &amp;lsquo;db.statement&amp;rsquo; field on Lettuce span UI for displaying more info.&lt;/li&gt;
+&lt;li&gt;Fix NullPointerException with &lt;code&gt;ReactiveRequestHolder.getHeaders&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Fix springmvc reactive api can&amp;rsquo;t collect HTTP statusCode.&lt;/li&gt;
+&lt;li&gt;Fix bug that asynchttpclient plugin does not record the response status code.&lt;/li&gt;
+&lt;li&gt;Fix spanLayer is null in optional plugin(gateway-2.0.x-plugin gateway-2.1.x-plugin).&lt;/li&gt;
+&lt;li&gt;Support @Trace, @Tag and @Tags work for static methods.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;oap-backend&#34;&gt;OAP-Backend&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Allow user-defined &lt;code&gt;JAVA_OPTS&lt;/code&gt; in the startup script.&lt;/li&gt;
+&lt;li&gt;Metrics combination API supports abandoning results.&lt;/li&gt;
+&lt;li&gt;Add a new concept &amp;ldquo;Event&amp;rdquo; and its implementations to collect events.&lt;/li&gt;
+&lt;li&gt;Add some defensive codes for NPE and bump up Kubernetes client version to expose exception stack trace.&lt;/li&gt;
+&lt;li&gt;Update the &lt;code&gt;timestamp&lt;/code&gt; field type for &lt;code&gt;LogQuery&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Support Zabbix protocol to receive agent metrics.&lt;/li&gt;
+&lt;li&gt;Update the Apdex metric combine calculator.&lt;/li&gt;
+&lt;li&gt;Enhance &lt;code&gt;MeterSystem&lt;/code&gt; to allow creating metrics with same &lt;code&gt;metricName&lt;/code&gt; / &lt;code&gt;function&lt;/code&gt; / &lt;code&gt;scope&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Storage plugin supports postgresql.&lt;/li&gt;
+&lt;li&gt;Fix kubernetes.client.openapi.ApiException.&lt;/li&gt;
+&lt;li&gt;Remove filename suffix in the meter active file config.&lt;/li&gt;
+&lt;li&gt;Introduce log analysis language (LAL).&lt;/li&gt;
+&lt;li&gt;Fix alarm httpclient connection leak.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;sum&lt;/code&gt; function in meter system.&lt;/li&gt;
+&lt;li&gt;Remove Jaeger receiver.&lt;/li&gt;
+&lt;li&gt;Remove the experimental Zipkin span analyzer.&lt;/li&gt;
+&lt;li&gt;Upgrade the Zipkin Elasticsearch storage from 6 to 7.&lt;/li&gt;
+&lt;li&gt;Require Zipkin receiver must work with &lt;code&gt;zipkin-elasticsearch7&lt;/code&gt; storage option.&lt;/li&gt;
+&lt;li&gt;Fix &lt;code&gt;DatabaseSlowStatementBuilder&lt;/code&gt; statement maybe null.&lt;/li&gt;
+&lt;li&gt;Remove fields of parent entity in the relation sources.&lt;/li&gt;
+&lt;li&gt;Save Envoy http access logs when error occurs.&lt;/li&gt;
+&lt;li&gt;Fix wrong &lt;code&gt;service_instance_sla&lt;/code&gt; setting in the &lt;code&gt;topology-instance.yml&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Fix wrong metrics name setting in the &lt;code&gt;self-observability.yml&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Add telemetry data about metrics in, metrics scraping, mesh error and trace in metrics to zipkin receiver.&lt;/li&gt;
+&lt;li&gt;Fix tags store of log and trace on h2/mysql/pg storage.&lt;/li&gt;
+&lt;li&gt;Merge indices by Metrics Function and Meter Function in Elasticsearch Storage.&lt;/li&gt;
+&lt;li&gt;Fix receiver don&amp;rsquo;t need to get itself when healthCheck&lt;/li&gt;
+&lt;li&gt;Remove group concept from AvgHistogramFunction. Heatmap(function result) doesn&amp;rsquo;t support labels.&lt;/li&gt;
+&lt;li&gt;Support metrics grouped by scope labelValue in MAL, no need global same labelValue as before.&lt;/li&gt;
+&lt;li&gt;Add functions in MAL to filter metrics according to the metric value.&lt;/li&gt;
+&lt;li&gt;Optimize the self monitoring grafana dashboard.&lt;/li&gt;
+&lt;li&gt;Enhance the export service.&lt;/li&gt;
+&lt;li&gt;Add function &lt;code&gt;retagByK8sMeta&lt;/code&gt; and opt type &lt;code&gt;K8sRetagType.Pod2Service&lt;/code&gt; in MAL for k8s to relate pods and services.&lt;/li&gt;
+&lt;li&gt;Using &amp;ldquo;service.istio.io/canonical-name&amp;rdquo; to replace &amp;ldquo;app&amp;rdquo; label to resolve Envoy ALS service name.&lt;/li&gt;
+&lt;li&gt;Support k8s monitoring.&lt;/li&gt;
+&lt;li&gt;Make the flushing metrics operation concurrent.&lt;/li&gt;
+&lt;li&gt;Fix ALS K8SServiceRegistry didn&amp;rsquo;t remove the correct entry.&lt;/li&gt;
+&lt;li&gt;Using &amp;ldquo;service.istio.io/canonical-name&amp;rdquo; to replace &amp;ldquo;app&amp;rdquo; label to resolve Envoy ALS service name.&lt;/li&gt;
+&lt;li&gt;Append the root slash(/) to getIndex and getTemplate requests in ES(6 and 7) client.&lt;/li&gt;
+&lt;li&gt;Fix &lt;code&gt;disable&lt;/code&gt; statement not working. This bug exists since 8.0.0.&lt;/li&gt;
+&lt;li&gt;Remove the useless metric in &lt;code&gt;vm.yaml&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ui&#34;&gt;UI&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Update selector scroller to show in all pages.&lt;/li&gt;
+&lt;li&gt;Implement searching logs with date.&lt;/li&gt;
+&lt;li&gt;Add nodejs 14 compiling.&lt;/li&gt;
+&lt;li&gt;Fix trace id by clear search conditions.&lt;/li&gt;
+&lt;li&gt;Search endpoints with keywords.&lt;/li&gt;
+&lt;li&gt;Fix pageSize on logs page.&lt;/li&gt;
+&lt;li&gt;Update echarts version to 5.0.2.&lt;/li&gt;
+&lt;li&gt;Fix instance dependency on the topology page.&lt;/li&gt;
+&lt;li&gt;Fix resolved url for vue-property-decorator.&lt;/li&gt;
+&lt;li&gt;Show instance attributes.&lt;/li&gt;
+&lt;li&gt;Copywriting grammar fix.&lt;/li&gt;
+&lt;li&gt;Fix log pages tags column not updated.&lt;/li&gt;
+&lt;li&gt;Fix the problem that the footer and topology group is shaded when the topology radiation is displayed.&lt;/li&gt;
+&lt;li&gt;When the topology radiation chart is displayed, the corresponding button should be highlighted.&lt;/li&gt;
+&lt;li&gt;Refactor the route mapping, Dynamically import routing components, Improve first page loading performance.&lt;/li&gt;
+&lt;li&gt;Support topology of two mutually calling services.&lt;/li&gt;
+&lt;li&gt;Implement a type of table chart in the dashboard.&lt;/li&gt;
+&lt;li&gt;Support event in the dashboard.&lt;/li&gt;
+&lt;li&gt;Show instance name in the trace view.&lt;/li&gt;
+&lt;li&gt;Fix groups of services in the topography.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;documentation&#34;&gt;Documentation&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Polish documentation due to we have covered all tracing, logging, and metrics fields.&lt;/li&gt;
+&lt;li&gt;Adjust documentation about Zipkin receiver.&lt;/li&gt;
+&lt;li&gt;Add backend-infrastructure-monitoring doc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All issues and pull requests are &lt;a href=&#34;https://github.com/apache/skywalking/milestone/76?closed=1&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking Cloud on Kubernetes 0.3.0</title>
+      <link>/events/release-apache-skywalking-cloud-on-kubernetes-0-3-0/</link>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-cloud-on-kubernetes-0-3-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking Cloud on Kubernetes 0.3.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Support special characters in the metric selector of HPA metric adapter.&lt;/li&gt;
+&lt;li&gt;Add the namespace to HPA metric name.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking for NodeJS 0.2.0</title>
+      <link>/events/release-apache-skywalking-nodejs-0-2-0/</link>
+      <pubDate>Wed, 31 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-nodejs-0-2-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking NodeJS 0.2.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add AMQPLib plugin (RabbitMQ). (#34)&lt;/li&gt;
+&lt;li&gt;Add MongoDB plugin. (#33)&lt;/li&gt;
+&lt;li&gt;Add PgPlugin - PosgreSQL. (#31)&lt;/li&gt;
+&lt;li&gt;Add MySQLPlugin to plugins. (#30)&lt;/li&gt;
+&lt;li&gt;Add http protocol of host to http plugins. (#28)&lt;/li&gt;
+&lt;li&gt;Add tag http.method to plugins. (#26)&lt;/li&gt;
+&lt;li&gt;Bugfix: child spans created on immediate cb from op. (#41)&lt;/li&gt;
+&lt;li&gt;Bugfix: async and preparing child entry/exit. (#36)&lt;/li&gt;
+&lt;li&gt;Bugfix: tsc error of dist lib. (#24)&lt;/li&gt;
+&lt;li&gt;Bugfix: AxiosPlugin async() / resync(). (#21)&lt;/li&gt;
+&lt;li&gt;Bugfix: some requests of express / axios are not close correctly. (#20)&lt;/li&gt;
+&lt;li&gt;Express plugin uses http wrap explicitly if http plugin disabled. (#42)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking Python 0.6.0</title>
+      <link>/events/release-apache-skywalking-python-0-6-0/</link>
+      <pubDate>Wed, 31 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-python-0-6-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking Python 0.6.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixes:
+&lt;ul&gt;
+&lt;li&gt;Segment data loss when gRPC timing out. (#116)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sw_tornado&lt;/code&gt; plugin async handler status set correctly. (#115)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sw_pymysql&lt;/code&gt; error when connection haven&amp;rsquo;t db. (#113)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking LUA Nginx 0.4.1</title>
+      <link>/events/release-apache-skywalking-lua-nginx-0.4.1/</link>
+      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-lua-nginx-0.4.1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking LUA Nginx 0.4.1 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: missing constants in the rockspsec.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking LUA Nginx 0.4.0</title>
+      <link>/events/release-apache-skywalking-lua-nginx-0.4.0/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-lua-nginx-0.4.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking LUA Nginx 0.4.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add a global field &amp;lsquo;includeHostInEntrySpan&amp;rsquo;, type &amp;lsquo;boolean&amp;rsquo;, mark the entrySpan include host/domain.&lt;/li&gt;
+&lt;li&gt;Add destroyBackendTimer to stop reporting metrics.&lt;/li&gt;
+&lt;li&gt;Doc: set random seed in init_worker phase.&lt;/li&gt;
+&lt;li&gt;Local cache some variables and reuse them in Lua module.&lt;/li&gt;
+&lt;li&gt;Enable local cache and use tablepool to reuse the temporary table.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking Client JS 0.4.0</title>
+      <link>/events/release-apache-skywalking-client-js-0-4-0/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-client-js-0-4-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking Client JS 0.4.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Update stack and message in logs.&lt;/li&gt;
+&lt;li&gt;Fix wrong URL when using relative path in xhr.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking Satellite 0.1.0</title>
+      <link>/events/release-apache-skwaylking-satellite-0-1-0/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skwaylking-satellite-0-1-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking Satellite 0.1.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;h4 id=&#34;features&#34;&gt;Features&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Build the Satellite core structure.&lt;/li&gt;
+&lt;li&gt;Add prometheus self telemetry.&lt;/li&gt;
+&lt;li&gt;Add kafka client plugin.&lt;/li&gt;
+&lt;li&gt;Add none-fallbacker plugin.&lt;/li&gt;
+&lt;li&gt;Add timer-fallbacker plugin.&lt;/li&gt;
+&lt;li&gt;Add nativelog-kafka-forwarder plugin.&lt;/li&gt;
+&lt;li&gt;Add memory-queue plugin.&lt;/li&gt;
+&lt;li&gt;Add mmap-queue plugin.&lt;/li&gt;
+&lt;li&gt;Add grpc-nativelog-receiver plugin.&lt;/li&gt;
+&lt;li&gt;Add http-nativelog-receiver plugin.&lt;/li&gt;
+&lt;li&gt;Add grpc-server plugin.&lt;/li&gt;
+&lt;li&gt;Add http-server plugin.&lt;/li&gt;
+&lt;li&gt;Add prometheus-server plugin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;bug-fixes&#34;&gt;Bug Fixes&lt;/h4&gt;
+&lt;h4 id=&#34;issues-and-pr&#34;&gt;Issues and PR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;All issues  are &lt;a href=&#34;https://github.com/apache/skywalking/milestone/64?closed=1&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;All and pull requests are &lt;a href=&#34;https://github.com/apache/skywalking-satellite/pulls?q=is%3Aopen+is%3Apr+milestone%3A0.1.0&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Welcome Juntao Zhang (张峻滔) to join the PMC</title>
+      <link>/events/welcome-juntao-zhang-to-join-the-pmc/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/welcome-juntao-zhang-to-join-the-pmc/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://github.com/Jtrust&#34;&gt;Juntao Zhang&lt;/a&gt; leads and finished the re-build process of the whole skywalking website. Immigrate to the whole automatic website update, super friendly to users.
+Within the re-building process, he took several months contributions to bring the document of our main repository to host on the SkyWalking website, which is also available for host documentations of other repositories.
+We were waiting for this for years.&lt;/p&gt;
+&lt;p&gt;Just in the &lt;a href=&#34;https://github.com/apache/skywalking-website&#34;&gt;website repository&lt;/a&gt;, he has 3800 LOC contributions through 26 commits.&lt;/p&gt;
+&lt;p&gt;We are honored to have him on the PMC team.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking CLI 0.6.0</title>
+      <link>/events/release-apache-skywalking-cli-0-6-0/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-cli-0-6-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking CLI 0.6.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Features&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Support authorization when connecting to the OAP&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;install&lt;/code&gt; command and &lt;code&gt;manifest&lt;/code&gt; sub-command&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;event&lt;/code&gt; command and &lt;code&gt;report&lt;/code&gt; sub-command&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bug Fixes&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix the bug that can&amp;rsquo;t query JVM instance metrics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Chores&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Set up a simple test with GitHub Actions&lt;/li&gt;
+&lt;li&gt;Reorganize the project layout&lt;/li&gt;
+&lt;li&gt;Update year in NOTICE&lt;/li&gt;
+&lt;li&gt;Add missing license of swck&lt;/li&gt;
+&lt;li&gt;Use license-eye to check license header&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking APM 8.4.0</title>
+      <link>/events/release-apache-skywalking-apm-8-4-0/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-apm-8-4-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking 8.4.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.
+Changes by Version&lt;/p&gt;
+&lt;h4 id=&#34;project&#34;&gt;Project&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Incompatible with previous releases when use H2/MySQL/TiDB storage options, due to support multiple alarm rules triggered for one entity.&lt;/li&gt;
+&lt;li&gt;Chore: adapt &lt;code&gt;create_source_release.sh&lt;/code&gt; to make it runnable on Linux.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;package&lt;/code&gt; to &lt;code&gt;.proto&lt;/code&gt; files, prevent polluting top-level namespace in some languages; The OAP server supports previous agent releases, whereas the previous OAP server (&amp;lt;=8.3.0) won&amp;rsquo;t recognize newer agents since this version (&amp;gt;= 8.4.0).&lt;/li&gt;
+&lt;li&gt;Add ElasticSearch 7.10 to test matrix and verify it works.&lt;/li&gt;
+&lt;li&gt;Replace Apache RAT with skywalking-eyes to check license headers.&lt;/li&gt;
+&lt;li&gt;Set up test of Envoy ALS / MetricsService under Istio 1.8.2 to verify Envoy V3 protocol&lt;/li&gt;
+&lt;li&gt;Test: fix flaky E2E test of Kafka.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;java-agent&#34;&gt;Java Agent&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The operation name of quartz-scheduler plugin, has been changed as the &lt;code&gt;quartz-scheduler/${className}&lt;/code&gt; format.&lt;/li&gt;
+&lt;li&gt;Fix jdk-http and okhttp-3.x plugin did not overwrite the old trace header.&lt;/li&gt;
+&lt;li&gt;Add interceptors of method(analyze, searchScroll, clearScroll, searchTemplate and deleteByQuery) for elasticsearch-6.x-plugin.&lt;/li&gt;
+&lt;li&gt;Fix the unexpected RunningContext recreation in the Tomcat plugin.&lt;/li&gt;
+&lt;li&gt;Fix the potential NPE when trace_sql_parameters is enabled.&lt;/li&gt;
+&lt;li&gt;Update &lt;code&gt;byte-buddy&lt;/code&gt; to 1.10.19.&lt;/li&gt;
+&lt;li&gt;Fix thrift plugin trace link broken when intermediate service does not mount agent&lt;/li&gt;
+&lt;li&gt;Fix thrift plugin collects wrong args when the method without parameter.&lt;/li&gt;
+&lt;li&gt;Fix DataCarrier&amp;rsquo;s &lt;code&gt;org.apache.skywalking.apm.commons.datacarrier.buffer.Buffer&lt;/code&gt; implementation isn&amp;rsquo;t activated in &lt;code&gt;IF_POSSIBLE&lt;/code&gt; mode.&lt;/li&gt;
+&lt;li&gt;Fix ArrayBlockingQueueBuffer&amp;rsquo;s useless &lt;code&gt;IF_POSSIBLE&lt;/code&gt; mode list&lt;/li&gt;
+&lt;li&gt;Support building gRPC TLS channel but CA file is not required.&lt;/li&gt;
+&lt;li&gt;Add witness method mechanism in the agent plugin core.&lt;/li&gt;
+&lt;li&gt;Add Dolphinscheduler plugin definition.&lt;/li&gt;
+&lt;li&gt;Make sampling still works when the trace ignores plug-in activation.&lt;/li&gt;
+&lt;li&gt;Fix mssql-plugin occur ClassCastException when call the method of return generate key.&lt;/li&gt;
+&lt;li&gt;The operation name of dubbo and dubbo-2.7.x-plugin, has been changed as the &lt;code&gt;groupValue/className.methodName&lt;/code&gt; format&lt;/li&gt;
+&lt;li&gt;Fix bug that rocketmq-plugin set the wrong tag.&lt;/li&gt;
+&lt;li&gt;Fix duplicated &lt;code&gt;EnhancedInstance&lt;/code&gt; interface added.&lt;/li&gt;
+&lt;li&gt;Fix thread leaks caused by the elasticsearch-6.x-plugin plugin.&lt;/li&gt;
+&lt;li&gt;Support reading segmentId and spanId with toolkit.&lt;/li&gt;
+&lt;li&gt;Fix RestTemplate plugin recording url tag with wrong port&lt;/li&gt;
+&lt;li&gt;Support collecting logs and forwarding through gRPC.&lt;/li&gt;
+&lt;li&gt;Support config &lt;code&gt;agent.sample_n_per_3_secs&lt;/code&gt; can be changed in the runtime.&lt;/li&gt;
+&lt;li&gt;Support config &lt;code&gt;agent.ignore_suffix&lt;/code&gt; can be changed in the runtime.&lt;/li&gt;
+&lt;li&gt;Support DNS periodic resolving mechanism to update backend service.&lt;/li&gt;
+&lt;li&gt;Support config &lt;code&gt;agent.trace.ignore_path&lt;/code&gt; can be changed in the runtime.&lt;/li&gt;
+&lt;li&gt;Added support for transmitting logback 1.x and log4j 2.x formatted &amp;amp; un-formatted messages via gPRC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;oap-backend&#34;&gt;OAP-Backend&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Make meter receiver support MAL.&lt;/li&gt;
+&lt;li&gt;Support influxDB connection response format option. Fix some error when use JSON as influxDB response format.&lt;/li&gt;
+&lt;li&gt;Support Kafka MirrorMaker 2.0 to replicate topics between Kafka clusters.&lt;/li&gt;
+&lt;li&gt;Add the rule name field to alarm record storage entity as a part of ID, to support multiple alarm rules triggered for one entity. The scope id has been removed from the ID.&lt;/li&gt;
+&lt;li&gt;Fix MAL concurrent execution issues.&lt;/li&gt;
+&lt;li&gt;Fix group name can&amp;rsquo;t be queried in the GraphQL.&lt;/li&gt;
+&lt;li&gt;Fix potential gRPC connection leak(not closed) for the channels among OAP instances.&lt;/li&gt;
+&lt;li&gt;Filter OAP instances(unassigned in booting stage) of the empty IP in KubernetesCoordinator.&lt;/li&gt;
+&lt;li&gt;Add component ID for Python aiohttp plugin requester and server.&lt;/li&gt;
+&lt;li&gt;Fix H2 in-memory database table missing issues&lt;/li&gt;
+&lt;li&gt;Add component ID for Python pyramid plugin server.&lt;/li&gt;
+&lt;li&gt;Add component ID for NodeJS Axios plugin.&lt;/li&gt;
+&lt;li&gt;Fix searchService method error in storage-influxdb-plugin.&lt;/li&gt;
+&lt;li&gt;Add JavaScript component ID.&lt;/li&gt;
+&lt;li&gt;Fix CVE of UninstrumentedGateways in Dynamic Configuration activation.&lt;/li&gt;
+&lt;li&gt;Improve query performance in storage-influxdb-plugin.&lt;/li&gt;
+&lt;li&gt;Fix the uuid field in GRPCConfigWatcherRegister is not updated.&lt;/li&gt;
+&lt;li&gt;Support Envoy {AccessLog,Metrics}Service API V3.&lt;/li&gt;
+&lt;li&gt;Adopt the &lt;a href=&#34;docs/en/concepts-and-designs/mal.md&#34;&gt;MAL&lt;/a&gt; in Envoy metrics service analyzer.&lt;/li&gt;
+&lt;li&gt;Fix the priority setting doesn&amp;rsquo;t work of the ALS analyzers.&lt;/li&gt;
+&lt;li&gt;Fix bug that &lt;code&gt;endpoint-name-grouping.yml&lt;/code&gt; is not customizable in Dockerized case.&lt;/li&gt;
+&lt;li&gt;Fix bug that istio version metric type on UI template mismatches the otel rule.&lt;/li&gt;
+&lt;li&gt;Improve ReadWriteSafeCache concurrency read-write performance&lt;/li&gt;
+&lt;li&gt;Fix bug that if use JSON as InfluxDB.ResponseFormat then NumberFormatException maybe occur.&lt;/li&gt;
+&lt;li&gt;Fix &lt;code&gt;timeBucket&lt;/code&gt; not taking effect in EqualsAndHashCode annotation of some relationship metrics.&lt;/li&gt;
+&lt;li&gt;Fix &lt;code&gt;SharingServerConfig&lt;/code&gt;&amp;rsquo;s propertie is not correct in the &lt;code&gt;application.yml&lt;/code&gt;, contextPath -&amp;gt; restConnextPath.&lt;/li&gt;
+&lt;li&gt;Istio control plane: remove redundant metrics and polish panel layout.&lt;/li&gt;
+&lt;li&gt;Fix bug endpoint name grouping not work due to setting service name and endpoint name out of order.&lt;/li&gt;
+&lt;li&gt;Fix receiver analysis error count metrics.&lt;/li&gt;
+&lt;li&gt;Log collecting and query implementation.&lt;/li&gt;
+&lt;li&gt;Support Alarm to feishu.&lt;/li&gt;
+&lt;li&gt;Add the implementation of ConfigurationDiscovery on the OAP side.&lt;/li&gt;
+&lt;li&gt;Fix bug in &lt;code&gt;parseInternalErrorCode&lt;/code&gt; where some error codes are never reached.&lt;/li&gt;
+&lt;li&gt;OAL supports multiple values when as numeric.&lt;/li&gt;
+&lt;li&gt;Add node information from the Openensus proto to the labels of the samples, to support the identification of the source of the Metric data.&lt;/li&gt;
+&lt;li&gt;Fix bug that the same sample name in one MAL expression caused &lt;code&gt;IllegalArgumentException&lt;/code&gt; in &lt;code&gt;Analyzer.analyse&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Add the text analyzer for querying log in the es storage.&lt;/li&gt;
+&lt;li&gt;Chore:  Remove duplicate codes in Envoy ALS handler.&lt;/li&gt;
+&lt;li&gt;Remove the strict rule of OAL disable statement parameter.&lt;/li&gt;
+&lt;li&gt;Fix a legal metric query adoption bug. Don&amp;rsquo;t support global level metric query.&lt;/li&gt;
+&lt;li&gt;Add VM MAL and ui-template configration, support Prometheus node-exporter VM metrics that pushed from OpenTelemetry-collector.&lt;/li&gt;
+&lt;li&gt;Remove unused log query parameters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ui&#34;&gt;UI&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix un-removed tags in trace query.&lt;/li&gt;
+&lt;li&gt;Fix unexpected metrics name on single value component.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t allow negative value as the refresh period.&lt;/li&gt;
+&lt;li&gt;Fix style issue in trace table view.&lt;/li&gt;
+&lt;li&gt;Separation Log and Dashboard selector data to avoid conflicts.&lt;/li&gt;
+&lt;li&gt;Fix trace instance selector bug.&lt;/li&gt;
+&lt;li&gt;Fix Unnecessary sidebar in tooltips for charts.&lt;/li&gt;
+&lt;li&gt;Refactor dashboard query in a common script.&lt;/li&gt;
+&lt;li&gt;Implement refreshing data for topology by updating date.&lt;/li&gt;
+&lt;li&gt;Implement group selector in the topology.&lt;/li&gt;
+&lt;li&gt;Fix all as default parameter for services selector.&lt;/li&gt;
+&lt;li&gt;Add icon for Python aiohttp plugin.&lt;/li&gt;
+&lt;li&gt;Add icon for Python pyramid plugin.&lt;/li&gt;
+&lt;li&gt;Fix topology render all services nodes when groups changed.&lt;/li&gt;
+&lt;li&gt;Fix rk-footer utc input&amp;rsquo;s width.&lt;/li&gt;
+&lt;li&gt;Update rk-icon and rewrite rk-header svg tags with rk-icon.&lt;/li&gt;
+&lt;li&gt;Add icon for http type.&lt;/li&gt;
+&lt;li&gt;Fix rk-footer utc without local storage.&lt;/li&gt;
+&lt;li&gt;Sort group names in the topology.&lt;/li&gt;
+&lt;li&gt;Add logo for Dolphinscheduler.&lt;/li&gt;
+&lt;li&gt;Fix dashboard wrong instance.&lt;/li&gt;
+&lt;li&gt;Add a legend for the topology.&lt;/li&gt;
+&lt;li&gt;Update the condition of unhealthy cube.&lt;/li&gt;
+&lt;li&gt;Fix: use icons to replace buttons for task list in profile.&lt;/li&gt;
+&lt;li&gt;Fix: support &lt;code&gt;=&lt;/code&gt; in the tag value in the trace query page.&lt;/li&gt;
+&lt;li&gt;Add envoy proxy component logo.&lt;/li&gt;
+&lt;li&gt;Chore: set up license-eye to check license headers and add missing license headers.&lt;/li&gt;
+&lt;li&gt;Fix prop for instances-survey and endpoints-survey.&lt;/li&gt;
+&lt;li&gt;Fix envoy icon in topology.&lt;/li&gt;
+&lt;li&gt;Implement the service logs on UI.&lt;/li&gt;
+&lt;li&gt;Change the flask icon to light version for a better view of topology dark theme.&lt;/li&gt;
+&lt;li&gt;Implement viewing logs on trace page.&lt;/li&gt;
+&lt;li&gt;Fix update props of date component.&lt;/li&gt;
+&lt;li&gt;Fix query conditions for logs.&lt;/li&gt;
+&lt;li&gt;Fix style of selectors to word wrap.&lt;/li&gt;
+&lt;li&gt;Fix logs time.&lt;/li&gt;
+&lt;li&gt;Fix search ui for logs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;documentation&#34;&gt;Documentation&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Update the documents of backend fetcher and self observability about the latest configurations.&lt;/li&gt;
+&lt;li&gt;Add documents about the group name of service.&lt;/li&gt;
+&lt;li&gt;Update docs about the latest UI.&lt;/li&gt;
+&lt;li&gt;Update the document of backend trace sampling with the latest configuration.&lt;/li&gt;
+&lt;li&gt;Update kafka plugin support version to 2.6.1.&lt;/li&gt;
+&lt;li&gt;Add FAQ about &lt;code&gt;Fix compiling on Mac M1 chip&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All issues and pull requests are &lt;a href=&#34;https://github.com/apache/skywalking/milestone/68?closed=1&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking Cloud on Kubernetes 0.2.0</title>
+      <link>/events/release-apache-skywalking-cloud-on-kubernetes-0-2-0/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-cloud-on-kubernetes-0-2-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking Cloud on Kubernetes 0.2.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduce custom metrics adapter to SkyWalking OAP cluster for Kubernetes HPA autoscaling.&lt;/li&gt;
+&lt;li&gt;Add RBAC files and service account to support Kubernetes coordination.&lt;/li&gt;
+&lt;li&gt;Add default and validation webhooks to operator controllers.&lt;/li&gt;
+&lt;li&gt;Add UI CRD to deploy skywalking UI server.&lt;/li&gt;
+&lt;li&gt;Add Fetcher CRD to fetch metrics from other telemetry system, for example, Prometheus.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking Client JS 0.3.0</title>
+      <link>/events/release-apache-skywalking-client-js-0-3-0/</link>
+      <pubDate>Thu, 14 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-client-js-0-3-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking Client JS 0.3.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Support tracing starting at the browser.&lt;/li&gt;
+&lt;li&gt;Add traceSDKInternal SDK for tracing SDK internal RPC.&lt;/li&gt;
+&lt;li&gt;Add detailMode SDK for tracing http method and url as tags in spans.&lt;/li&gt;
+&lt;li&gt;Fix conditions of http status.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking Eyes 0.1.0</title>
+      <link>/events/release-apache-skywalking-eyes-0-1-0/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-eyes-0-1-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking Eyes 0.1.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;License Header
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;check&lt;/code&gt; and &lt;code&gt;fix&lt;/code&gt; command.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;check&lt;/code&gt; results can be reported to pull request as comments.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fix&lt;/code&gt; suggestions can be filed on pull request as edit suggestions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking for NodeJS 0.1.0</title>
+      <link>/events/release-apache-skywalking-nodejs-0-1-0/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-nodejs-0-1-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking NodeJS 0.1.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Initialize project core codes.&lt;/li&gt;
+&lt;li&gt;Built-in http/https plugin.&lt;/li&gt;
+&lt;li&gt;Express plugin.&lt;/li&gt;
+&lt;li&gt;Axios plugin.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking Python 0.5.0</title>
+      <link>/events/release-apache-skywalking-python-0-5-0/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skywalking-python-0-5-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking Python 0.5.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;New plugins&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pyramid Plugin (#102)&lt;/li&gt;
+&lt;li&gt;AioHttp Plugin (#101)&lt;/li&gt;
+&lt;li&gt;Sanic Plugin (#91)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;API and enhancements&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@trace&lt;/code&gt; decorator supports &lt;code&gt;async&lt;/code&gt; functions&lt;/li&gt;
+&lt;li&gt;Supports async task context&lt;/li&gt;
+&lt;li&gt;Optimized path trace ignore&lt;/li&gt;
+&lt;li&gt;Moved exception check to &lt;code&gt;Span.__exit__&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Moved Method &amp;amp; Url tags before requests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fixes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;BaseExceptions&lt;/code&gt; not recorded as errors&lt;/li&gt;
+&lt;li&gt;Allow pending data to send before exit&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sw_flask&lt;/code&gt; general exceptions handled&lt;/li&gt;
+&lt;li&gt;Make &lt;code&gt;skywalking&lt;/code&gt; logging Non-global&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Chores and tests&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make tests really run on specified Python version&lt;/li&gt;
+&lt;li&gt;Deprecate 3.5 as it&amp;rsquo;s EOL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Welcome Ke Zhang (张可) as new committer</title>
+      <link>/events/welcome-ke-zhang-as-new-committer/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/events/welcome-ke-zhang-as-new-committer/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Ke Zhang (a.k.a. &lt;a href=&#34;https://github.com/HumbertZhang&#34;&gt;HumbertZhang&lt;/a&gt;) mainly focuses on the SkyWalking Python agent, he had participated in the &amp;ldquo;Open Source Promotion Plan - Summer 2020&amp;rdquo; and completed the project smoothly, and won the award &amp;ldquo;Most Potential Students&amp;rdquo; that shows his great willingness to continuously contribute to our community.&lt;/p&gt;
+&lt;p&gt;Up to date, he has submitted 8 PRs in the &lt;a href=&#34;https://github.com/apache/skywalking-python/commits?author=Humbertzhang&#34;&gt;Python agent repository&lt;/a&gt;, 7 PRs in the &lt;a href=&#34;https://github.com/apache/skywalking/commits?author=Humbertzhang&#34;&gt;main repo&lt;/a&gt;, all in total include ~2000 LOC.&lt;/p&gt;
+&lt;p&gt;At Dec. 13th, 2020, the project management committee (PMC) passed the proposal of promoting him as a new committer. He has accepted the invitation at the same day.&lt;/p&gt;
+&lt;p&gt;Welcome to join the committer team, Ke Zhang!&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Welcome Gui Cao as new committer</title>
+      <link>/events/welcome-gui-cao-as-new-committer/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/events/welcome-gui-cao-as-new-committer/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Gui Cao began the code contributions since May 3, 2020.
+In the past 6 months, his 23 pull requests(GitHub, zifeihan[1]) have been accepted, which includes 5k+ lines of codes.&lt;/p&gt;
+&lt;p&gt;Meanwhile, he took part in the tech discussion, and show the interests to contribute more to the project.&lt;/p&gt;
+&lt;p&gt;At Dec. 4th, 2020, the project management committee(PMC) passed the proposal of promoting him as a new committer.
+He has accepted the invitation at the same day.&lt;/p&gt;
+&lt;p&gt;Welcome Gui Cao join the committer team.&lt;/p&gt;
+&lt;p&gt;[1] &lt;a href=&#34;https://github.com/apache/skywalking/commits?author=zifeihan&#34;&gt;https://github.com/apache/skywalking/commits?author=zifeihan&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Events: Release Apache SkyWalking APM 8.3.0</title>
+      <link>/events/release-apache-skwaylking-apm-8-3-0/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/events/release-apache-skwaylking-apm-8-3-0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;SkyWalking 8.3.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+&lt;h4 id=&#34;project&#34;&gt;Project&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: ElasticSearch version 7.0.0 and 7.9.3 as storage are E2E tested.&lt;/li&gt;
+&lt;li&gt;Test: Bump up testcontainers version to work around the Docker bug on MacOS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;java-agent&#34;&gt;Java Agent&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Support propagate the sending timestamp in MQ plugins to calculate the transfer latency in the async MQ scenarios.&lt;/li&gt;
+&lt;li&gt;Support auto-tag with the fixed values propagated in the correlation context.&lt;/li&gt;
+&lt;li&gt;Make HttpClient 3.x, 4.x, and HttpAsyncClient 3.x plugins to support collecting HTTP parameters.&lt;/li&gt;
+&lt;li&gt;Make the Feign plugin to support Java 14&lt;/li&gt;
+&lt;li&gt;Make the okhttp3 plugin to support Java 14&lt;/li&gt;
+&lt;li&gt;Polish tracing context related codes.&lt;/li&gt;
+&lt;li&gt;Add the plugin for async-http-client 2.x&lt;/li&gt;
+&lt;li&gt;Fix NPE in the nutz plugin.&lt;/li&gt;
+&lt;li&gt;Provide Apache Commons DBCP 2.x plugin.&lt;/li&gt;
+&lt;li&gt;Add the plugin for mssql-jtds 1.x.&lt;/li&gt;
+&lt;li&gt;Add the plugin for mssql-jdbc 6.x -&amp;gt; 9.x.&lt;/li&gt;
+&lt;li&gt;Fix the default ignore mechanism isn&amp;rsquo;t accurate enough bug.&lt;/li&gt;
+&lt;li&gt;Add the plugin for spring-kafka 1.3.x.&lt;/li&gt;
+&lt;li&gt;Add the plugin for Apache CXF 3.x.&lt;/li&gt;
+&lt;li&gt;Fix okhttp-3.x and async-http-client-2.x did not overwrite the old trace header.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;oap-backend&#34;&gt;OAP-Backend&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Add the &lt;code&gt;@SuperDataset&lt;/code&gt; annotation for BrowserErrorLog.&lt;/li&gt;
+&lt;li&gt;Add the thread pool to the Kafka fetcher to increase the performance.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;contain&lt;/code&gt; and &lt;code&gt;not contain&lt;/code&gt; OPS in OAL.&lt;/li&gt;
+&lt;li&gt;Add Envoy ALS analyzer based on metadata exchange.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;listMetrics&lt;/code&gt; GraphQL query.&lt;/li&gt;
+&lt;li&gt;Add group name into services of so11y and istio relevant metrics&lt;/li&gt;
+&lt;li&gt;Support keeping collecting the slowly segments in the sampling mechanism.&lt;/li&gt;
+&lt;li&gt;Support choose files to active the meter analyzer.&lt;/li&gt;
+&lt;li&gt;Support nested class definition in the Service, ServiceInstance, Endpoint, ServiceRelation, and ServiceInstanceRelation sources.&lt;/li&gt;
+&lt;li&gt;Support &lt;code&gt;sideCar.internalErrorCode&lt;/code&gt; in the Service, ServiceInstance, Endpoint, ServiceRelation, and ServiceInstanceRelation sources.&lt;/li&gt;
+&lt;li&gt;Improve Kubernetes service registry for ALS analysis.&lt;/li&gt;
+&lt;li&gt;Add health checker for cluster management&lt;/li&gt;
+&lt;li&gt;Support the service auto grouping.&lt;/li&gt;
+&lt;li&gt;Support query service list by the group name.&lt;/li&gt;
+&lt;li&gt;Improve the queryable tags generation. Remove the duplicated tags to reduce the storage payload.&lt;/li&gt;
+&lt;li&gt;Fix the threads of the Kafka fetcher exit if some unexpected exceptions happen.&lt;/li&gt;
+&lt;li&gt;Fix the excessive timeout period set by the kubernetes-client.&lt;/li&gt;
+&lt;li&gt;Fix deadlock problem when using elasticsearch-client-7.0.0.&lt;/li&gt;
+&lt;li&gt;Fix storage-jdbc isExists not set dbname.&lt;/li&gt;
+&lt;li&gt;Fix &lt;code&gt;searchService&lt;/code&gt; bug in the InfluxDB storage implementation.&lt;/li&gt;
+&lt;li&gt;Fix CVE in the alarm module, when activating the dynamic configuration feature.&lt;/li&gt;
+&lt;li&gt;Fix CVE in the endpoint grouping, when activating the dynamic configuration feature.&lt;/li&gt;
+&lt;li&gt;Fix CVE in the uninstrumented gateways configs, when activating the dynamic configuration feature.&lt;/li&gt;
+&lt;li&gt;Fix CVE in the Apdex threshold configs, when activating the dynamic configuration feature.&lt;/li&gt;
+&lt;li&gt;Make the codes and doc consistent in sharding server and core server.&lt;/li&gt;
+&lt;li&gt;Fix that chunked string is incorrect while the tag contains colon.&lt;/li&gt;
+&lt;li&gt;Fix the incorrect dynamic configuration key bug of &lt;code&gt;endpoint-name-grouping&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Remove unused min date timebucket in jdbc deletehistory logical&lt;/li&gt;
+&lt;li&gt;Fix &amp;ldquo;transaction too large error&amp;rdquo; when use TiDB as storage.&lt;/li&gt;
+&lt;li&gt;Fix &amp;ldquo;index not found&amp;rdquo; in trace query when use ES7 storage.&lt;/li&gt;
+&lt;li&gt;Add otel rules to ui template to observe Istio control plane.&lt;/li&gt;
+&lt;li&gt;Remove istio mixer&lt;/li&gt;
+&lt;li&gt;Support close influxdb batch write model.&lt;/li&gt;
+&lt;li&gt;Check SAN in the ALS (m)TLS process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ui&#34;&gt;UI&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix incorrect label in radial chart in topology.&lt;/li&gt;
+&lt;li&gt;Replace node-sass with dart-sass.&lt;/li&gt;
+&lt;li&gt;Replace serviceFilter with serviceGroup&lt;/li&gt;
+&lt;li&gt;Removed &amp;ldquo;Les Miserables&amp;rdquo; from radial chart in topology.&lt;/li&gt;
+&lt;li&gt;Add the Promise dropdown option&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;documentation&#34;&gt;Documentation&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Add VNode FAQ doc.&lt;/li&gt;
+&lt;li&gt;Add logic endpoint section in the agent setup doc.&lt;/li&gt;
+&lt;li&gt;Adjust configuration names and system environment names of the sharing server module&lt;/li&gt;
+&lt;li&gt;Tweak Istio metrics collection doc.&lt;/li&gt;
+&lt;li&gt;Add otel receiver.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All issues and pull requests are &lt;a href=&#34;https://github.com/apache/skywalking/milestone/62?closed=1&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Events: Release Apache SkyWalking CLI 0.5.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-cli-0-5-0/</link>
+      <link>/events/release-apache-skywalking-cli-0-5-0/</link>
       <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-cli-0-5-0/</guid>
+      <guid>/events/release-apache-skywalking-cli-0-5-0/</guid>
       <description>
         
         
@@ -55,14 +1193,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking Python 0.4.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-python-0-4-0/</link>
+      <link>/events/release-apache-skywalking-python-0-4-0/</link>
       <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-python-0-4-0/</guid>
+      <guid>/events/release-apache-skywalking-python-0-4-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Python 0.4.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Python 0.4.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Feature: Support Kafka reporter protocol (#74)&lt;/li&gt;
 &lt;li&gt;BugFix: Move generated packages into skywalking namespace to avoid conflicts (#72)&lt;/li&gt;
@@ -75,14 +1213,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking Client JS 0.2.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-client-js-0.2.0/</link>
+      <link>/events/release-apache-skywalking-client-js-0-2-0/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-client-js-0.2.0/</guid>
+      <guid>/events/release-apache-skywalking-client-js-0-2-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Client JS 0.2.0 is released. Go to &lt;a href=&#34;https://github.com/apache/skywalking-website/blob/master/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Client JS 0.2.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Bug Fixes
 &lt;ul&gt;
@@ -97,14 +1235,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking Cloud on Kubernetes 0.1.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-cloud-on-kubernetes-0.1.0/</link>
+      <link>/events/release-apache-skywalking-cloud-on-kubernetes-0.1.0/</link>
       <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-cloud-on-kubernetes-0.1.0/</guid>
+      <guid>/events/release-apache-skywalking-cloud-on-kubernetes-0.1.0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Cloud on Kubernetes 0.1.0 is released. Go to &lt;a href=&#34;https://github.com/apache/skywalking-website/blob/master/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Cloud on Kubernetes 0.1.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Add OAPServer CRDs and controller.&lt;/li&gt;
 &lt;/ul&gt;
@@ -114,10 +1252,10 @@
     
     <item>
       <title>Events: Welcome Jiapeng Liu as new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-jiapeng-liu-as-new-committer/</link>
+      <link>/events/welcome-jiapeng-liu-as-new-committer/</link>
       <pubDate>Thu, 05 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/welcome-jiapeng-liu-as-new-committer/</guid>
+      <guid>/events/welcome-jiapeng-liu-as-new-committer/</guid>
       <description>
         
         
@@ -128,14 +1266,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking Kubernetes Helm Chart 4.0.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-kubernetes-helm-chart-4.0.0/</link>
+      <link>/events/release-apache-skywalking-kubernetes-helm-chart-4.0.0/</link>
       <pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-kubernetes-helm-chart-4.0.0/</guid>
+      <guid>/events/release-apache-skywalking-kubernetes-helm-chart-4.0.0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Kubernetes Helm Chart 4.0.0 is released. Go to &lt;a href=&#34;https://github.com/apache/skywalking-website/blob/master/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Kubernetes Helm Chart 4.0.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Allow overriding configurations files under /skywalking/config.&lt;/li&gt;
 &lt;li&gt;Unify the usages of different SkyWalking versions.&lt;/li&gt;
@@ -148,14 +1286,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking Client JS 0.1.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-client-js0.1.0/</link>
+      <link>/events/release-apache-skywalking-client-js-0-1-0/</link>
       <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-client-js0.1.0/</guid>
+      <guid>/events/release-apache-skywalking-client-js-0-1-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Client JS 0.1.0 is released. Go to &lt;a href=&#34;https://github.com/apache/skywalking-website/blob/master/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Client JS 0.1.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Support Browser Side Monitoring. Require SkyWalking APM 8.2+.&lt;/li&gt;
 &lt;/ul&gt;
@@ -165,14 +1303,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking APM 8.2.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-apm-8-2-0/</link>
+      <link>/events/release-apache-skywalking-apm-8-2-0/</link>
       <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-apm-8-2-0/</guid>
+      <guid>/events/release-apache-skywalking-apm-8-2-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking 8.2.0 is released. Go to &lt;a href=&#34;https://github.com/apache/skywalking-website/blob/master/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking 8.2.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;h4 id=&#34;project&#34;&gt;Project&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Support Browser monitoring.&lt;/li&gt;
@@ -287,14 +1425,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking LUA Nginx 0.3.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-lua-nginx-0.3.0/</link>
+      <link>/events/release-apache-skywalking-lua-nginx-0.3.0/</link>
       <pubDate>Sat, 24 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-lua-nginx-0.3.0/</guid>
+      <guid>/events/release-apache-skywalking-lua-nginx-0.3.0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking LUA Nginx 0.3.0 is released. Go to &lt;a href=&#34;https://github.com/apache/skywalking-website/blob/master/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking LUA Nginx 0.3.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Load the &lt;code&gt;base64&lt;/code&gt; module in &lt;code&gt;utils&lt;/code&gt;, different ENV use different library.&lt;/li&gt;
 &lt;li&gt;Add prefix &lt;code&gt;skywalking&lt;/code&gt;, avoid conflicts with other lua libraries.&lt;/li&gt;
@@ -309,14 +1447,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking CLI 0.4.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-cli-0-4-0/</link>
+      <link>/events/release-apache-skywalking-cli-0-4-0/</link>
       <pubDate>Sun, 11 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-cli-0-4-0/</guid>
+      <guid>/events/release-apache-skywalking-cli-0-4-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking CLI 0.4.0 is released. Go to &lt;a href=&#34;https://github.com/apache/skywalking-website/blob/master/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking CLI 0.4.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Features
 &lt;ul&gt;
@@ -337,29 +1475,32 @@
     </item>
     
     <item>
-      <title>Events: Welcome Huaxi Jiang as new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-huaxi-jiang-as-new-committer/</link>
+      <title>Events: Welcome Huaxi Jiang (江华禧) as new committer</title>
+      <link>/events/welcome-huaxi-jiang-as-new-committer/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/welcome-huaxi-jiang-as-new-committer/</guid>
+      <guid>/events/welcome-huaxi-jiang-as-new-committer/</guid>
       <description>
         
         
-        &lt;p&gt;Based on his continuous contributions, Huaxi Jiang (a.k.a &lt;a href=&#34;https://github.com/fgksgf&#34;&gt;fgksgf&lt;/a&gt;) has been voted as a new committer.&lt;/p&gt;
+        &lt;p&gt;Huaxi Jiang (江华禧) (a.k.a. &lt;a href=&#34;https://github.com/fgksgf&#34;&gt;fgksgf&lt;/a&gt;) mainly focuses on the SkyWalking CLI project, he had participated in the &amp;ldquo;Open Source Promotion Plan - Summer 2020&amp;rdquo; and completed the project smoothly, and won the award &amp;ldquo;Most Potential Students&amp;rdquo; that shows his great willingness to continuously contribute to our community.&lt;/p&gt;
+&lt;p&gt;Up to date, he has submitted 26 PRs in the &lt;a href=&#34;https://github.com/apache/skywalking-cli/commits?author=fgksgf&#34;&gt;CLI repository&lt;/a&gt;, 3 PRs in the &lt;a href=&#34;https://github.com/apache/skywalking/commits?author=fgksgf&#34;&gt;main repo&lt;/a&gt;, all in total include ~4000 LOC.&lt;/p&gt;
+&lt;p&gt;At Sep. 28th, 2020, the project management committee (PMC) passed the proposal of promoting him as a new committer. He has accepted the invitation at the same day.&lt;/p&gt;
+&lt;p&gt;Welcome to join the committer team, Huaxi!&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>Events: Release Apache SkyWalking Python 0.3.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-python-0-3-0/</link>
+      <link>/events/release-apache-skywalking-python-0-3-0/</link>
       <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-python-0-3-0/</guid>
+      <guid>/events/release-apache-skywalking-python-0-3-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Python 0.3.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Python 0.3.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;New plugins&lt;/p&gt;
@@ -400,14 +1541,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking Chart 3.1.0 for SkyWalking 8.1.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-chart-3-1-0-for-skywalking-8-1-0/</link>
+      <link>/events/release-apache-skywalking-chart-3-1-0-for-skywalking-8-1-0/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-chart-3-1-0-for-skywalking-8-1-0/</guid>
+      <guid>/events/release-apache-skywalking-chart-3-1-0-for-skywalking-8-1-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Chart 3.1.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Chart 3.1.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Support SkyWalking 8.1.0&lt;/li&gt;
 &lt;li&gt;Support enable oap dynamic configuration through k8s configmap&lt;/li&gt;
@@ -418,14 +1559,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking APM 8.1.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-apm-8-1-0/</link>
+      <link>/events/release-apache-skywalking-apm-8-1-0/</link>
       <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-apm-8-1-0/</guid>
+      <guid>/events/release-apache-skywalking-apm-8-1-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking APM 8.1.0 is release. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking APM 8.1.0 is release. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;h4 id=&#34;project&#34;&gt;Project&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Support Kafka as an optional trace, JVM metrics, profiling snapshots and meter system data transport layer.&lt;/li&gt;
@@ -503,10 +1644,10 @@
     
     <item>
       <title>Events: Welcome Wei Hua as new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-wei-hua-as-new-committer/</link>
+      <link>/events/welcome-wei-hua-as-new-committer/</link>
       <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/welcome-wei-hua-as-new-committer/</guid>
+      <guid>/events/welcome-wei-hua-as-new-committer/</guid>
       <description>
         
         
@@ -517,14 +1658,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking Python 0.2.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-python-0-2-0/</link>
+      <link>/events/release-apache-skywalking-python-0-2-0/</link>
       <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-python-0-2-0/</guid>
+      <guid>/events/release-apache-skywalking-python-0-2-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Python 0.2.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Python 0.2.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Plugins:&lt;/p&gt;
@@ -560,14 +1701,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking CLI 0.3.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-cli-0-3-0/</link>
+      <link>/events/release-apache-skywalking-cli-0-3-0/</link>
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-cli-0-3-0/</guid>
+      <guid>/events/release-apache-skywalking-cli-0-3-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking CLI 0.3.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking CLI 0.3.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Command: health check command&lt;/li&gt;
 &lt;li&gt;Command: Add trace command&lt;/li&gt;
@@ -579,14 +1720,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking Python 0.1.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-python-0-1-0/</link>
+      <link>/events/release-apache-skywalking-python-0-1-0/</link>
       <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-python-0-1-0/</guid>
+      <guid>/events/release-apache-skywalking-python-0-1-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Python 0.1.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Python 0.1.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;API: agent core APIs, check &lt;a href=&#34;https://github.com/apache/skywalking-python/blob/3892cab9d5d2c03107cfb2b1c59a6c77c5c3cc35/README.md#api&#34;&gt;the APIs and the examples&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Plugin: built-in libraries &lt;code&gt;http&lt;/code&gt;, &lt;code&gt;urllib.request&lt;/code&gt; and third-party library &lt;code&gt;requests&lt;/code&gt; are supported.&lt;/li&gt;
@@ -598,14 +1739,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking Chart 3.0.0 for SkyWalking 8.0.1</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-chart-3-0-0-for-skywalking-8-0-1/</link>
+      <link>/events/release-apache-skywalking-chart-3-0-0-for-skywalking-8-0-1/</link>
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-chart-3-0-0-for-skywalking-8-0-1/</guid>
+      <guid>/events/release-apache-skywalking-chart-3-0-0-for-skywalking-8-0-1/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Chart 3.0.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Chart 3.0.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Support SkyWalking 8.0.1&lt;/li&gt;
 &lt;/ul&gt;
@@ -615,14 +1756,14 @@
     
     <item>
       <title>Events: Relase Apache SkyWalking Nginx LUA 0.2.0</title>
-      <link>https://skywalking.apache.org/events/relase-apache-skywalking-nginx-lua-0-2-0/</link>
+      <link>/events/release-apache-skywalking-nginx-lua-0-2-0/</link>
       <pubDate>Sun, 21 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/relase-apache-skywalking-nginx-lua-0-2-0/</guid>
+      <guid>/events/release-apache-skywalking-nginx-lua-0-2-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Nginx LUA 0.2.0 is release. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Nginx LUA 0.2.0 is release. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Adapt the new v3 protocol.&lt;/li&gt;
 &lt;li&gt;Implement correlation protocol.&lt;/li&gt;
@@ -634,14 +1775,14 @@
     
     <item>
       <title>Events: Release Apache SkyWalking APM 8.0.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-apm-8-0-0/</link>
+      <link>/events/release-apache-skywalking-apm-8-0-0/</link>
       <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-apm-8-0-0/</guid>
+      <guid>/events/release-apache-skywalking-apm-8-0-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking APM 8.0.0 is release. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking APM 8.0.0 is release. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;h4 id=&#34;project&#34;&gt;Project&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;v3 protocol is added and implemented. All previous releases are incompatible with 8.x releases.&lt;/li&gt;
@@ -708,10 +1849,10 @@
     
     <item>
       <title>Events: Welcome Wei Zhang to join the PMC</title>
-      <link>https://skywalking.apache.org/events/welcome-wei-zhang-to-join-the-pmc/</link>
+      <link>/events/welcome-wei-zhang-to-join-the-pmc/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/welcome-wei-zhang-to-join-the-pmc/</guid>
+      <guid>/events/welcome-wei-zhang-to-join-the-pmc/</guid>
       <description>
         
         
@@ -722,452 +1863,19 @@
     
     <item>
       <title>Events: Release Apache SkyWalking Chart 2.0.0 for SkyWalking 7.0.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-chart-2-0-0-for-skywalking-7-0-0/</link>
+      <link>/events/release-apache-skywalking-chart-2-0-0-for-skywalking-7-0-0/</link>
       <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-chart-2-0-0-for-skywalking-7-0-0/</guid>
+      <guid>/events/release-apache-skywalking-chart-2-0-0-for-skywalking-7-0-0/</guid>
       <description>
         
         
-        &lt;p&gt;SkyWalking Chart 2.0.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
+        &lt;p&gt;SkyWalking Chart 2.0.0 is released. Go to &lt;a href=&#34;/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Support SkyWalking 7.0.0&lt;/li&gt;
 &lt;li&gt;Support set ES user/password&lt;/li&gt;
 &lt;li&gt;Add CI for release&lt;/li&gt;
 &lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking APM 7.0.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-apm-7-0-0/</link>
-      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-apm-7-0-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;SkyWalking APM 7.0.0 is release. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Upgrade JDK minimal JDK requirement to JDK8&lt;/li&gt;
-&lt;li&gt;Support profiling code level performance&lt;/li&gt;
-&lt;li&gt;Don&amp;rsquo;t support SkyWalking v5 agent in-wire and out-wire protocol. V6 is required.&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking CLI 0.2.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-cli-0-2-0/</link>
-      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-cli-0-2-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;SkyWalking CLI 0.2.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Support visualization of heat map&lt;/li&gt;
-&lt;li&gt;Support top N entities, &lt;code&gt;swctl metrics top 5 --name service_sla&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Support thermodynamic metrics, &lt;code&gt;swctl metrics thermodynamic --name all_heatmap&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Support multiple linear metrics, &lt;code&gt;swctl --display=graph --debug metrics multiple-linear --name all_percentile&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking Chart 1.1.0 for SkyWalking 6.6.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-chart-1-1-0-for-skywalking-6-6-0/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-chart-1-1-0-for-skywalking-6-6-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;SkyWalking Chart 1.1.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Support SkyWalking 6.6.0&lt;/li&gt;
-&lt;li&gt;Support deploy Elasticsearch 7&lt;/li&gt;
-&lt;li&gt;The official helm repo was changed to the official Elasticsearch repo (&lt;a href=&#34;https://helm.elastic.co/&#34;&gt;https://helm.elastic.co/&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: SkyWalking Nginx LUA 0.1.0 release</title>
-      <link>https://skywalking.apache.org/events/skywalking-nginx-lua-0-1-0-release/</link>
-      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/skywalking-nginx-lua-0-1-0-release/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Support tracing and collect metrics from Nginx server. Require SkyWalking APM 7.0+.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Ming Wen as new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-ming-wen-as-new-committer/</link>
-      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-ming-wen-as-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Ming Wen (a.k.a &lt;a href=&#34;https://github.com/moonming&#34;&gt;moonming&lt;/a&gt;) has been voted as a new committer.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Haochao Zhuang to join the PMC</title>
-      <link>https://skywalking.apache.org/events/welcome-haochao-zhuang-to-join-the-pmc/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-haochao-zhuang-to-join-the-pmc/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Haochao Zhuang (a.k.a &lt;a href=&#34;https://github.com/dmsolr&#34;&gt;dmsolr&lt;/a&gt;) has been invited to join the PMC. Welcome aboard.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Zhusheng Xu as new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-zhusheng-xu-as-new-committer/</link>
-      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-zhusheng-xu-as-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Zhusheng Xu (a.k.a &lt;a href=&#34;https://github.com/aderm&#34;&gt;aderm&lt;/a&gt;) has been voted as a new committer.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Han Liu as new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-han-liu-as-new-committer/</link>
-      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-han-liu-as-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Han Liu (a.k.a &lt;a href=&#34;https://github.com/mrproliu&#34;&gt;mrproliu&lt;/a&gt;) has been voted as a new committer.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Hongwei Zhai to join the PMC</title>
-      <link>https://skywalking.apache.org/events/welcome-hongwei-zhai-to-join-the-pmc/</link>
-      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-hongwei-zhai-to-join-the-pmc/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Hongwei Zhai (a.k.a &lt;a href=&#34;https://github.com/innerpeacez&#34;&gt;innerpeacez&lt;/a&gt;) has been invited to join the PMC. Welcome aboard.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking APM 6.6.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-6-0/</link>
-      <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-6-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Apache APM 6.6.0 release. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Service Instance dependency detection are available.&lt;/li&gt;
-&lt;li&gt;Support ElasticSearch 7 as a storage option.&lt;/li&gt;
-&lt;li&gt;Reduce the register load.&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking Chart 1.0.0 for SkyWalking 6.5.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-chart-1-0-0-for-skywalking-6-5-0/</link>
-      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-chart-1-0-0-for-skywalking-6-5-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;SkyWalking Chart 1.0.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Deploy SkyWalking 6.5.0 by Chart.&lt;/li&gt;
-&lt;li&gt;Elasticsearch deploy optional.&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking CLI 0.1.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-cli-0-1-0/</link>
-      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-cli-0-1-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;SkyWalking CLI 0.1.0 is released. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Add command &lt;code&gt;swctl service&lt;/code&gt; to list services&lt;/li&gt;
-&lt;li&gt;Add command &lt;code&gt;swctl instance&lt;/code&gt; and &lt;code&gt;swctl search&lt;/code&gt; to list and search instances of service.&lt;/li&gt;
-&lt;li&gt;Add command &lt;code&gt;swctl endpoint&lt;/code&gt; to list endpoints of service.&lt;/li&gt;
-&lt;li&gt;Add command &lt;code&gt;swctl linear-metrics&lt;/code&gt; to query linear metrics and plot the metrics in Ascii Graph mode.&lt;/li&gt;
-&lt;li&gt;Add command &lt;code&gt;swctl single-metrics&lt;/code&gt; to query single-value metrics.&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Weiyi Liu as new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-weiyi-liu-as-new-committer/</link>
-      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-weiyi-liu-as-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Weiyi Liu (a.k.a &lt;a href=&#34;https://github.com/wayilau&#34;&gt;wayilau&lt;/a&gt;) has been voted as a new committer.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Lang Li as a new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-lang-li-as-a-new-committer/</link>
-      <pubDate>Fri, 06 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-lang-li-as-a-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his contributions to the project, he has been accepted as SkyWalking committer. Welcome aboard.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Qiuxia Fan as new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-qiuxia-fan-as-new-committer/</link>
-      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-qiuxia-fan-as-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on her continuous contributions, Qiuxia Fan (a.k.a &lt;a href=&#34;https://github.com/Fine0830&#34;&gt;Fine0830&lt;/a&gt;) has been voted as a new committer.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking APM 6.5.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-5-0/</link>
-      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-5-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;6.5.0 release. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;New metrics comparison view in UI.&lt;/li&gt;
-&lt;li&gt;Dynamic Alert setting supported.&lt;/li&gt;
-&lt;li&gt;JDK9-12 supported in backend.&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Wei Zhang as new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-wei-zhang-as-new-committer/</link>
-      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-wei-zhang-as-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Wei Zhang (a.k.a &lt;a href=&#34;https://github.com/arugal&#34;&gt;arugal&lt;/a&gt;) has been voted as a new committer.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Haochao Zhuang as new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-haochao-zhuang-as-new-committer/</link>
-      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-haochao-zhuang-as-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Haochao Zhuang (a.k.a &lt;a href=&#34;https://github.com/dmsolr&#34;&gt;dmsolr&lt;/a&gt;) has been voted as a new committer.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Weijie Zou as a new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-weijie-zou-as-a-new-committer/</link>
-      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-weijie-zou-as-a-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his contributions to the skywalking ui project, Weijie Zou (a.k.a &lt;a href=&#34;https://github.com/x22x22&#34;&gt;Kdump&lt;/a&gt;) has been accepted as a new committer.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking APM 6.4.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-4-0/</link>
-      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-4-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;6.4.0 release. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Highly recommend to upgrade due to Pxx metrics calculation bug.&lt;/li&gt;
-&lt;li&gt;Make agent working in JDK9+ Module system.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Read &lt;a href=&#34;https://github.com/apache/skywalking/blob/master/CHANGES.md&#34;&gt;changelog&lt;/a&gt; for the details.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Yuguang Zhao to join the PMC</title>
-      <link>https://skywalking.apache.org/events/welcome-yuguang-zhao-to-join-the-pmc/</link>
-      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-yuguang-zhao-to-join-the-pmc/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Yuguang Zhao (a.k.a &lt;a href=&#34;https://github.com/zhaoyuguang&#34;&gt;zhaoyuguang&lt;/a&gt;) has been invited to join the PMC. Welcome aboard.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Zhenxu Ke to join the PMC</title>
-      <link>https://skywalking.apache.org/events/welcome-zhenxu-ke-to-join-the-pmc/</link>
-      <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-zhenxu-ke-to-join-the-pmc/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Zhenxu Ke (a.k.a &lt;a href=&#34;https://github.com/kezhenxu94&#34;&gt;kezhenxu94&lt;/a&gt;) has been invited to join the PMC. Welcome aboard.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Yanlong He as a new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-yanlong-he-as-a-new-committer/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-yanlong-he-as-a-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his contributions to the skywalking PHP project, Yanlong He (a.k.a &lt;a href=&#34;https://github.com/heyanlong&#34;&gt;heyanlong&lt;/a&gt; has been accepted as a new committer.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking APM 6.3.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-3-0/</link>
-      <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-3-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;6.3.0 release. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Improve ElasticSearch storage implementation performance again.&lt;/li&gt;
-&lt;li&gt;OAP backend re-install w/o agent reboot required.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Read &lt;a href=&#34;https://github.com/apache/skywalking/blob/master/CHANGES.md&#34;&gt;changelog&lt;/a&gt; for the details.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking APM 6.2.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-2-0/</link>
-      <pubDate>Tue, 02 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-2-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;6.2.0 release. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.
-ElasticSearch storage implementation changed, high reduce payload to ElasticSearch cluster.&lt;/p&gt;
-&lt;p&gt;Read &lt;a href=&#34;https://github.com/apache/skywalking/blob/master/CHANGES.md&#34;&gt;changelog&lt;/a&gt; for the details.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Welcome Zhenxu Ke as a new committer</title>
-      <link>https://skywalking.apache.org/events/welcome-zhenxu-ke-as-a-new-committer/</link>
-      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/welcome-zhenxu-ke-as-a-new-committer/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Based on his continuous contributions, Zhenxu Ke (a.k.a &lt;a href=&#34;https://github.com/kezhenxu94&#34;&gt;kezhenxu94&lt;/a&gt;) has been voted as a new committer.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Events: Release Apache SkyWalking APM 6.1.0</title>
-      <link>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-1-0/</link>
-      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://skywalking.apache.org/events/release-apache-skywalking-apm-6-1-0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;6.1.0 release. Go to &lt;a href=&#34;https://skywalking.apache.org/downloads&#34;&gt;downloads&lt;/a&gt; page to find release tars.
-This is the first top level project version.&lt;/p&gt;
-&lt;p&gt;Key updates&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;RocketBot UI&lt;/li&gt;
-&lt;li&gt;OAP performance improvement&lt;/li&gt;
-&lt;/ol&gt;
 
       </description>
     </item>

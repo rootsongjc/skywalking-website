@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="twitter:site" content="skywalking.apache.org">
+<meta name="twitter:image:src" content="https://skywalking.apache.org/images/skywalking_400x400.png">
+<meta property="og:image" content="https://skywalking.apache.org/images/skywalking_400x400.png">
+<meta name="generator" content="Hugo 0.80.0" />
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/site.webmanifest">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<title>Release Apache SkyWalking APM 8.4.0 | Apache SkyWalking</title><meta property="og:title" content="Release Apache SkyWalking APM 8.4.0" />
+<meta property="og:description" content="Release Apache SkyWalking 8.4.0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/events/release-apache-skywalking-apm-8-4-0/" />
+<meta property="article:published_time" content="2021-02-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-05T17:00:45+08:00" />
+<meta itemprop="name" content="Release Apache SkyWalking APM 8.4.0">
+<meta itemprop="description" content="Release Apache SkyWalking 8.4.0.">
+<meta itemprop="datePublished" content="2021-02-04T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-07-05T17:00:45+08:00" />
+<meta itemprop="wordCount" content="1117">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Release Apache SkyWalking APM 8.4.0"/>
+<meta name="twitter:description" content="Release Apache SkyWalking 8.4.0."/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-178891182-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<link rel="preload" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+
+
+<link rel="preload" href="/scss/main.min.183547de3e7337ab8639ed4b1e14334ce5038fdec7dd30707617ff0837722518.css" as="style">
+<link href="/scss/main.min.183547de3e7337ab8639ed4b1e14334ce5038fdec7dd30707617ff0837722518.css" rel="stylesheet" integrity="">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+    <title>Release Apache SkyWalking APM 8.4.0 | Apache SkyWalking</title>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <div class="sidebar-button"><svg width="40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div>
+    <a class="navbar-brand" href="/">
+        <span class="navbar-logo"><img width="126" height="30" src="/images/logo.png" alt="SkyWalking"></span> 
+    </a>
+    <div class="td-navbar-nav-scroll ml-md-auto" id="navigation">
+        <ul class="navbar-nav mt-lg-0">
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs" ><span>Projects and Documentations</span></a>
+			</li>
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/events" ><span>Events</span></a>
+			</li>
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog" ><span>Blogs</span></a>
+			</li>
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/downloads" ><span>Downloads</span></a>
+			</li>
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/team" ><span>Team</span></a>
+			</li>
+              
+            
+            <li class="nav-item mr-3 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/zh" ><span>中文博客</span></a>
+			</li>
+              
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Links
+              </a>
+                <div class="dropdown-menu">
+                    
+                    <a class="dropdown-item" href="http://www.apache.org/">Apache Software Foundation</a> 
+                    <a class="dropdown-item" href="https://github.com/apache/skywalking/issues">GitHub Issue Tracker</a> 
+                    <a class="dropdown-item" href="https://lists.apache.org/list.html?dev@skywalking.apache.org">Dev Mailing List</a> 
+                    <a class="dropdown-item" href="https://cwiki.apache.org/confluence/display/SKYWALKING/Home">WIKI</a> 
+                    <a class="dropdown-item" href="http://www.apache.org/licenses/">License</a> 
+                    <a class="dropdown-item" href="http://www.apache.org/events/current-event">Apache Events</a> 
+                    <a class="dropdown-item" href="http://www.apache.org/security/">Security</a> 
+                    <a class="dropdown-item" href="http://www.apache.org/foundation/sponsorship.html">Sponsor and Donate</a> 
+                    <a class="dropdown-item" href="http://www.apache.org/foundation/thanks.html">Thanks</a> 
+                </div>
+            </li>
+             
+            
+			
+        </ul>
+    </div>
+    <div class="navbar-nav d-none d-lg-block search-input-box">
+<input id="algolia-search-input" type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="container">
+          <main class="" role="main">
+            
+<div class="td-content">
+	<h1>Release Apache SkyWalking APM 8.4.0</h1>
+	<div class="lead">Release Apache SkyWalking 8.4.0.</div>
+	<div class="td-byline mb-4">
+		By <b>SkyWalking Team</b> |
+		<time datetime="2021-02-04" class="text-muted">Thursday, February 04, 2021</time>
+	</div>
+	<p>SkyWalking 8.4.0 is released. Go to <a href="/downloads">downloads</a> page to find release tars.
+Changes by Version</p>
+<h4 id="project">Project</h4>
+<ul>
+<li>Incompatible with previous releases when use H2/MySQL/TiDB storage options, due to support multiple alarm rules triggered for one entity.</li>
+<li>Chore: adapt <code>create_source_release.sh</code> to make it runnable on Linux.</li>
+<li>Add <code>package</code> to <code>.proto</code> files, prevent polluting top-level namespace in some languages; The OAP server supports previous agent releases, whereas the previous OAP server (&lt;=8.3.0) won&rsquo;t recognize newer agents since this version (&gt;= 8.4.0).</li>
+<li>Add ElasticSearch 7.10 to test matrix and verify it works.</li>
+<li>Replace Apache RAT with skywalking-eyes to check license headers.</li>
+<li>Set up test of Envoy ALS / MetricsService under Istio 1.8.2 to verify Envoy V3 protocol</li>
+<li>Test: fix flaky E2E test of Kafka.</li>
+</ul>
+<h4 id="java-agent">Java Agent</h4>
+<ul>
+<li>The operation name of quartz-scheduler plugin, has been changed as the <code>quartz-scheduler/${className}</code> format.</li>
+<li>Fix jdk-http and okhttp-3.x plugin did not overwrite the old trace header.</li>
+<li>Add interceptors of method(analyze, searchScroll, clearScroll, searchTemplate and deleteByQuery) for elasticsearch-6.x-plugin.</li>
+<li>Fix the unexpected RunningContext recreation in the Tomcat plugin.</li>
+<li>Fix the potential NPE when trace_sql_parameters is enabled.</li>
+<li>Update <code>byte-buddy</code> to 1.10.19.</li>
+<li>Fix thrift plugin trace link broken when intermediate service does not mount agent</li>
+<li>Fix thrift plugin collects wrong args when the method without parameter.</li>
+<li>Fix DataCarrier&rsquo;s <code>org.apache.skywalking.apm.commons.datacarrier.buffer.Buffer</code> implementation isn&rsquo;t activated in <code>IF_POSSIBLE</code> mode.</li>
+<li>Fix ArrayBlockingQueueBuffer&rsquo;s useless <code>IF_POSSIBLE</code> mode list</li>
+<li>Support building gRPC TLS channel but CA file is not required.</li>
+<li>Add witness method mechanism in the agent plugin core.</li>
+<li>Add Dolphinscheduler plugin definition.</li>
+<li>Make sampling still works when the trace ignores plug-in activation.</li>
+<li>Fix mssql-plugin occur ClassCastException when call the method of return generate key.</li>
+<li>The operation name of dubbo and dubbo-2.7.x-plugin, has been changed as the <code>groupValue/className.methodName</code> format</li>
+<li>Fix bug that rocketmq-plugin set the wrong tag.</li>
+<li>Fix duplicated <code>EnhancedInstance</code> interface added.</li>
+<li>Fix thread leaks caused by the elasticsearch-6.x-plugin plugin.</li>
+<li>Support reading segmentId and spanId with toolkit.</li>
+<li>Fix RestTemplate plugin recording url tag with wrong port</li>
+<li>Support collecting logs and forwarding through gRPC.</li>
+<li>Support config <code>agent.sample_n_per_3_secs</code> can be changed in the runtime.</li>
+<li>Support config <code>agent.ignore_suffix</code> can be changed in the runtime.</li>
+<li>Support DNS periodic resolving mechanism to update backend service.</li>
+<li>Support config <code>agent.trace.ignore_path</code> can be changed in the runtime.</li>
+<li>Added support for transmitting logback 1.x and log4j 2.x formatted &amp; un-formatted messages via gPRC</li>
+</ul>
+<h4 id="oap-backend">OAP-Backend</h4>
+<ul>
+<li>Make meter receiver support MAL.</li>
+<li>Support influxDB connection response format option. Fix some error when use JSON as influxDB response format.</li>
+<li>Support Kafka MirrorMaker 2.0 to replicate topics between Kafka clusters.</li>
+<li>Add the rule name field to alarm record storage entity as a part of ID, to support multiple alarm rules triggered for one entity. The scope id has been removed from the ID.</li>
+<li>Fix MAL concurrent execution issues.</li>
+<li>Fix group name can&rsquo;t be queried in the GraphQL.</li>
+<li>Fix potential gRPC connection leak(not closed) for the channels among OAP instances.</li>
+<li>Filter OAP instances(unassigned in booting stage) of the empty IP in KubernetesCoordinator.</li>
+<li>Add component ID for Python aiohttp plugin requester and server.</li>
+<li>Fix H2 in-memory database table missing issues</li>
+<li>Add component ID for Python pyramid plugin server.</li>
+<li>Add component ID for NodeJS Axios plugin.</li>
+<li>Fix searchService method error in storage-influxdb-plugin.</li>
+<li>Add JavaScript component ID.</li>
+<li>Fix CVE of UninstrumentedGateways in Dynamic Configuration activation.</li>
+<li>Improve query performance in storage-influxdb-plugin.</li>
+<li>Fix the uuid field in GRPCConfigWatcherRegister is not updated.</li>
+<li>Support Envoy {AccessLog,Metrics}Service API V3.</li>
+<li>Adopt the <a href="docs/en/concepts-and-designs/mal.md">MAL</a> in Envoy metrics service analyzer.</li>
+<li>Fix the priority setting doesn&rsquo;t work of the ALS analyzers.</li>
+<li>Fix bug that <code>endpoint-name-grouping.yml</code> is not customizable in Dockerized case.</li>
+<li>Fix bug that istio version metric type on UI template mismatches the otel rule.</li>
+<li>Improve ReadWriteSafeCache concurrency read-write performance</li>
+<li>Fix bug that if use JSON as InfluxDB.ResponseFormat then NumberFormatException maybe occur.</li>
+<li>Fix <code>timeBucket</code> not taking effect in EqualsAndHashCode annotation of some relationship metrics.</li>
+<li>Fix <code>SharingServerConfig</code>&rsquo;s propertie is not correct in the <code>application.yml</code>, contextPath -&gt; restConnextPath.</li>
+<li>Istio control plane: remove redundant metrics and polish panel layout.</li>
+<li>Fix bug endpoint name grouping not work due to setting service name and endpoint name out of order.</li>
+<li>Fix receiver analysis error count metrics.</li>
+<li>Log collecting and query implementation.</li>
+<li>Support Alarm to feishu.</li>
+<li>Add the implementation of ConfigurationDiscovery on the OAP side.</li>
+<li>Fix bug in <code>parseInternalErrorCode</code> where some error codes are never reached.</li>
+<li>OAL supports multiple values when as numeric.</li>
+<li>Add node information from the Openensus proto to the labels of the samples, to support the identification of the source of the Metric data.</li>
+<li>Fix bug that the same sample name in one MAL expression caused <code>IllegalArgumentException</code> in <code>Analyzer.analyse</code>.</li>
+<li>Add the text analyzer for querying log in the es storage.</li>
+<li>Chore:  Remove duplicate codes in Envoy ALS handler.</li>
+<li>Remove the strict rule of OAL disable statement parameter.</li>
+<li>Fix a legal metric query adoption bug. Don&rsquo;t support global level metric query.</li>
+<li>Add VM MAL and ui-template configration, support Prometheus node-exporter VM metrics that pushed from OpenTelemetry-collector.</li>
+<li>Remove unused log query parameters.</li>
+</ul>
+<h4 id="ui">UI</h4>
+<ul>
+<li>Fix un-removed tags in trace query.</li>
+<li>Fix unexpected metrics name on single value component.</li>
+<li>Don&rsquo;t allow negative value as the refresh period.</li>
+<li>Fix style issue in trace table view.</li>
+<li>Separation Log and Dashboard selector data to avoid conflicts.</li>
+<li>Fix trace instance selector bug.</li>
+<li>Fix Unnecessary sidebar in tooltips for charts.</li>
+<li>Refactor dashboard query in a common script.</li>
+<li>Implement refreshing data for topology by updating date.</li>
+<li>Implement group selector in the topology.</li>
+<li>Fix all as default parameter for services selector.</li>
+<li>Add icon for Python aiohttp plugin.</li>
+<li>Add icon for Python pyramid plugin.</li>
+<li>Fix topology render all services nodes when groups changed.</li>
+<li>Fix rk-footer utc input&rsquo;s width.</li>
+<li>Update rk-icon and rewrite rk-header svg tags with rk-icon.</li>
+<li>Add icon for http type.</li>
+<li>Fix rk-footer utc without local storage.</li>
+<li>Sort group names in the topology.</li>
+<li>Add logo for Dolphinscheduler.</li>
+<li>Fix dashboard wrong instance.</li>
+<li>Add a legend for the topology.</li>
+<li>Update the condition of unhealthy cube.</li>
+<li>Fix: use icons to replace buttons for task list in profile.</li>
+<li>Fix: support <code>=</code> in the tag value in the trace query page.</li>
+<li>Add envoy proxy component logo.</li>
+<li>Chore: set up license-eye to check license headers and add missing license headers.</li>
+<li>Fix prop for instances-survey and endpoints-survey.</li>
+<li>Fix envoy icon in topology.</li>
+<li>Implement the service logs on UI.</li>
+<li>Change the flask icon to light version for a better view of topology dark theme.</li>
+<li>Implement viewing logs on trace page.</li>
+<li>Fix update props of date component.</li>
+<li>Fix query conditions for logs.</li>
+<li>Fix style of selectors to word wrap.</li>
+<li>Fix logs time.</li>
+<li>Fix search ui for logs.</li>
+</ul>
+<h4 id="documentation">Documentation</h4>
+<ul>
+<li>Update the documents of backend fetcher and self observability about the latest configurations.</li>
+<li>Add documents about the group name of service.</li>
+<li>Update docs about the latest UI.</li>
+<li>Update the document of backend trace sampling with the latest configuration.</li>
+<li>Update kafka plugin support version to 2.6.1.</li>
+<li>Add FAQ about <code>Fix compiling on Mac M1 chip</code>.</li>
+</ul>
+<p>All issues and pull requests are <a href="https://github.com/apache/skywalking/milestone/68?closed=1">here</a></p>
+
+	
+
+	<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+  <li>
+    <a href="/events/release-apache-skywalking-cloud-on-kubernetes-0-2-0/" class="btn btn-primary "><span class="mr-1">←</span> Previous</a>
+  </li>
+    <a href="/events/release-apache-skywalking-cli-0-6-0/" class="btn btn-primary ">Next <span class="ml-1">→</span></a>
+  </li>
+</ul>
+
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 sky-row">
+  <div class="container-fluid text-center">
+    <div class="">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" href="https://twitter.com/asfskywalking">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="http://s.apache.org/slack-invite">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Mailing list" aria-label="Mailing list">
+    <a class="text-white" target="_blank" href="https://lists.apache.org/list.html?dev@skywalking.apache.org">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/apache/skywalking">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+    </div>
+    <div class="">
+
+        <small class="text-white">&copy; 2017 - 2021 The Apache Software Foundation All Rights Reserved</small>
+        
+	
+    </div>
+    <div class="">
+      <small class="text-white   mt-4">Apache SkyWalking, SkyWalking, Apache, the Apache feather logo, and the Apache SkyWalking project logo are either registered trademarks or trademarks of the Apache Software Foundation.</small>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<div id="popup">
+    <div class="mask">
+        <img src=""/>
+    </div>
+</div>
+
+    <div class="sidebar-mask"></div>
+<div class="sidebar">
+    <nav class="nav-links">
+        <div class="nav-item"><a href="/docs/" class="nav-link">Projects and Documentation</a></div>
+        <div class="nav-item"><a href="/events/" class="nav-link">Events</a></div>
+        <div class="nav-item"><a href="/blog/" class="nav-link router-link-exact-active router-link-active">Blog</a>
+        </div>
+        <div class="nav-item"><a href="/downloads/" class="nav-link">Downloads</a></div>
+        <div class="nav-item"><a href="/team/" class="nav-link">Team</a></div>
+        <div class="nav-item"><a href="/zh/" class="nav-link">中文博客</a></div>
+        <div class="nav-item">
+            <div class="dropdown-wrapper open"><a class="dropdown-title"><span class="title">Links</span> <span
+                    class="arrow down"></span></a>
+                <ul class="nav-dropdown" style="">
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/" target="_blank"
+                           rel="noopener noreferrer" class="nav-link external">
+                            Apache Software Foundation
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="https://github.com/apache/skywalking/issues"
+                           target="_blank" rel="noopener noreferrer"
+                           class="nav-link external">
+                            GitHub Issue Tracker
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="https://lists.apache.org/list.html?dev@skywalking.apache.org" target="_blank"
+                           rel="noopener noreferrer" class="nav-link external">
+                            Dev Mailing List
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/licenses/" target="_blank"
+                           rel="noopener noreferrer" class="nav-link external">
+                            License
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/events/current-event"
+                           target="_blank" rel="noopener noreferrer"
+                           class="nav-link external">
+                            Apache Events
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/security/" target="_blank"
+                           rel="noopener noreferrer" class="nav-link external">
+                            Security
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/foundation/sponsorship.html"
+                           target="_blank" rel="noopener noreferrer"
+                           class="nav-link external">
+                            Sponsorship and Donate
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="http://www.apache.org/foundation/thanks.html"
+                           target="_blank" rel="noopener noreferrer"
+                           class="nav-link external">
+                            Thanks
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.b39e9e0a8b4cdf9f436c5f7899461300ecea2f05f620805ef970b7832857a4cb.js" integrity="sha256-s56eCotM359DbF94mUYTAOzqLwX2IIBe&#43;XC3gyhXpMs=" crossorigin="anonymous"></script>
+
+
+
+
+
+  </body>
+</html>
